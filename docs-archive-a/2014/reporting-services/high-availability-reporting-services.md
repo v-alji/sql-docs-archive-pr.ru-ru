@@ -1,0 +1,43 @@
+---
+title: Высокий уровень доступности (Reporting Services) | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+helpviewer_keywords:
+- high availability [SQL Server], Reporting Services
+- high availability [Reporting Services]
+- Reporting Services, high availability
+ms.assetid: 50e0813f-f591-4688-9cd1-e6389a3808e5
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: dfa0548bc526b007c4301572cd1a8e47a2851e18
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87669281"
+---
+# <a name="high-availability-reporting-services"></a><span data-ttu-id="fe085-102">Высокий уровень доступности (службы Reporting Services)</span><span class="sxs-lookup"><span data-stu-id="fe085-102">High Availability (Reporting Services)</span></span>
+  <span data-ttu-id="fe085-103">Сервер отчетов служб [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] является сервером без сохранения состояния, на котором в двух реляционных базах данных [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] хранятся данные приложений, содержимое, свойства и сведения о сеансах.</span><span class="sxs-lookup"><span data-stu-id="fe085-103">A [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] report server is a stateless server that stores application data, content, properties, and session information in two [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] relational databases.</span></span> <span data-ttu-id="fe085-104">Лучшим способом обеспечить доступность функций служб [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] будут следующие действия.</span><span class="sxs-lookup"><span data-stu-id="fe085-104">As such, the best way to ensure the availability of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] functionality is to do the following:</span></span>  
+  
+-   <span data-ttu-id="fe085-105">Используйте функцию высокого уровня доступности компонента [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssDE](../includes/ssde-md.md)], чтобы максимально увеличить время работоспособности баз данных сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="fe085-105">Use the high availability features of the [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssDE](../includes/ssde-md.md)] to maximize the uptime of the report server databases.</span></span> <span data-ttu-id="fe085-106">Если экземпляр компонента [!INCLUDE[ssDE](../includes/ssde-md.md)] настроить для работы в отказоустойчивом кластере, при создании базы данных сервера отчетов можно выбрать этот экземпляр.</span><span class="sxs-lookup"><span data-stu-id="fe085-106">If you configure a [!INCLUDE[ssDE](../includes/ssde-md.md)] instance to run in a failover cluster, you can select that instance when you create a report server database.</span></span>  
+  
+-   <span data-ttu-id="fe085-107">Для баз данных [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] и для источников данных по возможности используйте [!INCLUDE[ssHADR](../includes/sshadr-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="fe085-107">Use [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssHADR](../includes/sshadr-md.md)] with the [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] databases and for data sources, as possible.</span></span> <span data-ttu-id="fe085-108">Дополнительные сведения см. в статье [Службы Reporting Services с группами доступности AlwaysOn (SQL Server)](../database-engine/availability-groups/windows/reporting-services-with-always-on-availability-groups-sql-server.md).</span><span class="sxs-lookup"><span data-stu-id="fe085-108">For more information, see [Reporting Services with AlwaysOn Availability Groups &#40;SQL Server&#41;](../database-engine/availability-groups/windows/reporting-services-with-always-on-availability-groups-sql-server.md).</span></span>  
+  
+-   <span data-ttu-id="fe085-109">Настройте несколько серверов отчетов для работы в режиме масштабного развертывания, где все серверы совместно используют одну базу данных сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="fe085-109">Configure multiple report servers to run in a scale-out deployment, where all the servers share a single report server database.</span></span> <span data-ttu-id="fe085-110">Развертывание нескольких экземпляров сервера отчетов в масштабном развертывании (предпочтительно на разных серверах) помогает обеспечить непрерывную работу служб в случае отказа одного из экземпляров сервера.</span><span class="sxs-lookup"><span data-stu-id="fe085-110">Deploying multiple report server instances, preferably on different servers, in a scale-out deployment can help provide uninterrupted service in the event one of the report server instances goes down.</span></span>  
+  
+ <span data-ttu-id="fe085-111">Масштабное развертывание обеспечивает совместное использование базы данных.</span><span class="sxs-lookup"><span data-stu-id="fe085-111">A scale-out deployment provides a way to share a database.</span></span> <span data-ttu-id="fe085-112">Если происходит отказ одного из серверов отчетов, остальные серверы в развертывании продолжают работать.</span><span class="sxs-lookup"><span data-stu-id="fe085-112">If one report server goes down, other servers in the same deployment will continue to work.</span></span>  
+  
+ [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] <span data-ttu-id="fe085-113">не имеет ограничений на кластеризацию.</span><span class="sxs-lookup"><span data-stu-id="fe085-113">is not cluster-aware.</span></span> <span data-ttu-id="fe085-114">Само по себе масштабное развертывание не обеспечивает балансировки нагрузки, оно не определяет рабочую нагрузку сервера отчетов и не перенаправляет запросы на обработку на менее загруженный сервер.</span><span class="sxs-lookup"><span data-stu-id="fe085-114">By itself, a scale-out deployment does not provide load balancing; it does not detect the processing loads on a report server and route new processing requests to the least busy server.</span></span> <span data-ttu-id="fe085-115">Оно не перенаправляет на обработку запросы, не завершенные вследствие ошибки.</span><span class="sxs-lookup"><span data-stu-id="fe085-115">It does not re-route processing requests that failed before completion.</span></span> <span data-ttu-id="fe085-116">Чтобы получить возможность балансировать нагрузку, необходимо настроить балансирование нагрузки на веб-серверах, на которых находятся серверы отчетов, а затем настроить серверы отчетов для работы в режиме масштабного развертывания, чтобы они использовали одну базу данных сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="fe085-116">To get load balancing features, you must configure load balancing for the Web servers that host the report servers, and then configure the report servers in a scale-out deployment so that they share the same report server database.</span></span>  
+  
+ <span data-ttu-id="fe085-117">Веб-служба сервера отчетов и служба Windows тесно интегрируются и выполняются вместе как один экземпляр сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="fe085-117">The Report Server Web service and Windows service are tightly integrated and run together as a single report server instance.</span></span> <span data-ttu-id="fe085-118">Нельзя настроить доступность одного сервера отдельно от другого.</span><span class="sxs-lookup"><span data-stu-id="fe085-118">You cannot configure availability for one service separately from the other.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="fe085-119">См. также:</span><span class="sxs-lookup"><span data-stu-id="fe085-119">See Also</span></span>  
+ <span data-ttu-id="fe085-120">[Решения высокого уровня доступности (SQL Server)](../sql-server/failover-clusters/high-availability-solutions-sql-server.md) </span><span class="sxs-lookup"><span data-stu-id="fe085-120">[High Availability Solutions &#40;SQL Server&#41;](../sql-server/failover-clusters/high-availability-solutions-sql-server.md) </span></span>  
+ [<span data-ttu-id="fe085-121">Настройка масштабного развертывания сервера отчетов в основном режиме (диспетчер конфигурации служб SSRS)</span><span class="sxs-lookup"><span data-stu-id="fe085-121">Configure a Native Mode Report Server Scale-Out Deployment &#40;SSRS Configuration Manager&#41;</span></span>](install-windows/configure-a-native-mode-report-server-scale-out-deployment.md)  
+  
+  

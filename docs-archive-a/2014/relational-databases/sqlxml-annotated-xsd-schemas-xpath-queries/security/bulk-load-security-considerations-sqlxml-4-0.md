@@ -1,0 +1,58 @@
+---
+title: Вопросы безопасности при выполнении групповой загрузки (SQLXML 4,0) | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: xml
+ms.topic: reference
+helpviewer_keywords:
+- SQLXML, XML Bulk Load
+- bulk load [SQLXML], security
+- security [SQLXML], XML Bulk Load
+- XML Bulk Load [SQLXML], security
+ms.assetid: 192fc6d4-ecbc-4a4d-a5cb-55e1f64af318
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 21c1cbe7f94ef42327aa7b81f75fa521d9f7c0e9
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87669388"
+---
+# <a name="bulk-load-security-considerations-sqlxml-40"></a><span data-ttu-id="7d456-102">Вопросы безопасности массовой загрузки (SQLXML 4.0)</span><span class="sxs-lookup"><span data-stu-id="7d456-102">Bulk Load Security Considerations (SQLXML 4.0)</span></span>
+  <span data-ttu-id="7d456-103">Ниже приведены рекомендации по обеспечению безопасности при использовании массовой загрузки XML.</span><span class="sxs-lookup"><span data-stu-id="7d456-103">The following are security guidelines for using XML Bulk Load:</span></span>  
+  
+-   <span data-ttu-id="7d456-104">Если указано, что операция массовой загрузки должна выполняться в виде транзакции, то необходимо с помощью свойства `TempFilePath` задать каталог, в котором создаются временные файлы.</span><span class="sxs-lookup"><span data-stu-id="7d456-104">When you specify that the Bulk Load operation is to be performed as a transaction, you use the `TempFilePath` property to specify a folder in which to create the temporary files.</span></span>  
+  
+     <span data-ttu-id="7d456-105">Процесс массовой загрузки создает эти временные файлы со следующими разрешениями.</span><span class="sxs-lookup"><span data-stu-id="7d456-105">The Bulk Load process creates these temporary files with the following permissions:</span></span>  
+  
+    -   <span data-ttu-id="7d456-106">Процессу массовой загрузки предоставляется доступ для чтения, записи или удаления.</span><span class="sxs-lookup"><span data-stu-id="7d456-106">Read/Write/Delete access is granted to the Bulk Load process.</span></span>  
+  
+    -   <span data-ttu-id="7d456-107">Разрешение на чтение предоставляется всем пользователям, так как учетная запись, под которой Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] будет осуществлять доступ к этим файлам, неизвестна.</span><span class="sxs-lookup"><span data-stu-id="7d456-107">Read permission is granted to all users, because the account under which Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] will access these files is unknown.</span></span> <span data-ttu-id="7d456-108">Можно ограничить доступ к этим временным файлам, задав соответствующие разрешения на каталог, содержащий файлы.</span><span class="sxs-lookup"><span data-stu-id="7d456-108">You can restrict the access to these temporary files by setting the appropriate permissions on the folder that contains them.</span></span>  
+  
+-   <span data-ttu-id="7d456-109">Массовая загрузка XML сама по себе не имеет настроек разрешений.</span><span class="sxs-lookup"><span data-stu-id="7d456-109">XML Bulk Load does not itself have any permissions settings.</span></span> <span data-ttu-id="7d456-110">Предполагается, что база данных настроена верно, а пользовательский контекст (т. е. имя входа, на использование которого настроены средства массовой загрузкой) имеет соответствующий набор разрешений.</span><span class="sxs-lookup"><span data-stu-id="7d456-110">It is assumed that the database is set up correctly and that the user context (that is, the login that Bulk Load is set use) has appropriate permissions set.</span></span>  
+  
+-   <span data-ttu-id="7d456-111">В нетранзакционном режиме в случае возникновения ошибки в процессе массовой загрузки данные могут остаться в состоянии частичной загрузки.</span><span class="sxs-lookup"><span data-stu-id="7d456-111">In non-transactional mode, if an error occurs during the Bulk Load process, data may be left in a partially loaded state.</span></span> <span data-ttu-id="7d456-112">В этом случае массовая загрузка просто останавливается в той точке, где это произошло.</span><span class="sxs-lookup"><span data-stu-id="7d456-112">Bulk Load will simply stop at the point where it is when this happens.</span></span> <span data-ttu-id="7d456-113">Чтобы устранить эту проблему, можно использовать транзакционный режим.</span><span class="sxs-lookup"><span data-stu-id="7d456-113">Transactional mode can be used to alleviate this issue.</span></span>  
+  
+-   <span data-ttu-id="7d456-114">В случае возникновения ошибок массовой загрузки в сообщения об ошибках могут быть включены сведения о базе данных.</span><span class="sxs-lookup"><span data-stu-id="7d456-114">When Bulk Load errors occur, they may include information about the database.</span></span> <span data-ttu-id="7d456-115">Например, сообщения об ошибках могут содержать имя таблицы или столбца, а также сведения о типе столбца.</span><span class="sxs-lookup"><span data-stu-id="7d456-115">For example, they may include the name of a table or column, or column type information.</span></span> <span data-ttu-id="7d456-116">При использовании массового копирования необходимо обеспечить перехват ошибок процесса массовой загрузки и возврат общего сообщения об ошибке, а не предоставлять пользователям непосредственный доступ ко всем сведениям об ошибках.</span><span class="sxs-lookup"><span data-stu-id="7d456-116">When you use Bulk Load, you should take care to catch errors from the Bulk Load process and return a generic error message, rather than exposing errors directly to users.</span></span>  
+  
+-   <span data-ttu-id="7d456-117">Массовая загрузка не налагает ограничений на размер обрабатываемых данных.</span><span class="sxs-lookup"><span data-stu-id="7d456-117">Bulk Load sets no limit on the amount of data it works over.</span></span> <span data-ttu-id="7d456-118">Массовая загрузка не предусматривает какую-либо проверку размера загружаемых данных.</span><span class="sxs-lookup"><span data-stu-id="7d456-118">Bulk Load does not do any checking on the size of the data to be loaded.</span></span> <span data-ttu-id="7d456-119">За обеспечение в процессе массовой загрузки достаточного объема памяти для обработки указанного файла и достаточного пространства в базе данных для хранения загружаемых данных отвечает пользователь.</span><span class="sxs-lookup"><span data-stu-id="7d456-119">It is the responsibility of the user executing Bulk Load to ensure that there is enough memory to process the specified file, and that there is enough room in the database to store the data being loaded.</span></span>  
+  
+-   <span data-ttu-id="7d456-120">В ходе массовой загрузки не осуществляются какие-либо попытки использовать полученные данные в качестве кода.</span><span class="sxs-lookup"><span data-stu-id="7d456-120">Bulk Load does not make an attempt to use the data it is given as code.</span></span> <span data-ttu-id="7d456-121">Входные данные никогда и никоим образом не вызываются на выполнение.</span><span class="sxs-lookup"><span data-stu-id="7d456-121">The data input is never executed in any fashion.</span></span> <span data-ttu-id="7d456-122">Любой код или команды во входных данных рассматриваются как обычные данные и не выполняются.</span><span class="sxs-lookup"><span data-stu-id="7d456-122">Any code or commands in the input data are treated as normal data and will not be executed.</span></span>  
+  
+-   <span data-ttu-id="7d456-123">Массовая загрузка позволяет вносить в полученные данные изменения, связанные с форматированием, исходя из различий между моделями данных XML и [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7d456-123">Bulk Load may make formatting changes to the given data based on differences between the XML and [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] data models.</span></span> <span data-ttu-id="7d456-124">Например, различаются форматы задания времени.</span><span class="sxs-lookup"><span data-stu-id="7d456-124">For example, the format for specifying a time is different.</span></span> <span data-ttu-id="7d456-125">В ходе массовой загрузки предпринимаются попытки устранить эти различия.</span><span class="sxs-lookup"><span data-stu-id="7d456-125">Bulk Load will attempt to resolve these differences.</span></span> <span data-ttu-id="7d456-126">В результате некоторая часть данных о точности может быть потеряна.</span><span class="sxs-lookup"><span data-stu-id="7d456-126">As a result, some precision information may be lost.</span></span>  
+  
+-   <span data-ttu-id="7d456-127">Массовая загрузка не налагает ограничений на количество времени, которое потребуется на обработку данных.</span><span class="sxs-lookup"><span data-stu-id="7d456-127">Bulk Load sets no limit on the amount of time it takes to process the data.</span></span> <span data-ttu-id="7d456-128">Обработка продолжится до завершения или до тех пор, пока не возникнут ошибки.</span><span class="sxs-lookup"><span data-stu-id="7d456-128">Processing will continue until processing is complete or an error occurs.</span></span>  
+  
+-   <span data-ttu-id="7d456-129">Массовая загрузка позволяет создавать и удалять временные таблицы в базе данных, для чего должны быть предоставлены разрешения.</span><span class="sxs-lookup"><span data-stu-id="7d456-129">Bulk Load can create and delete temporary tables within the database, and needs permissions to do so.</span></span> <span data-ttu-id="7d456-130">Разрешения на эти таблицы предоставляются тому пользователю, который создал соединение с базой данных для выполнения процесса массовой загрузки.</span><span class="sxs-lookup"><span data-stu-id="7d456-130">Permissions to these tables will be given to the same user who is connecting to the database for the Bulk Load process.</span></span>  
+  
+-   <span data-ttu-id="7d456-131">Массовая загрузка позволяет создавать и удалять временные файлы, используемые при обработке в транзакционном режиме, для чего должны быть предоставлены разрешения.</span><span class="sxs-lookup"><span data-stu-id="7d456-131">Bulk Load can create and delete temporary files used during transactional mode processing, and needs permissions to do so.</span></span> <span data-ttu-id="7d456-132">Эти файлы создаются с теми же разрешениями, с которыми текущий пользователь потока осуществляет массовую загрузку.</span><span class="sxs-lookup"><span data-stu-id="7d456-132">These files are created with the same permissions as the current user of the thread within which Bulk Load is running.</span></span>  
+  
+-   <span data-ttu-id="7d456-133">Если пользователь задает для SQLXML файл журнала ошибок для записи ошибок, то каждый раз при выполнении массовой загрузки этот файл будет перезаписываться данными последнего процесса массовой загрузки.</span><span class="sxs-lookup"><span data-stu-id="7d456-133">If the user sets an error Log file for SQLXML to write errors into, then each time Bulk Load is executed the file will be overwritten with data from the last Bulk Load process.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="7d456-134">См. также:</span><span class="sxs-lookup"><span data-stu-id="7d456-134">See Also</span></span>  
+ [<span data-ttu-id="7d456-135">Выполнение массовой загрузки XML-данных &#40;SQLXML 4.0&#41;</span><span class="sxs-lookup"><span data-stu-id="7d456-135">Performing Bulk Load of XML Data &#40;SQLXML 4.0&#41;</span></span>](../bulk-load-xml/performing-bulk-load-of-xml-data-sqlxml-4-0.md)  
+  
+  

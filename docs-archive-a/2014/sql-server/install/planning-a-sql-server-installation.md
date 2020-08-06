@@ -1,0 +1,82 @@
+---
+title: Планирование установки SQL Server | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: install
+ms.topic: conceptual
+helpviewer_keywords:
+- installing SQL Server, planning
+ms.assetid: b1d56f2f-603f-48f2-b902-c715f14a6db9
+author: MashaMSFT
+ms.author: mathoma
+ms.openlocfilehash: e5b1dae9d2ef32298a9ddf2eeed1530e5ae97683
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87666939"
+---
+# <a name="planning-a-sql-server-installation"></a><span data-ttu-id="c1d2e-102">Планирование установки SQL Server</span><span class="sxs-lookup"><span data-stu-id="c1d2e-102">Planning a SQL Server Installation</span></span>
+  <span data-ttu-id="c1d2e-103">Чтобы установить [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], выполните описанные далее действия.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-103">To install [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], follow these steps:</span></span>  
+  
+-   <span data-ttu-id="c1d2e-104">Ознакомьтесь с требованиями по установке, сведениями о проверках конфигурации системы и вопросами безопасности для установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="c1d2e-104">Review installation requirements, system configuration checks, and security considerations for a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation.</span></span>  
+  
+-   <span data-ttu-id="c1d2e-105">Запуск программы установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для установки или обновления до последней версии.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-105">Run [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup to install or upgrade to a later version.</span></span>  
+  
+-   <span data-ttu-id="c1d2e-106">Настройка [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] при помощи программ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-106">Use [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] utilities to configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span></span>  
+  
+ <span data-ttu-id="c1d2e-107">Независимо от метода установки, необходимо подтвердить свое согласие с условиями лицензии на использование пакета программ как физического лица или от имени организации, если на используемое программное обеспечение не распространяется отдельное соглашение [!INCLUDE[msCoName](../../includes/msconame-md.md)] , такое как соглашение о корпоративном лицензировании Майкрософт или отдельное соглашение с независимым поставщиком программного обеспечения или изготовителем оборудования (OEM).</span><span class="sxs-lookup"><span data-stu-id="c1d2e-107">Regardless of the installation method, you are required to confirm acceptance of the software license terms as an individual or on behalf of an entity, unless your use of the software is governed by a separate agreement such as a [!INCLUDE[msCoName](../../includes/msconame-md.md)] volume licensing agreement or a third-party agreement with an ISV or OEM.</span></span>  
+  
+ <span data-ttu-id="c1d2e-108">Условия лицензионного соглашения отображаются для ознакомления и принятия в пользовательском интерфейсе программы установки.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-108">The license terms are displayed for review and acceptance in the Setup user interface.</span></span> <span data-ttu-id="c1d2e-109">Автоматические установки (с использованием параметров /Q или /QS) должны включать параметр /IAcceptSQLServerLicenseTerms.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-109">Unattended installations (using the /Q or /QS parameters) must include the /IAcceptSQLServerLicenseTerms parameter.</span></span> <span data-ttu-id="c1d2e-110">Ознакомиться с условиями лицензии можно на странице [Условия лицензионного соглашения о программном обеспечении Майкрософт](https://go.microsoft.com/fwlink/?LinkID=148209).</span><span class="sxs-lookup"><span data-stu-id="c1d2e-110">You can review the license terms separately at [Microsoft Software License Terms](https://go.microsoft.com/fwlink/?LinkID=148209).</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="c1d2e-111">В зависимости от способа получения ПО (например, по [!INCLUDE[msCoName](../../includes/msconame-md.md)] ), на его использование могут распространяться дополнительные условия.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-111">Depending on how you received the software (for example, through [!INCLUDE[msCoName](../../includes/msconame-md.md)] volume licensing), your use of the software may be subject to additional terms and conditions.</span></span>  
+  
+## <a name="in-this-section"></a><span data-ttu-id="c1d2e-112">в этом разделе</span><span class="sxs-lookup"><span data-stu-id="c1d2e-112">In This Section</span></span>  
+ [<span data-ttu-id="c1d2e-113">Новые возможности установки SQL Server</span><span class="sxs-lookup"><span data-stu-id="c1d2e-113">What's New in SQL Server Installation</span></span>](../../../2014/sql-server/install/what-s-new-in-sql-server-installation.md)  
+ <span data-ttu-id="c1d2e-114">В этом разделе подробно рассматриваются новые и усовершенствованные возможности установки в данной версии [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-114">This topic describes the details about the new or improved features of installation in this version of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-115">Требования к аппаратному и программному обеспечению для установки SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="c1d2e-115">Hardware and Software Requirements for Installing SQL Server 2014</span></span>](hardware-and-software-requirements-for-installing-sql-server.md)  
+ <span data-ttu-id="c1d2e-116">В этом разделе перечислены минимальные требования к оборудованию и программному обеспечению, необходимые для установки и запуска экземпляра [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-116">This topic lists the minimum hardware and software requirements to install and run an instance of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-117">Вопросы безопасности при установке SQL Server</span><span class="sxs-lookup"><span data-stu-id="c1d2e-117">Security Considerations for a SQL Server Installation</span></span>](../../../2014/sql-server/install/security-considerations-for-a-sql-server-installation.md)  
+ <span data-ttu-id="c1d2e-118">В этой статье приведены некоторые рекомендации по безопасности, которых следует придерживаться как до, так [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и после установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-118">This topic describes some security best practices that you should consider before you install [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and after you install [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-119">Настройка учетных записей службы Windows и разрешений</span><span class="sxs-lookup"><span data-stu-id="c1d2e-119">Configure Windows Service Accounts and Permissions</span></span>](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)  
+ <span data-ttu-id="c1d2e-120">В этом разделе описана конфигурация по умолчанию служб данного выпуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], а также параметры конфигурации служб [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , которые можно настроить во время и после установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="c1d2e-120">This topic describes the default configuration of services in this release of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], and configuration options for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] services that you can set during and after [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation.</span></span>  
+  
+ [<span data-ttu-id="c1d2e-121">Сетевые протоколы и библиотеки</span><span class="sxs-lookup"><span data-stu-id="c1d2e-121">Network Protocols and Network Libraries</span></span>](../../../2014/sql-server/install/network-protocols-and-network-libraries.md)  
+ <span data-ttu-id="c1d2e-122">В этом разделе описана конфигурация сетевых протоколов, устанавливаемая по умолчанию для служб данной версии [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], а также доступные параметры для настройки.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-122">This topic describes the default configuration of network protocols in this release of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], and the configuration options available.</span></span>  
+  
+ [<span data-ttu-id="c1d2e-123">Работа с несколькими версиями и экземплярами SQL Server</span><span class="sxs-lookup"><span data-stu-id="c1d2e-123">Work with Multiple Versions and Instances of SQL Server</span></span>](../../../2014/sql-server/install/work-with-multiple-versions-and-instances-of-sql-server.md)  
+ <span data-ttu-id="c1d2e-124">В этом разделе описаны рекомендации по установке нескольких версий и экземпляров [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-124">This topic describes the considerations for installing multiple versions and instances of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-125">Версии SQL Server на местных языках</span><span class="sxs-lookup"><span data-stu-id="c1d2e-125">Local Language Versions in SQL Server</span></span>](../../../2014/sql-server/install/local-language-versions-in-sql-server.md)  
+ <span data-ttu-id="c1d2e-126">В этом разделе рассматриваются локализованные версии [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-126">This topic describes about the localized versions of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span></span>  
+  
+## <a name="related-sections"></a><span data-ttu-id="c1d2e-127">Связанные разделы</span><span class="sxs-lookup"><span data-stu-id="c1d2e-127">Related Sections</span></span>  
+ [<span data-ttu-id="c1d2e-128">Установка SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="c1d2e-128">Install SQL Server 2014</span></span>](../../database-engine/install-windows/install-sql-server.md)  
+ <span data-ttu-id="c1d2e-129">В этом разделе представлены общие сведения о разных параметрах установки [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-129">This section provides an overview of different installation options we have for installing [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-130">Install SQL Server 2014 BI Features</span><span class="sxs-lookup"><span data-stu-id="c1d2e-130">Install SQL Server 2014 BI Features</span></span>](install-sql-server-business-intelligence-features.md)  
+ <span data-ttu-id="c1d2e-131">В этом разделе документации по программе установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] описывается процедура установки функций [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , которые входят в состав платформы бизнес-аналитики Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="c1d2e-131">This section of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup documentation explains how to install [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] features that are part of the Microsoft BI platform.</span></span>  
+  
+ [<span data-ttu-id="c1d2e-132">Обновление до SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="c1d2e-132">Upgrade to SQL Server 2014</span></span>](../../database-engine/install-windows/upgrade-sql-server.md)  
+ <span data-ttu-id="c1d2e-133">В данном разделе представлена общая информация по обновлению экземпляров предыдущих версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] до [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-133">The section provides an overview of upgrading instances of previous [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] versions to [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-134">Удаление SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="c1d2e-134">Uninstall SQL Server 2014</span></span>](uninstall-sql-server.md)  
+ <span data-ttu-id="c1d2e-135">В этом разделе описано, как полностью удалить существующий экземпляр [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] и подготовить систему к повторной установке [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c1d2e-135">Refer this section to uninstall an existing instance of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] completely, and prepare the system so that you can reinstall [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span></span>  
+  
+ [<span data-ttu-id="c1d2e-136">Установка отказоустойчивого кластера SQL Server</span><span class="sxs-lookup"><span data-stu-id="c1d2e-136">SQL Server Failover Cluster Installation</span></span>](../failover-clusters/install/sql-server-failover-cluster-installation.md)  
+ <span data-ttu-id="c1d2e-137">В этом разделе документации по программе установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] описывается процедура установки и настройки кластера отработки отказа [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="c1d2e-137">This section of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup documentation explains how to install, and configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="c1d2e-138">См. также:</span><span class="sxs-lookup"><span data-stu-id="c1d2e-138">See Also</span></span>  
+ <span data-ttu-id="c1d2e-139">[Быстрый запуск установки SQL Server 2014](../../../2014/getting-started/quick-start-installation-of-sql-server-2014.md) </span><span class="sxs-lookup"><span data-stu-id="c1d2e-139">[Quick-Start Installation of SQL Server 2014](../../../2014/getting-started/quick-start-installation-of-sql-server-2014.md) </span></span>  
+ <span data-ttu-id="c1d2e-140">[Установка SQL Server 2014 из командной строки](../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md) </span><span class="sxs-lookup"><span data-stu-id="c1d2e-140">[Install SQL Server 2014 from the Command Prompt](../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md) </span></span>  
+ <span data-ttu-id="c1d2e-141">[Решения высокого уровня доступности (SQL Server)](../failover-clusters/high-availability-solutions-sql-server.md) </span><span class="sxs-lookup"><span data-stu-id="c1d2e-141">[High Availability Solutions &#40;SQL Server&#41;](../failover-clusters/high-availability-solutions-sql-server.md) </span></span>  
+ <span data-ttu-id="c1d2e-142">[Перед установкой отказоустойчивой кластеризации](../failover-clusters/install/before-installing-failover-clustering.md) </span><span class="sxs-lookup"><span data-stu-id="c1d2e-142">[Before Installing Failover Clustering](../failover-clusters/install/before-installing-failover-clustering.md) </span></span>  
+ [<span data-ttu-id="c1d2e-143">Обновление до SQL Server 2014 с помощью мастера установки &#40;установки&#41;</span><span class="sxs-lookup"><span data-stu-id="c1d2e-143">Upgrade to SQL Server 2014 Using the Installation Wizard &#40;Setup&#41;</span></span>](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)  
+  
+  

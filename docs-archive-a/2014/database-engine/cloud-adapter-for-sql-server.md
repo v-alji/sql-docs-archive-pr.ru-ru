@@ -1,0 +1,100 @@
+---
+title: адаптер для облака для SQL Server | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/09/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: database-engine
+ms.topic: conceptual
+helpviewer_keywords:
+- Cloud adapter
+- Deploy to Azure
+ms.assetid: 82ed0d0f-952d-4d49-aa36-3855a3ca9877
+author: mashamsft
+ms.author: mathoma
+ms.openlocfilehash: d5716435bb1db494bdabeb45ed366c1783926989
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87665582"
+---
+# <a name="cloud-adapter-for-sql-server"></a><span data-ttu-id="76aa6-102">Адаптер для облака для SQL Server</span><span class="sxs-lookup"><span data-stu-id="76aa6-102">Cloud Adapter for SQL Server</span></span>
+  <span data-ttu-id="76aa6-103">Служба адаптер для облака создается как часть [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] подготовки на виртуальной машине Azure.</span><span class="sxs-lookup"><span data-stu-id="76aa6-103">The Cloud Adapter service is created as part of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] provisioning on an Azure VM.</span></span> <span data-ttu-id="76aa6-104">Служба адаптера для облака создает самозаверяющий SSL-сертификат в рамках своего первого запуска, а затем запускается от имени учетной записи **Local System** .</span><span class="sxs-lookup"><span data-stu-id="76aa6-104">The Cloud Adapter service generates a self-signed SSL certificate as part of its first run, and then runs as a **Local System** account.</span></span> <span data-ttu-id="76aa6-105">Она создает файл конфигурации, который используется для ее настройки.</span><span class="sxs-lookup"><span data-stu-id="76aa6-105">It generates a configuration file that is used to configure itself.</span></span> <span data-ttu-id="76aa6-106">Служба Cloud Adapter также создает правило брандмауэра Windows, чтобы разрешить входящие подключения TCP через порт по умолчанию 11435.</span><span class="sxs-lookup"><span data-stu-id="76aa6-106">The Cloud Adapter also creates a Windows Firewall rule to allow its incoming TCP connections at default port 11435.</span></span>  
+  
+ <span data-ttu-id="76aa6-107">Служба Cloud Adapter — это синхронная служба без сохранения состояния, которая получает сообщения из локального экземпляра [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="76aa6-107">The Cloud Adapter is a stateless, synchronous service that receives messages from the on-premise instance of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="76aa6-108">Когда служба адаптера для облака останавливается, она останавливает адаптер для облака удаленного доступа, отменяет привязку SSL-сертификата и отключает правило брандмауэра Windows.</span><span class="sxs-lookup"><span data-stu-id="76aa6-108">When the Cloud Adapter service is stopped, it stops the remote access Cloud Adapter, unbinds the SSL certificate, and disables the Windows Firewall rule.</span></span>  
+  
+## <a name="cloud-adapter-requirements"></a><span data-ttu-id="76aa6-109">Требования для адаптера для облака</span><span class="sxs-lookup"><span data-stu-id="76aa6-109">Cloud Adapter Requirements</span></span>  
+ <span data-ttu-id="76aa6-110">Обратите внимание на следующие требования для установки, включения и запуска Cloud Adapter для [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="76aa6-110">Note the following requirements to install, enable, and run the Cloud Adapter for [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]:</span></span>  
+  
+-   <span data-ttu-id="76aa6-111">Cloud Adapter поддерживается в [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012 и более поздних версиях.</span><span class="sxs-lookup"><span data-stu-id="76aa6-111">Cloud Adapter is supported with [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012 and higher.</span></span> <span data-ttu-id="76aa6-112">В [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012 службе Cloud Adapter для [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] требуются объекты SMO для [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012.</span><span class="sxs-lookup"><span data-stu-id="76aa6-112">On [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012, the Cloud Adapter for [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] requires SQL Management Objects for [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 2012.</span></span>  
+  
+-   <span data-ttu-id="76aa6-113">Веб-служба адаптера для облака запускается в учетной записи **Local System** и проверяет учетные данные клиента до выполнения любой задачи.</span><span class="sxs-lookup"><span data-stu-id="76aa6-113">Cloud Adapter web service runs as a **Local System** account and verifies client credentials before executing any task.</span></span> <span data-ttu-id="76aa6-114">Учетные данные, предоставленные клиентом, должны принадлежать учетной записи использования, которая является членом локальной группы **администраторов** на удаленном компьютере.</span><span class="sxs-lookup"><span data-stu-id="76aa6-114">Credentials supplied by the client must belong to the use account that is a member of the local **Administrators** group on the remote machine.</span></span>  
+  
+-   <span data-ttu-id="76aa6-115">Служба Cloud Adapter поддерживает только проверку подлинности [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="76aa6-115">Cloud Adapter supports only [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Authentication.</span></span>  
+  
+-   <span data-ttu-id="76aa6-116">Cloud Adapter использует учетную запись администратора локальной виртуальной машины для выполнения команд на локальном компьютере, а не учетную запись sa.</span><span class="sxs-lookup"><span data-stu-id="76aa6-116">Cloud Adapter uses VM local administrator account to execute commands on the local machine, not an sa account.</span></span>  
+  
+-   <span data-ttu-id="76aa6-117">Адаптер для облака прослушивает порт TCP/IP.</span><span class="sxs-lookup"><span data-stu-id="76aa6-117">Cloud Adapter listens on TCP/IP.</span></span> <span data-ttu-id="76aa6-118">По умолчанию используется порт 11435.</span><span class="sxs-lookup"><span data-stu-id="76aa6-118">The default port is 11435.</span></span>  
+  
+-   <span data-ttu-id="76aa6-119">Адаптер для облака должен иметь разрешения на создание и изменение правил брандмауэра Windows.</span><span class="sxs-lookup"><span data-stu-id="76aa6-119">Cloud Adapter must have permissions to create and modify Windows Firewall rules.</span></span>  
+  
+## <a name="cloud-adapter-configuration-settings"></a><span data-ttu-id="76aa6-120">Параметры конфигурации адаптера для облака</span><span class="sxs-lookup"><span data-stu-id="76aa6-120">Cloud Adapter Configuration Settings</span></span>  
+ <span data-ttu-id="76aa6-121">Используйте следующую конфигурацию, чтобы изменить параметры адаптера для облака.</span><span class="sxs-lookup"><span data-stu-id="76aa6-121">Use the following Cloud Adapter configuration details to modify settings for a Cloud Adapter.</span></span>  
+  
+-   <span data-ttu-id="76aa6-122">**Путь по умолчанию для файла конфигурации** -C:\PROGRAM Files\Microsoft SQL Server\120\Tools\CloudAdapter</span><span class="sxs-lookup"><span data-stu-id="76aa6-122">**Default path for the configuration file** - C:\Program Files\Microsoft SQL Server\120\Tools\CloudAdapter</span></span>\  
+  
+-   <span data-ttu-id="76aa6-123">**Параметры файла конфигурации** -</span><span class="sxs-lookup"><span data-stu-id="76aa6-123">**Configuration file parameters** -</span></span>  
+  
+    -   \<configuration>  
+  
+        -   \<appSettings>  
+  
+            -   \<add key="WebServicePort" value="" />  
+  
+            -   \<add key="WebServiceCertificate" value="GUID" />  
+  
+            -   \<add key="ExposeExceptionDetails" value="true" />  
+  
+        -   \</appSettings>  
+  
+    -   \</configuration>  
+  
+-   <span data-ttu-id="76aa6-124">**Сведения о сертификате** . сертификат имеет следующие значения:</span><span class="sxs-lookup"><span data-stu-id="76aa6-124">**Certificate details** - The certificate has the following values:</span></span>  
+  
+    -   <span data-ttu-id="76aa6-125">Subject-"CN = Клаудадаптер \<VMName> , DC = SQL Server, DC = Microsoft"</span><span class="sxs-lookup"><span data-stu-id="76aa6-125">Subject - "CN=CloudAdapter\<VMName>, DC=SQL Server, DC=Microsoft"</span></span>  
+  
+    -   <span data-ttu-id="76aa6-126">Для сертификата должно быть включено только расширенное использование ключей проверки подлинности на сервере.</span><span class="sxs-lookup"><span data-stu-id="76aa6-126">The certificate should have only Server Authentication EKU enabled.</span></span>  
+  
+    -   <span data-ttu-id="76aa6-127">Длина ключа сертификата — 2048.</span><span class="sxs-lookup"><span data-stu-id="76aa6-127">The certificate key length is 2048.</span></span>  
+  
+ <span data-ttu-id="76aa6-128">**Значения файла конфигурации**:</span><span class="sxs-lookup"><span data-stu-id="76aa6-128">**Configuration file values**:</span></span>  
+  
+|<span data-ttu-id="76aa6-129">Параметр</span><span class="sxs-lookup"><span data-stu-id="76aa6-129">Setting</span></span>|<span data-ttu-id="76aa6-130">Значения</span><span class="sxs-lookup"><span data-stu-id="76aa6-130">Values</span></span>|<span data-ttu-id="76aa6-131">По умолчанию</span><span class="sxs-lookup"><span data-stu-id="76aa6-131">Default</span></span>|<span data-ttu-id="76aa6-132">Комментарии</span><span class="sxs-lookup"><span data-stu-id="76aa6-132">Comments</span></span>|  
+|-------------|------------|-------------|--------------|  
+|<span data-ttu-id="76aa6-133">WebServicePort</span><span class="sxs-lookup"><span data-stu-id="76aa6-133">WebServicePort</span></span>|<span data-ttu-id="76aa6-134">1-65535</span><span class="sxs-lookup"><span data-stu-id="76aa6-134">1-65535</span></span>|<span data-ttu-id="76aa6-135">11435</span><span class="sxs-lookup"><span data-stu-id="76aa6-135">11435</span></span>|<span data-ttu-id="76aa6-136">Если не указано, используется 11435.</span><span class="sxs-lookup"><span data-stu-id="76aa6-136">If not specified, use 11435.</span></span>|  
+|<span data-ttu-id="76aa6-137">WebServiceCertificate</span><span class="sxs-lookup"><span data-stu-id="76aa6-137">WebServiceCertificate</span></span>|<span data-ttu-id="76aa6-138">Отпечаток</span><span class="sxs-lookup"><span data-stu-id="76aa6-138">Thumbprint</span></span>|<span data-ttu-id="76aa6-139">Empty</span><span class="sxs-lookup"><span data-stu-id="76aa6-139">Empty</span></span>|<span data-ttu-id="76aa6-140">Если не указано, формируется новый самозаверяющий сертификат.</span><span class="sxs-lookup"><span data-stu-id="76aa6-140">If empty, a new self-signed certificate is generated.</span></span>|  
+|<span data-ttu-id="76aa6-141">ExposeExceptionDetails</span><span class="sxs-lookup"><span data-stu-id="76aa6-141">ExposeExceptionDetails</span></span>|<span data-ttu-id="76aa6-142">Истина/ложь</span><span class="sxs-lookup"><span data-stu-id="76aa6-142">True/False</span></span>|<span data-ttu-id="76aa6-143">Неверно</span><span class="sxs-lookup"><span data-stu-id="76aa6-143">False</span></span>||  
+  
+## <a name="cloud-adapter-troubleshooting"></a><span data-ttu-id="76aa6-144">Устранение неполадок адаптера для облака</span><span class="sxs-lookup"><span data-stu-id="76aa6-144">Cloud Adapter Troubleshooting</span></span>  
+ <span data-ttu-id="76aa6-145">Используйте следующие сведения для устранения неполадок со службой Cloud Adapter для [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="76aa6-145">Use the following information to troubleshoot the Cloud Adapter for [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]:</span></span>  
+  
+-   <span data-ttu-id="76aa6-146">**Обработка ошибок и ведение журнала** — ошибки и сообщения о состоянии записываются в журнал событий приложений.</span><span class="sxs-lookup"><span data-stu-id="76aa6-146">**Error handling and logging** - Errors and status messages are written to the Application Event Log.</span></span>  
+  
+-   <span data-ttu-id="76aa6-147">**Трассировка, события** — все события записываются в журнал событий приложений.</span><span class="sxs-lookup"><span data-stu-id="76aa6-147">**Tracing, Events** - All events are written to the Application Event Log.</span></span>  
+  
+-   <span data-ttu-id="76aa6-148">**Control, Configuration** — используйте файл конфигурации, расположенный в папке C:\PROGRAM Files\Microsoft SQL Server\120\Tools\CloudAdapter \\ .</span><span class="sxs-lookup"><span data-stu-id="76aa6-148">**Control, configuration** - Use the configuration file located in:  C:\Program Files\Microsoft SQL Server\120\Tools\CloudAdapter\\.</span></span>  
+  
+|<span data-ttu-id="76aa6-149">Ошибка</span><span class="sxs-lookup"><span data-stu-id="76aa6-149">Error</span></span>|<span data-ttu-id="76aa6-150">Идентификатор ошибки</span><span class="sxs-lookup"><span data-stu-id="76aa6-150">Error ID</span></span>|<span data-ttu-id="76aa6-151">Причина</span><span class="sxs-lookup"><span data-stu-id="76aa6-151">Cause</span></span>|<span data-ttu-id="76aa6-152">Решение</span><span class="sxs-lookup"><span data-stu-id="76aa6-152">Resolution</span></span>|  
+|-----------|--------------|-----------|----------------|  
+|<span data-ttu-id="76aa6-153">Возникло исключение при добавлении сертификата в хранилище сертификатов.</span><span class="sxs-lookup"><span data-stu-id="76aa6-153">There was an exception while adding the certificate to the certificate store.</span></span> <span data-ttu-id="76aa6-154">{Текст исключения}</span><span class="sxs-lookup"><span data-stu-id="76aa6-154">{Exception text}.</span></span>|<span data-ttu-id="76aa6-155">45560</span><span class="sxs-lookup"><span data-stu-id="76aa6-155">45560</span></span>|<span data-ttu-id="76aa6-156">Разрешения на доступ к хранилищу сертификатов компьютера</span><span class="sxs-lookup"><span data-stu-id="76aa6-156">Machine certificate store permissions</span></span>|<span data-ttu-id="76aa6-157">Убедитесь, что служба Cloud Adapter имеет разрешения на добавление сертификатов в хранилище сертификатов компьютера.</span><span class="sxs-lookup"><span data-stu-id="76aa6-157">Ensure that the Cloud Adapter service has permissions to add certificates to the machine certificate store.</span></span>|  
+|<span data-ttu-id="76aa6-158">Возникло исключение при попытке настройки SSL-привязки для порта {номер порта} сертификата {отпечаток}.</span><span class="sxs-lookup"><span data-stu-id="76aa6-158">There was an exception while trying to configure the SSL binding for port {Port number} and certificate {Thumbprint}.</span></span> <span data-ttu-id="76aa6-159">{Исключение}.</span><span class="sxs-lookup"><span data-stu-id="76aa6-159">{Exception}.</span></span>|<span data-ttu-id="76aa6-160">45561</span><span class="sxs-lookup"><span data-stu-id="76aa6-160">45561</span></span>|<span data-ttu-id="76aa6-161">Другое приложение уже использует порт или привязало к нему сертификат.</span><span class="sxs-lookup"><span data-stu-id="76aa6-161">Another application has already used the port or bound a certificate to it.</span></span>|<span data-ttu-id="76aa6-162">Удалите существующие привязки или измените порт адаптера для облака в файле конфигурации.</span><span class="sxs-lookup"><span data-stu-id="76aa6-162">Remove existing bindings or change Cloud Adapter port in the configuration file.</span></span>|  
+|<span data-ttu-id="76aa6-163">Не удалось найти SSL-сертификат [{отпечаток}] в хранилище сертификатов.</span><span class="sxs-lookup"><span data-stu-id="76aa6-163">Failed to find SSL certificate [{Thumbprint}] in the certificate store.</span></span>|<span data-ttu-id="76aa6-164">45564</span><span class="sxs-lookup"><span data-stu-id="76aa6-164">45564</span></span>|<span data-ttu-id="76aa6-165">Отпечаток сертификата находится в файле конфигурации, но хранилище личных сертификатов для службы не содержит сертификат.</span><span class="sxs-lookup"><span data-stu-id="76aa6-165">Certificate thumbprint is in the configuration file, but personal certificate store for the service does not contain certificate.</span></span><br /><br /> <span data-ttu-id="76aa6-166">Недостаточно разрешений.</span><span class="sxs-lookup"><span data-stu-id="76aa6-166">Insufficient permissions.</span></span>|<span data-ttu-id="76aa6-167">Убедитесь, что сертификат находится в хранилище личных сертификатов для службы.</span><span class="sxs-lookup"><span data-stu-id="76aa6-167">Make sure the certificate is in the personal certificate store for the service.</span></span><br /><br /> <span data-ttu-id="76aa6-168">Убедитесь, что служба имеет необходимые разрешения для хранилища.</span><span class="sxs-lookup"><span data-stu-id="76aa6-168">Make sure the service has correct permissions for the store.</span></span>|  
+|<span data-ttu-id="76aa6-169">Не удалось запустить веб-службу.</span><span class="sxs-lookup"><span data-stu-id="76aa6-169">Failed to start the web service.</span></span> <span data-ttu-id="76aa6-170">{Текст исключения}</span><span class="sxs-lookup"><span data-stu-id="76aa6-170">{Exception text}.</span></span>|<span data-ttu-id="76aa6-171">45570</span><span class="sxs-lookup"><span data-stu-id="76aa6-171">45570</span></span>|<span data-ttu-id="76aa6-172">Описано в исключении.</span><span class="sxs-lookup"><span data-stu-id="76aa6-172">Described in the exception.</span></span>|<span data-ttu-id="76aa6-173">Включите ExposeExceptionDetails и используйте расширенные сведения из исключения.</span><span class="sxs-lookup"><span data-stu-id="76aa6-173">Enable ExposeExceptionDetails and use extended information from the exception.</span></span>|  
+|<span data-ttu-id="76aa6-174">Истек срок действия сертификата [{отпечаток}].</span><span class="sxs-lookup"><span data-stu-id="76aa6-174">Certificate [{Thumbprint}] has expired.</span></span>|<span data-ttu-id="76aa6-175">45565</span><span class="sxs-lookup"><span data-stu-id="76aa6-175">45565</span></span>|<span data-ttu-id="76aa6-176">У сертификата, указанного в файле конфигурации, истек срок действия.</span><span class="sxs-lookup"><span data-stu-id="76aa6-176">Expired certificate referenced from the configuration file.</span></span>|<span data-ttu-id="76aa6-177">Добавьте действительный сертификат и добавьте в файл конфигурации его отпечаток.</span><span class="sxs-lookup"><span data-stu-id="76aa6-177">Add a valid certificate and update the configuration file with its thumbprint.</span></span>|  
+|<span data-ttu-id="76aa6-178">Ошибка веб-службы: {0} .</span><span class="sxs-lookup"><span data-stu-id="76aa6-178">Web service error: {0}.</span></span>|<span data-ttu-id="76aa6-179">45571</span><span class="sxs-lookup"><span data-stu-id="76aa6-179">45571</span></span>|<span data-ttu-id="76aa6-180">Описано в исключении.</span><span class="sxs-lookup"><span data-stu-id="76aa6-180">Described in the exception.</span></span>|<span data-ttu-id="76aa6-181">Включите ExposeExceptionDetails и используйте расширенные сведения из исключения.</span><span class="sxs-lookup"><span data-stu-id="76aa6-181">Enable ExposeExceptionDetails and use extended information from the exception.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="76aa6-182">См. также:</span><span class="sxs-lookup"><span data-stu-id="76aa6-182">See Also</span></span>  
+ [<span data-ttu-id="76aa6-183">Развертывание базы данных SQL Server в виртуальной машине Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="76aa6-183">Deploy a SQL Server Database to a Microsoft Azure Virtual Machine</span></span>](../relational-databases/databases/deploy-a-sql-server-database-to-a-microsoft-azure-virtual-machine.md)  
+  
+  
