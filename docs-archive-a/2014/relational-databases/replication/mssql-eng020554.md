@@ -1,0 +1,83 @@
+---
+title: MSSQL_ENG020554 | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/08/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: replication
+ms.topic: conceptual
+helpviewer_keywords:
+- MSSQL_ENG020554 error
+ms.assetid: ef1a1b88-b2ab-43e8-99cd-163a973262d6
+author: MashaMSFT
+ms.author: mathoma
+ms.openlocfilehash: b48714f19fdec520c7bd20e4d8598d491f6e1908
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87733949"
+---
+# <a name="mssql_eng020554"></a><span data-ttu-id="f31fb-102">MSSQL_ENG020554</span><span class="sxs-lookup"><span data-stu-id="f31fb-102">MSSQL_ENG020554</span></span>
+    
+## <a name="message-details"></a><span data-ttu-id="f31fb-103">Сведения о сообщении</span><span class="sxs-lookup"><span data-stu-id="f31fb-103">Message Details</span></span>  
+  
+|||  
+|-|-|  
+|<span data-ttu-id="f31fb-104">Название продукта</span><span class="sxs-lookup"><span data-stu-id="f31fb-104">Product Name</span></span>|<span data-ttu-id="f31fb-105">SQL Server</span><span class="sxs-lookup"><span data-stu-id="f31fb-105">SQL Server</span></span>|  
+|<span data-ttu-id="f31fb-106">Идентификатор события</span><span class="sxs-lookup"><span data-stu-id="f31fb-106">Event ID</span></span>|<span data-ttu-id="f31fb-107">20554</span><span class="sxs-lookup"><span data-stu-id="f31fb-107">20554</span></span>|  
+|<span data-ttu-id="f31fb-108">Источник события</span><span class="sxs-lookup"><span data-stu-id="f31fb-108">Event Source</span></span>|<span data-ttu-id="f31fb-109">MSSQLSERVER</span><span class="sxs-lookup"><span data-stu-id="f31fb-109">MSSQLSERVER</span></span>|  
+|<span data-ttu-id="f31fb-110">Компонент</span><span class="sxs-lookup"><span data-stu-id="f31fb-110">Component</span></span>|[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|  
+|<span data-ttu-id="f31fb-111">Символическое имя</span><span class="sxs-lookup"><span data-stu-id="f31fb-111">Symbolic Name</span></span>||  
+|<span data-ttu-id="f31fb-112">Текст сообщения</span><span class="sxs-lookup"><span data-stu-id="f31fb-112">Message Text</span></span>|<span data-ttu-id="f31fb-113">Агент репликации не зарегистрировал сообщение о ходе выполнения в течение %ld минут.</span><span class="sxs-lookup"><span data-stu-id="f31fb-113">The replication agent has not logged a progress message in %ld minutes.</span></span> <span data-ttu-id="f31fb-114">Это может указывать на то, что агент не отвечает, либо на высокую загрузку системы.</span><span class="sxs-lookup"><span data-stu-id="f31fb-114">This might indicate an unresponsive agent or high system activity.</span></span> <span data-ttu-id="f31fb-115">Убедитесь, что записи реплицируются по назначению, а подключения к подписчику, издателю и распространителю все еще активны.</span><span class="sxs-lookup"><span data-stu-id="f31fb-115">Verify that records are being replicated to the destination and that connections to the Subscriber, Publisher, and Distributor are still active.</span></span>|  
+  
+## <a name="explanation"></a><span data-ttu-id="f31fb-116">Объяснение</span><span class="sxs-lookup"><span data-stu-id="f31fb-116">Explanation</span></span>  
+ <span data-ttu-id="f31fb-117">Задание **Проверка агентов репликации** выполняется с заданным интервалом (по умолчанию — 10 минут) для проверки состояния каждого агента репликации.</span><span class="sxs-lookup"><span data-stu-id="f31fb-117">The **Replication agents checkup** job runs at a specified interval (10 minutes by default) to check on the status of each replication agent.</span></span> <span data-ttu-id="f31fb-118">Если с момента последней проверки контрольной суммы агентом в журнале не было сделано записей о сообщениях о выполнении, вызывается ошибка MSSQL_ENG020554.</span><span class="sxs-lookup"><span data-stu-id="f31fb-118">If an agent has not logged any progress messages since the last time the agent checkup job ran, error MSSQL_ENG020554 can be raised.</span></span> <span data-ttu-id="f31fb-119">Предполагается, что агент записывает записи в журнал, даже если действий по репликации не производится.</span><span class="sxs-lookup"><span data-stu-id="f31fb-119">The agent is expected at least to log history messages even if no other replication activity is occurring.</span></span> <span data-ttu-id="f31fb-120">Но если агент репликации не реагирует, как положено, из этого не следует, что он был остановлен или что в его работе произошел сбой (если в работе агента произошел сбой, вызывается ошибка MSSQL_ENG020536).</span><span class="sxs-lookup"><span data-stu-id="f31fb-120">Although the replication agent is not responding as expected, it has not necessarily stopped or failed (if an agent has failed, error MSSQL_ENG020536 should be raised).</span></span>  
+  
+ <span data-ttu-id="f31fb-121">К возникновению ошибки MSSQL_ENG020554 могут привести следующие причины:</span><span class="sxs-lookup"><span data-stu-id="f31fb-121">The following issues can cause error MSSQL_ENG020554 to be raised:</span></span>  
+  
+-   <span data-ttu-id="f31fb-122">Агент занят.</span><span class="sxs-lookup"><span data-stu-id="f31fb-122">The agent is busy.</span></span>  
+  
+     <span data-ttu-id="f31fb-123">Если агент слишком занят, чтобы ответить на опрос во время проверки, в отчете задания по проверке невозможно отметить, верно ли функционирует агент.</span><span class="sxs-lookup"><span data-stu-id="f31fb-123">If the agent is too busy to respond when polled by the agent checkup job, the agent checkup job cannot report whether the replication agent is functioning properly.</span></span> <span data-ttu-id="f31fb-124">Причиной занятости агента может быть репликация большого количества данных или неправильная конструкция или конфигурация приложения, в результате которой процессы выполняются очень долго.</span><span class="sxs-lookup"><span data-stu-id="f31fb-124">There are a number of reasons why the replication agent could be busy: there might be a lot of data being replicated, or there might be application design or configuration issues that result in processes that run for a long time.</span></span>  
+  
+-   <span data-ttu-id="f31fb-125">Агент не может вести записи в журнал на одном из компьютеров в данной топологии.</span><span class="sxs-lookup"><span data-stu-id="f31fb-125">The agent cannot log in to one of the computers in the topology.</span></span>  
+  
+     <span data-ttu-id="f31fb-126">У всех агентов есть параметр **-LoginTimeOut** (по умолчанию задано 15 секунд), определяющий время, в течение которого агент предпринимает попытки входа на узел репликации (например, вход агента слияния на узел издателя).</span><span class="sxs-lookup"><span data-stu-id="f31fb-126">All agents have a parameter **-LoginTimeOut** (set to 15 seconds by default), which governs how long an agent attempts to log in to a replication node, such as a Merge Agent logging in to the Publisher.</span></span> <span data-ttu-id="f31fb-127">Если значение параметра **-LoginTimeOut** превышает интервал проверки агента репликации, проблема со входом может стать основной причиной ошибки: ошибка MSSQL_ENG020554 возникает прежде, чем агент может сформировать более конкретную ошибку.</span><span class="sxs-lookup"><span data-stu-id="f31fb-127">If the **-LoginTimeOut** value is set higher than the interval at which the replication agent checkup job runs, a login problem could be the root cause of the error: error MSSQL_ENG020554 is raised before the agent is able to raise a more specific error.</span></span>  
+  
+## <a name="user-action"></a><span data-ttu-id="f31fb-128">Действие пользователя</span><span class="sxs-lookup"><span data-stu-id="f31fb-128">User Action</span></span>  
+ <span data-ttu-id="f31fb-129">Необходимые действия зависят от причины возникновения ошибки.</span><span class="sxs-lookup"><span data-stu-id="f31fb-129">The action required depends on the cause of the error:</span></span>  
+  
+-   <span data-ttu-id="f31fb-130">Во всех случаях возникновения данной ошибки:</span><span class="sxs-lookup"><span data-stu-id="f31fb-130">For all cases in which this error is raised:</span></span>  
+  
+     <span data-ttu-id="f31fb-131">Следует проверить подробные сведения об ошибке в мониторе репликации и перезапустить агент, если он был остановлен.</span><span class="sxs-lookup"><span data-stu-id="f31fb-131">Check the error details in Replication Monitor, and then restart the agent if it has stopped.</span></span> <span data-ttu-id="f31fb-132">В подробных сведениях об ошибке может содержаться дополнительная информация о причинах неверного поведения агента.</span><span class="sxs-lookup"><span data-stu-id="f31fb-132">The error details might provide additional information on why the agent was not running properly.</span></span> <span data-ttu-id="f31fb-133">Если агент до сих пор работает, останавливать и перезапускать его не следует, поскольку это может ухудшить проблему.</span><span class="sxs-lookup"><span data-stu-id="f31fb-133">If the agent is running, do not stop and restart the agent, because that can exacerbate the problem.</span></span> <span data-ttu-id="f31fb-134">Сведения о просмотре состояния агента и подробных сведений об ошибке в мониторе репликации см. в следующих разделах:</span><span class="sxs-lookup"><span data-stu-id="f31fb-134">For information about viewing agent status and error details in Replication Monitor, see the following topics:</span></span>  
+  
+    -   <span data-ttu-id="f31fb-135">Сведения о агент моментальных снимков, агент чтения журнала и агент чтения очереди см. в разделе [Просмотр сведений и выполнение задач с помощью монитора репликации](monitor/view-information-and-perform-tasks-replication-monitor.md).</span><span class="sxs-lookup"><span data-stu-id="f31fb-135">For the Snapshot Agent, Log Reader Agent, and Queue Reader Agent, see [View Information and Perform Tasks using Replication Monitor](monitor/view-information-and-perform-tasks-replication-monitor.md).</span></span>  
+  
+    -   <span data-ttu-id="f31fb-136">Сведения о агент распространения и агент слияния см. в разделе [Просмотр сведений и выполнение задач с помощью монитора репликации](monitor/view-information-and-perform-tasks-replication-monitor.md).</span><span class="sxs-lookup"><span data-stu-id="f31fb-136">For the Distribution Agent and Merge Agent, see [View Information and Perform Tasks using Replication Monitor](monitor/view-information-and-perform-tasks-replication-monitor.md).</span></span>  
+  
+-   <span data-ttu-id="f31fb-137">В случае частого возникновения данной ошибки из-за занятости агента:</span><span class="sxs-lookup"><span data-stu-id="f31fb-137">If this error is raised frequently because the agent is busy:</span></span>  
+  
+     <span data-ttu-id="f31fb-138">Может потребоваться перепроектирование приложения таким образом, чтобы агенту требовалось меньше времени на обработку.</span><span class="sxs-lookup"><span data-stu-id="f31fb-138">You might need to redesign your application so that the agent spends less time processing.</span></span>  
+  
+     <span data-ttu-id="f31fb-139">С помощью диалогового окна **Свойства задания** можно увеличить интервал проверки состояния агента.</span><span class="sxs-lookup"><span data-stu-id="f31fb-139">You can increase the interval at which agent status is checked using the **Job Properties** dialog box.</span></span> <span data-ttu-id="f31fb-140">Сведения о доступе к этому диалоговому окну для заданий репликации см. в разделе [Просмотр сведений и выполнение задач с помощью монитора репликации](monitor/view-information-and-perform-tasks-replication-monitor.md).</span><span class="sxs-lookup"><span data-stu-id="f31fb-140">For information about accessing this dialog box for replication jobs, see [View Information and Perform Tasks using Replication Monitor](monitor/view-information-and-perform-tasks-replication-monitor.md).</span></span>  
+  
+-   <span data-ttu-id="f31fb-141">Агент не может вести записи в журнал на одном из компьютеров в данной топологии.</span><span class="sxs-lookup"><span data-stu-id="f31fb-141">If an agent cannot log in to one of the computers in the topology:</span></span>  
+  
+     <span data-ttu-id="f31fb-142">Рекомендуем устанавливать значение параметра **-LoginTimeOut** меньше, чем интервал проверки агента репликации.</span><span class="sxs-lookup"><span data-stu-id="f31fb-142">We recommend that the **-LoginTimeOut** value be set lower than the interval at which the replication agent checkup job runs.</span></span> <span data-ttu-id="f31fb-143">Иногда значение параметра **-LoginTimeOut** может быть больше, так как проблемы в сети могут привести к истечению времени ожидания входа в систему. Если значение параметра **-LoginTimeOut** меньше интервала проверки агента, в отчете репликации могут быть отмечены определенные ошибки, что позволяет решать проблемы входа в систему, вызванные разрешениями, проблемами в сети или другими неполадками.</span><span class="sxs-lookup"><span data-stu-id="f31fb-143">In some cases, the value for **-LoginTimeOut** is set higher because of network issues that cause logins to time out. If the **-LoginTimeOut** is set lower, replication can report more specific errors, allowing you to troubleshoot login problems that could be caused by permissions, network problems, or other issues.</span></span> <span data-ttu-id="f31fb-144">Параметры агента могут задаваться в профилях агента или в командной строке.</span><span class="sxs-lookup"><span data-stu-id="f31fb-144">Agent parameters can be specified in agent profiles and on the command line.</span></span> <span data-ttu-id="f31fb-145">Дополнительные сведения см. в разделе:</span><span class="sxs-lookup"><span data-stu-id="f31fb-145">For more information, see:</span></span>  
+  
+    -   [<span data-ttu-id="f31fb-146">Работа с профилями агента репликации</span><span class="sxs-lookup"><span data-stu-id="f31fb-146">Work with Replication Agent Profiles</span></span>](agents/replication-agent-profiles.md)  
+  
+    -   [<span data-ttu-id="f31fb-147">Просмотр и изменение параметров командной строки агента репликации (среда SQL Server Management Studio)</span><span class="sxs-lookup"><span data-stu-id="f31fb-147">View and Modify Replication Agent Command Prompt Parameters &#40;SQL Server Management Studio&#41;</span></span>](agents/view-and-modify-replication-agent-command-prompt-parameters.md)  
+  
+    -   <span data-ttu-id="f31fb-148">[Replication Agent Executables Concepts](concepts/replication-agent-executables-concepts.md).</span><span class="sxs-lookup"><span data-stu-id="f31fb-148">[Replication Agent Executables Concepts](concepts/replication-agent-executables-concepts.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f31fb-149">См. также:</span><span class="sxs-lookup"><span data-stu-id="f31fb-149">See Also</span></span>  
+ <span data-ttu-id="f31fb-150">[Администрирование агента репликации](agents/replication-agent-administration.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-150">[Replication Agent Administration](agents/replication-agent-administration.md) </span></span>  
+ <span data-ttu-id="f31fb-151">[Справочник по ошибкам и событиям (репликация)](errors-and-events-reference-replication.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-151">[Errors and Events Reference &#40;Replication&#41;](errors-and-events-reference-replication.md) </span></span>  
+ <span data-ttu-id="f31fb-152">[Replication Distribution Agent](agents/replication-distribution-agent.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-152">[Replication Distribution Agent](agents/replication-distribution-agent.md) </span></span>  
+ <span data-ttu-id="f31fb-153">[Replication Log Reader Agent](agents/replication-log-reader-agent.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-153">[Replication Log Reader Agent](agents/replication-log-reader-agent.md) </span></span>  
+ <span data-ttu-id="f31fb-154">[Replication Merge Agent](agents/replication-merge-agent.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-154">[Replication Merge Agent](agents/replication-merge-agent.md) </span></span>  
+ <span data-ttu-id="f31fb-155">[Агент чтения очереди репликации](agents/replication-queue-reader-agent.md) </span><span class="sxs-lookup"><span data-stu-id="f31fb-155">[Replication Queue Reader Agent](agents/replication-queue-reader-agent.md) </span></span>  
+ [<span data-ttu-id="f31fb-156">Replication Snapshot Agent</span><span class="sxs-lookup"><span data-stu-id="f31fb-156">Replication Snapshot Agent</span></span>](agents/replication-snapshot-agent.md)  
+  
+  

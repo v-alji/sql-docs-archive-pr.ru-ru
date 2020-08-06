@@ -1,0 +1,43 @@
+---
+title: Сборка мусора XTP | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: performance
+ms.topic: conceptual
+ms.assetid: 64ae91e5-b420-44b4-af1a-f8bca83d7f41
+author: MikeRayMSFT
+ms.author: mikeray
+ms.openlocfilehash: 341a45c1c103f154672bb01a0648339562ee9750
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87730581"
+---
+# <a name="xtp-garbage-collection"></a><span data-ttu-id="9c002-102">Сборка мусора XTP</span><span class="sxs-lookup"><span data-stu-id="9c002-102">XTP Garbage Collection</span></span>
+  <span data-ttu-id="9c002-103">Объект производительности XTP Garbage Collection содержит счетчики, относящиеся к механизму сборщика мусора XTP.</span><span class="sxs-lookup"><span data-stu-id="9c002-103">The XTP Garbage Collection performance object contains counters related to the XTP engine's garbage collector.</span></span>  
+  
+ <span data-ttu-id="9c002-104">Эта таблица описывает счетчики **XTP garbage Collection** .</span><span class="sxs-lookup"><span data-stu-id="9c002-104">This table describes the **XTP garbage Collection** counters.</span></span>  
+  
+|<span data-ttu-id="9c002-105">Счетчик</span><span class="sxs-lookup"><span data-stu-id="9c002-105">Counter</span></span>|<span data-ttu-id="9c002-106">Описание</span><span class="sxs-lookup"><span data-stu-id="9c002-106">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="9c002-107">**Число попыток сканирования «пыльных углов»/с (от сборщика мусора)**</span><span class="sxs-lookup"><span data-stu-id="9c002-107">**Dusty corner scan retries/sec (GC-issued)**</span></span>|<span data-ttu-id="9c002-108">Число повторных попыток сканирования из-за конфликтов записи при обработке «пыльных углов», выданное сборщиком мусора (в среднем), в секунду</span><span class="sxs-lookup"><span data-stu-id="9c002-108">The number of scan retries due to write conflicts during dusty corner sweeps issued by the garbage collector (on average), per second.</span></span> <span data-ttu-id="9c002-109">Это счетчик очень низкого уровня, не предназначенный для пользователей.</span><span class="sxs-lookup"><span data-stu-id="9c002-109">This is a very low-level counter, not intended for customer use.</span></span>|  
+|<span data-ttu-id="9c002-110">**Рабочие элементы основной сборки мусора/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-110">**Main GC work items/sec**</span></span>|<span data-ttu-id="9c002-111">Число рабочих элементов в секунду, обрабатываемых основным потоком сборки мусора.</span><span class="sxs-lookup"><span data-stu-id="9c002-111">The number of work items processed by the main GC thread.</span></span>|  
+|<span data-ttu-id="9c002-112">**Рабочие элементы параллельной сборки мусора/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-112">**Parallel GC work item/sec**</span></span>|<span data-ttu-id="9c002-113">Число выполнений рабочего элемента сборки мусора параллельным потоком</span><span class="sxs-lookup"><span data-stu-id="9c002-113">The number of times a parallel thread has executed a GC work item.</span></span>|  
+|<span data-ttu-id="9c002-114">**Обработано строк/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-114">**Rows processed/sec**</span></span>|<span data-ttu-id="9c002-115">Число строк, обрабатываемых сборщиком мусора (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-115">The number of rows processed by the garbage collector (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-116">**Обработано строк/с (сначала в контейнере и удалено)**</span><span class="sxs-lookup"><span data-stu-id="9c002-116">**Rows processed/sec (first in bucket and removed)**</span></span>|<span data-ttu-id="9c002-117">Число строк, обработанных сборщиком мусора, которые сначала были в соответствующем хэш-контейнере, и могли быть удалены немедленно (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-117">The number of rows processed by the garbage collector that were first in the corresponding hash bucket, and were able to be removed immediately (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-118">**Обработано строк/с (сначала в контейнере)**</span><span class="sxs-lookup"><span data-stu-id="9c002-118">**Rows processed/sec (first in bucket)**</span></span>|<span data-ttu-id="9c002-119">Число строк, обработанных сборщиком мусора, которые сначала были в соответствующем хэш-контейнере (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-119">The number of rows processed by the garbage collector that were first in the corresponding hash bucket (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-120">**Обработано строк/с (отмеченных для удаления связи)**</span><span class="sxs-lookup"><span data-stu-id="9c002-120">**Rows processed/sec (marked for unlink)**</span></span>|<span data-ttu-id="9c002-121">Число строк, обработанных сборщиком мусора, которые уже отмечены для удаления связи (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-121">The number of rows processed by the garbage collector that were already marked for unlink (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-122">**Обработано строк/с (очистка не требуется)**</span><span class="sxs-lookup"><span data-stu-id="9c002-122">**Rows processed/sec (no sweep needed)**</span></span>|<span data-ttu-id="9c002-123">Число строк, обработанных сборщиком мусора, которые не потребуют очистки «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-123">The number of rows processed by the garbage collector that will not require a dusty corner sweep (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-124">**Очистка удаленных просроченных строк/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-124">**Sweep expired rows removed/sec**</span></span>|<span data-ttu-id="9c002-125">Число просроченных строк, удаленных при очистке «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-125">The number of expired rows removed during dusty corner sweeps (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-126">**Очистка затронутых просроченных строк/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-126">**Sweep expired rows touched/sec**</span></span>|<span data-ttu-id="9c002-127">Число просроченных строк, затронутых при очистке «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-127">The number of expired rows touched during dusty corner sweeps (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-128">**Очистка затронутых строк с истекающим сроком действия/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-128">**Sweep expiring rows touched/sec**</span></span>|<span data-ttu-id="9c002-129">Число строк с истекающим сроком действия, затронутых при очистке «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-129">The number of expiring rows touched during dusty corner sweeps (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-130">**Очистка затронутых строк/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-130">**Sweep rows touched/sec**</span></span>|<span data-ttu-id="9c002-131">Число строк, затронутых при очистке «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-131">The number of rows touched during dusty corner sweeps (on average), per second.</span></span>|  
+|<span data-ttu-id="9c002-132">**Начатые очистки/с**</span><span class="sxs-lookup"><span data-stu-id="9c002-132">**Sweep scans started/sec**</span></span>|<span data-ttu-id="9c002-133">Число начатых очисток «пыльных углов» (в среднем), в секунду.</span><span class="sxs-lookup"><span data-stu-id="9c002-133">The number of dusty corner sweep scans started (on average), per second.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="9c002-134">См. также:</span><span class="sxs-lookup"><span data-stu-id="9c002-134">See Also</span></span>  
+ [<span data-ttu-id="9c002-135">Счетчики производительности XTP &#40;в памяти OLTP&#41;</span><span class="sxs-lookup"><span data-stu-id="9c002-135">XTP &#40;In-Memory OLTP&#41; Performance Counters</span></span>](../../integration-services/performance/performance-counters.md)  
+  
+  
