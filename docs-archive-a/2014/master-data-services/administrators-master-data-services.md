@@ -1,0 +1,61 @@
+---
+title: Администраторы (службы Master Data Services) | Документы Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: master-data-services
+ms.topic: conceptual
+helpviewer_keywords:
+- administrators [Master Data Services], about administrators
+- administrators [Master Data Services]
+- models [Master Data Services], administrators
+ms.assetid: d330aa4e-6ade-4b09-b376-1b15d6c78f7d
+author: lrtoyou1223
+ms.author: lle
+ms.openlocfilehash: 52e16d4e77acc0a6b50b87e00184918cb9ce64b1
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87734241"
+---
+# <a name="administrators-master-data-services"></a><span data-ttu-id="50325-102">Администраторы (службы Master Data Services)</span><span class="sxs-lookup"><span data-stu-id="50325-102">Administrators (Master Data Services)</span></span>
+  <span data-ttu-id="50325-103">В службах [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] существует два типа администраторов: администраторы модели и системные администраторы служб [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="50325-103">In [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)], there are two types of administrators: model administrators, and the [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] system administrator.</span></span>  
+  
+## <a name="model-administrators"></a><span data-ttu-id="50325-104">Администраторы модели</span><span class="sxs-lookup"><span data-stu-id="50325-104">Model Administrators</span></span>  
+ <span data-ttu-id="50325-105">В [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] Администратор модели — это пользователь, имеющий разрешение на **Обновление** , назначенное объекту модели верхнего уровня на вкладке **объекты модели** и не имеющий других назначенных разрешений.</span><span class="sxs-lookup"><span data-stu-id="50325-105">In [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)], a model administrator is a user who has **Update** permission assigned to the top-level model object on the **Model Objects** tab and no other assigned permissions.</span></span>  
+  
+-   <span data-ttu-id="50325-106">Если пользователь имеет доступ к функциональной области **Обозреватель** , то он может добавлять, удалять и обновлять все основные данные в этой области.</span><span class="sxs-lookup"><span data-stu-id="50325-106">If the user has access to the **Explorer** functional area, the user can add, delete, and update all master data in this area.</span></span>  
+  
+-   <span data-ttu-id="50325-107">Если пользователь имеет доступ к другим функциональным областям, то он может выполнять все административные задачи, доступные в функциональной области.</span><span class="sxs-lookup"><span data-stu-id="50325-107">If the user has access to other functional areas, the user can perform all administrative tasks available in the functional area.</span></span>  
+  
+ <span data-ttu-id="50325-108">Каждая модель может иметь несколько администраторов.</span><span class="sxs-lookup"><span data-stu-id="50325-108">Each model can have multiple administrators.</span></span> <span data-ttu-id="50325-109">Каждый пользователь может быть администратором одной, нескольких или всех моделей в развертывании [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="50325-109">Each user can be a model administrator for one, several, or all models in the [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] deployment.</span></span>  
+  
+ <span data-ttu-id="50325-110">Сделать пользователя администратором модели можно в [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] либо с помощью программных средств.</span><span class="sxs-lookup"><span data-stu-id="50325-110">A user can be configured as a model administrator either in [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] or programmatically.</span></span> <span data-ttu-id="50325-111">Дополнительные сведения см. в разделе [Создание администратора модели (службы Master Data Services)](create-a-model-administrator-master-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="50325-111">For more information, see [Create a Model Administrator &#40;Master Data Services&#41;](create-a-model-administrator-master-data-services.md).</span></span>  
+  
+## <a name="master-data-services-system-administrator"></a><span data-ttu-id="50325-112">Системный администратор служб Master Data Services</span><span class="sxs-lookup"><span data-stu-id="50325-112">Master Data Services System Administrator</span></span>  
+ <span data-ttu-id="50325-113">Может быть только один системный администратор служб [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="50325-113">There is only one [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] system administrator.</span></span> <span data-ttu-id="50325-114">Системный администратор — это пользователь, указанный для **учетной записи администратора** при создании [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] базы данных.</span><span class="sxs-lookup"><span data-stu-id="50325-114">The system administrator is the user specified for the **Administrator Account** when you create the [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] database.</span></span>  
+  
+ <span data-ttu-id="50325-115">Системный администратор служб [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]:</span><span class="sxs-lookup"><span data-stu-id="50325-115">The [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] system administrator:</span></span>  
+  
+-   <span data-ttu-id="50325-116">Автоматически имеет доступ ко всем функциональным областям.</span><span class="sxs-lookup"><span data-stu-id="50325-116">Automatically has access to all functional areas.</span></span>  
+  
+-   <span data-ttu-id="50325-117">Может добавлять, удалять и обновлять все основные данные для всех моделей в функциональной области **Обозреватель** .</span><span class="sxs-lookup"><span data-stu-id="50325-117">Can add, delete, and update all master data for all models in the **Explorer** functional area.</span></span>  
+  
+ <span data-ttu-id="50325-118">Пользователя, назначенного в качестве системного администратора, можно изменить.</span><span class="sxs-lookup"><span data-stu-id="50325-118">You can change the user who is assigned as the system administrator.</span></span> <span data-ttu-id="50325-119">Дополнительные сведения см. [в разделе Изменение учетной записи системного администратора &#40;Master Data Services&#41;](../../2014/master-data-services/change-the-system-administrator-account-master-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="50325-119">For more information, see [Change the System Administrator Account &#40;Master Data Services&#41;](../../2014/master-data-services/change-the-system-administrator-account-master-data-services.md).</span></span>  
+  
+## <a name="comparing-administrator-types"></a><span data-ttu-id="50325-120">Сравнение типов администраторов</span><span class="sxs-lookup"><span data-stu-id="50325-120">Comparing Administrator Types</span></span>  
+  
+|<span data-ttu-id="50325-121">Тип администратора</span><span class="sxs-lookup"><span data-stu-id="50325-121">Administrator Type</span></span>|<span data-ttu-id="50325-122">Описание</span><span class="sxs-lookup"><span data-stu-id="50325-122">Description</span></span>|  
+|------------------------|-----------------|  
+|<span data-ttu-id="50325-123">Системный администратор служб [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]</span><span class="sxs-lookup"><span data-stu-id="50325-123">[!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] system administrator</span></span>|<span data-ttu-id="50325-124">Разрешения, назначенные в [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)], не влияют на доступ администратора.</span><span class="sxs-lookup"><span data-stu-id="50325-124">Permissions assigned in [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] have no effect on the administrator's access.</span></span><br /><br /> <span data-ttu-id="50325-125">Автоматически имеет разрешение **Обновление** для всех моделей.</span><span class="sxs-lookup"><span data-stu-id="50325-125">Automatically has **Update** permission to all models.</span></span><br /><br /> <span data-ttu-id="50325-126">Автоматически имеет доступ ко всем функциональным областям.</span><span class="sxs-lookup"><span data-stu-id="50325-126">Automatically has access to all functional areas.</span></span><br /><br /> <span data-ttu-id="50325-127">В MDM. tblUser значение столбца **ID** равно **1**.</span><span class="sxs-lookup"><span data-stu-id="50325-127">In mdm.tblUser, the value in the **ID** column is **1**.</span></span>|  
+|<span data-ttu-id="50325-128">Администратор модели</span><span class="sxs-lookup"><span data-stu-id="50325-128">Model administrator</span></span>|<span data-ttu-id="50325-129">Разрешения, заданные в [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)], определяют, является ли пользователь администратором модели.</span><span class="sxs-lookup"><span data-stu-id="50325-129">Permissions assigned in [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] determine whether or not the user is a model administrator.</span></span><br /><br /> <span data-ttu-id="50325-130">Может быть администратором модели на основе разрешений, назначенных ему явно, либо на основе разрешений, полученных в результате членства в некоторой группе.</span><span class="sxs-lookup"><span data-stu-id="50325-130">Can be a model administrator based on permissions assigned explicitly or permissions inherited from a group.</span></span><br /><br /> <span data-ttu-id="50325-131">Является администратором только для моделей, имеющих разрешение на **Обновление** , назначенное объекту модели верхнего уровня, и не имеет других разрешений.</span><span class="sxs-lookup"><span data-stu-id="50325-131">Is an administrator only for models that have **Update** permission assigned to top-level model object, and no other permissions.</span></span><br /><br /> <span data-ttu-id="50325-132">Имеет доступ только к тем функциональным областям, к которым разрешен доступ.</span><span class="sxs-lookup"><span data-stu-id="50325-132">Has access only to functional areas that access is granted to.</span></span><br /><br /> <span data-ttu-id="50325-133">В MDM. tblUser значение в столбце **ID** не равно **1**.</span><span class="sxs-lookup"><span data-stu-id="50325-133">In mdm.tblUser, the value in the **ID** column is not **1**.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="50325-134">См. также:</span><span class="sxs-lookup"><span data-stu-id="50325-134">See Also</span></span>  
+ <span data-ttu-id="50325-135">[Создание администратора модели &#40;Master Data Services&#41;](create-a-model-administrator-master-data-services.md) </span><span class="sxs-lookup"><span data-stu-id="50325-135">[Create a Model Administrator &#40;Master Data Services&#41;](create-a-model-administrator-master-data-services.md) </span></span>  
+ <span data-ttu-id="50325-136">[Измените &#40;Master Data Services учетной записи системного администратора&#41;](../../2014/master-data-services/change-the-system-administrator-account-master-data-services.md) </span><span class="sxs-lookup"><span data-stu-id="50325-136">[Change the System Administrator Account &#40;Master Data Services&#41;](../../2014/master-data-services/change-the-system-administrator-account-master-data-services.md) </span></span>  
+ <span data-ttu-id="50325-137">[Создание базы данных Master Data Services](install-windows/create-a-master-data-services-database.md) </span><span class="sxs-lookup"><span data-stu-id="50325-137">[Create a Master Data Services Database](install-windows/create-a-master-data-services-database.md) </span></span>  
+ [<span data-ttu-id="50325-138">Уведомления (службы Master Data Services)</span><span class="sxs-lookup"><span data-stu-id="50325-138">Notifications &#40;Master Data Services&#41;</span></span>](../../2014/master-data-services/notifications-master-data-services.md)  
+  
+  

@@ -1,0 +1,48 @@
+---
+title: Безопасность агента чтения журнала (одноранговая репликация) | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: replication
+ms.topic: conceptual
+f1_keywords:
+- sql12.rep.p2pwizard.LRA.f1
+ms.assetid: 6575e2a8-16bb-449c-bdca-4a4202d0972f
+author: MashaMSFT
+ms.author: mathoma
+ms.openlocfilehash: dfef98adb622f9da922af0c1cdbb1cf8b7a07da5
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87666511"
+---
+# <a name="log-reader-agent-security-peer-to-peer-replication"></a><span data-ttu-id="21c36-102">Безопасность агента чтения журнала (одноранговая репликация)</span><span class="sxs-lookup"><span data-stu-id="21c36-102">Log Reader Agent Security (Peer-to-Peer Replication)</span></span>
+  <span data-ttu-id="21c36-103">На странице **Безопасность агента чтения журнала** можно указать учетные записи, под которыми агент чтения журнала запускается и устанавливает соединения на каждом узле.</span><span class="sxs-lookup"><span data-stu-id="21c36-103">The **Log Reader Agent Security** page allows you to specify the accounts under which the Log Reader Agent at each peer runs and makes connections.</span></span> <span data-ttu-id="21c36-104">Сведения о разрешениях, требуемых агентами, и об оптимальных методах защиты репликации см. в статьях [Модель безопасности агента репликации](security/replication-agent-security-model.md) и [Рекомендации по защите репликации](security/replication-security-best-practices.md).</span><span class="sxs-lookup"><span data-stu-id="21c36-104">For information on permissions required by agents and best practices for replication security, see [Replication Agent Security Model](security/replication-agent-security-model.md) and [Replication Security Best Practices](security/replication-security-best-practices.md).</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="21c36-105">Для каждой базы данных, опубликованной с использованием репликации транзакций, существует по одному агенту чтения журнала.</span><span class="sxs-lookup"><span data-stu-id="21c36-105">There is one Log Reader Agent for each database that is published using transactional replication.</span></span> <span data-ttu-id="21c36-106">Если агент чтения журнала для базы данных уже настроен (либо для публикации при предыдущем запуске этого мастера, либо для другой публикации транзакций в этой же базе данных), то нельзя изменить учетные данные, которые он использует, в этом мастере.</span><span class="sxs-lookup"><span data-stu-id="21c36-106">If the Log Reader Agent for a database has already been configured (either for a publication in a previous run of this wizard or for another transactional publication in the same database), you cannot change the credentials it uses in this wizard.</span></span> <span data-ttu-id="21c36-107">При указании новых учетных данных они будут проигнорированы.</span><span class="sxs-lookup"><span data-stu-id="21c36-107">If you specify new credentials, they are ignored.</span></span> <span data-ttu-id="21c36-108">Учетные данные можно изменить в диалоговом окне **Свойства публикации** .</span><span class="sxs-lookup"><span data-stu-id="21c36-108">To change credentials, use the **Publication Properties** dialog box.</span></span> <span data-ttu-id="21c36-109">Дополнительные сведения см. в статье [View and Modify Replication Security Settings](security/view-and-modify-replication-security-settings.md).</span><span class="sxs-lookup"><span data-stu-id="21c36-109">For more information, see [View and Modify Replication Security Settings](security/view-and-modify-replication-security-settings.md).</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="21c36-110">Параметры</span><span class="sxs-lookup"><span data-stu-id="21c36-110">Options</span></span>  
+ <span data-ttu-id="21c36-111">Нажмите кнопку свойств ( **...** ) в строке каждого узла, чтобы открыть диалоговое окно **Безопасность агента чтения журнала** .</span><span class="sxs-lookup"><span data-stu-id="21c36-111">Click the properties button (**...**) in the row for each peer to access the **Log Reader Agent Security** dialog box.</span></span> <span data-ttu-id="21c36-112">Нажмите кнопку **Справка** в открывшемся окне **Безопасность агента чтения журнала** , чтобы получить дополнительные сведения о разрешениях доступа, необходимых учетным записям, используемым агентами.</span><span class="sxs-lookup"><span data-stu-id="21c36-112">Click **Help** on the **Log Reader Agent Security** dialog box that is launched for more information on the permissions required for accounts used by the agents.</span></span>  
+  
+ <span data-ttu-id="21c36-113">После ввода параметров в диалоговом окне, в сетке отображаются сведения о соединении для подписчика.</span><span class="sxs-lookup"><span data-stu-id="21c36-113">After settings have been entered in the dialog box, connection information for the Subscriber is displayed in the grid.</span></span>  
+  
+ <span data-ttu-id="21c36-114">**Агенты для издателя**</span><span class="sxs-lookup"><span data-stu-id="21c36-114">**Agents for Publisher**</span></span>  
+ <span data-ttu-id="21c36-115">Имя каждого экземпляра узла в одноранговой сети.</span><span class="sxs-lookup"><span data-stu-id="21c36-115">The name of each peer server instance.</span></span>  
+  
+ <span data-ttu-id="21c36-116">**Одноранговая база данных**</span><span class="sxs-lookup"><span data-stu-id="21c36-116">**Peer Database**</span></span>  
+ <span data-ttu-id="21c36-117">База данных каждого узла одноранговой сети, которая служит базой данных публикации и базой данных подписки.</span><span class="sxs-lookup"><span data-stu-id="21c36-117">The database that serves as the publication database and subscription database at each peer.</span></span>  
+  
+ <span data-ttu-id="21c36-118">**Соединение с распространителем**</span><span class="sxs-lookup"><span data-stu-id="21c36-118">**Connection to Distributor**</span></span>  
+ <span data-ttu-id="21c36-119">Контекст, в котором устанавливается соединение с распространителем.</span><span class="sxs-lookup"><span data-stu-id="21c36-119">The context under which the connection to the Distributor is made.</span></span> <span data-ttu-id="21c36-120">Локальное соединение с распространителем всегда устанавливается в контексте учетной записи Windows [!INCLUDE[msCoName](../../includes/msconame-md.md)], под которой запущен агент; таким образом, в этом поле всегда будет отображаться следующее: **Impersonate '\<Domain>\\<имя_для_входа\>'** или **Impersonate '\<Computer>\\<имя_для_входа\>'** .</span><span class="sxs-lookup"><span data-stu-id="21c36-120">The local connection to the Distributor is always made using the context of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows account under which the agent runs, so this field will always display **Impersonate '\<Domain>\\<Login\>'** or **Impersonate '\<Computer>\\<Login\>'**.</span></span>  
+  
+ <span data-ttu-id="21c36-121">**Соединение с издателем**</span><span class="sxs-lookup"><span data-stu-id="21c36-121">**Connection to Publisher**</span></span>  
+ <span data-ttu-id="21c36-122">Контекст, в котором осуществляется соединение с издателем.</span><span class="sxs-lookup"><span data-stu-id="21c36-122">The context under which the connection to the Publisher is made.</span></span> <span data-ttu-id="21c36-123">Устанавливать соединение с издателем можно при помощи имени входа [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] или в контексте учетной записи Windows, под которой запущен агент.</span><span class="sxs-lookup"><span data-stu-id="21c36-123">The connection to the Publisher can be made using a [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login or using the context of the Windows account under which the agent runs.</span></span> <span data-ttu-id="21c36-124">В поле отображается одна из следующих строк: **Использовать имя для входа '\<Login>'** , **Выполнить олицетворение '\<Domain>\\<Login\>'** или **Выполнить олицетворение '\<Computer>\\<Login\>'** .</span><span class="sxs-lookup"><span data-stu-id="21c36-124">The field displays one of the following: **Use login '\<Login>'**, **Impersonate '\<Domain>\\<Login\>'** or **Impersonate '\<Computer>\\<Login\>'**.</span></span> [!INCLUDE[msCoName](../../includes/msconame-md.md)] <span data-ttu-id="21c36-125">рекомендует выполнять соединение в контексте учетной записи Windows.</span><span class="sxs-lookup"><span data-stu-id="21c36-125">recommends that all connections be made using the context of the Windows account.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="21c36-126">См. также:</span><span class="sxs-lookup"><span data-stu-id="21c36-126">See Also</span></span>  
+ <span data-ttu-id="21c36-127">[Администрирование одноранговой топологии (программирование репликации на языке Transact-SQL)](administration/administer-a-peer-to-peer-topology-replication-transact-sql-programming.md) </span><span class="sxs-lookup"><span data-stu-id="21c36-127">[Administer a Peer-to-Peer Topology &#40;Replication Transact-SQL Programming&#41;](administration/administer-a-peer-to-peer-topology-replication-transact-sql-programming.md) </span></span>  
+ [<span data-ttu-id="21c36-128">Peer-to-Peer Transactional Replication</span><span class="sxs-lookup"><span data-stu-id="21c36-128">Peer-to-Peer Transactional Replication</span></span>](transactional/peer-to-peer-transactional-replication.md)  
+  
+  
