@@ -1,0 +1,40 @@
+---
+title: Свойства сеанса | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: native-client
+ms.topic: reference
+helpviewer_keywords:
+- sessions [OLE DB]
+- SQL Server Native Client OLE DB provider, sessions
+ms.assetid: 2498fbad-b3db-4bea-8fc6-fef5317d3eba
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 99f2bc6def0f470f653446c87216c3e854b2f819
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87655706"
+---
+# <a name="session-properties"></a><span data-ttu-id="76300-102">Свойства сеанса</span><span class="sxs-lookup"><span data-stu-id="76300-102">Session Properties</span></span>
+  <span data-ttu-id="76300-103">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Поставщик OLE DB собственного клиента интерпретирует свойства OLE DB сеанса следующим образом.</span><span class="sxs-lookup"><span data-stu-id="76300-103">The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider interprets OLE DB session properties as follows.</span></span>  
+  
+|<span data-ttu-id="76300-104">Идентификатор свойства</span><span class="sxs-lookup"><span data-stu-id="76300-104">Property ID</span></span>|<span data-ttu-id="76300-105">Описание</span><span class="sxs-lookup"><span data-stu-id="76300-105">Description</span></span>|  
+|-----------------|-----------------|  
+|<span data-ttu-id="76300-106">DBPROP_SESS_AUTOCOMMITISOLEVELS</span><span class="sxs-lookup"><span data-stu-id="76300-106">DBPROP_SESS_AUTOCOMMITISOLEVELS</span></span>|<span data-ttu-id="76300-107">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Поставщик OLE DB собственного клиента поддерживает все уровни изоляции транзакций с автоматической фиксацией за исключением уровня chaos DBPROPVAL_TI_CHAOS.</span><span class="sxs-lookup"><span data-stu-id="76300-107">The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider supports all autocommit transaction isolation levels with the exception of the chaos level DBPROPVAL_TI_CHAOS.</span></span>|  
+  
+ <span data-ttu-id="76300-108">В DBPROPSET_SQLSERVERSESSION свойств, зависящих от поставщика, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поставщик OLE DB собственного клиента определяет следующее дополнительное свойство сеанса.</span><span class="sxs-lookup"><span data-stu-id="76300-108">In the provider-specific property set DBPROPSET_SQLSERVERSESSION, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider defines the following additional session property.</span></span>  
+  
+|<span data-ttu-id="76300-109">Идентификатор свойства</span><span class="sxs-lookup"><span data-stu-id="76300-109">Property ID</span></span>|<span data-ttu-id="76300-110">Описание</span><span class="sxs-lookup"><span data-stu-id="76300-110">Description</span></span>|  
+|-----------------|-----------------|  
+|<span data-ttu-id="76300-111">SSPROP_QUOTEDCATALOGNAMES</span><span class="sxs-lookup"><span data-stu-id="76300-111">SSPROP_QUOTEDCATALOGNAMES</span></span>|<span data-ttu-id="76300-112">Тип: VT_BOOL.</span><span class="sxs-lookup"><span data-stu-id="76300-112">Type: VT_BOOL</span></span><br /><br /> <span data-ttu-id="76300-113">Ч/З Чтение/запись</span><span class="sxs-lookup"><span data-stu-id="76300-113">R/W: Read/write</span></span><br /><br /> <span data-ttu-id="76300-114">Значение по умолчанию: VARIANT_FALSE</span><span class="sxs-lookup"><span data-stu-id="76300-114">Default: VARIANT_FALSE</span></span><br /><br /> <span data-ttu-id="76300-115">Описание: заключенные в кавычки идентификаторы допускаются ограничением CATALOG.</span><span class="sxs-lookup"><span data-stu-id="76300-115">Description: Quoted identifiers allowed in CATALOG restriction.</span></span><br /><br /> <span data-ttu-id="76300-116">VARIANT_TRUE: заключенные в кавычки идентификаторы распознаются ограничением каталога для наборов строк схемы, предоставляющих поддержку распределенных запросов.</span><span class="sxs-lookup"><span data-stu-id="76300-116">VARIANT_TRUE: Quoted identifiers are recognized for a catalog restriction for the schema rowsets that supply distributed query support.</span></span><br /><br /> <span data-ttu-id="76300-117">VARIANT_FALSE: заключенные в кавычки идентификаторы не распознаются ограничением каталога для наборов строк схемы, предоставляющих поддержку распределенных запросов.</span><span class="sxs-lookup"><span data-stu-id="76300-117">VARIANT_FALSE: Quoted identifiers are not recognized for a catalog restriction for the schema rowsets that supply distributed query support.</span></span><br /><br /> <span data-ttu-id="76300-118">Дополнительные сведения о наборах строк схемы, обеспечивающих поддержку распределенных запросов, см. в статье [Поддержка распределенных запросов в наборах строк схемы](../native-client/ole-db/schema-rowsets-distributed-query-support.md).</span><span class="sxs-lookup"><span data-stu-id="76300-118">For more information about schema rowsets that supply distributed query support, see [Distributed Query Support in Schema Rowsets](../native-client/ole-db/schema-rowsets-distributed-query-support.md).</span></span>|  
+|<span data-ttu-id="76300-119">Свойство SSPROP_ALLOWNATIVEVARIANT</span><span class="sxs-lookup"><span data-stu-id="76300-119">SSPROP_ALLOWNATIVEVARIANT</span></span>|<span data-ttu-id="76300-120">Тип: VT_BOOL.</span><span class="sxs-lookup"><span data-stu-id="76300-120">Type: VT_BOOL</span></span><br /><br /> <span data-ttu-id="76300-121">Чтение и запись в R/W</span><span class="sxs-lookup"><span data-stu-id="76300-121">R/W: Read/Write</span></span><br /><br /> <span data-ttu-id="76300-122">Значение по умолчанию: VARIANT_FALSE</span><span class="sxs-lookup"><span data-stu-id="76300-122">Default: VARIANT_FALSE</span></span><br /><br /> <span data-ttu-id="76300-123">Описание: определяет, имеют ли данные, полученные в результате выборки, тип DBTYPE_VARIANT или DBTYPE_SQLVARIANT.</span><span class="sxs-lookup"><span data-stu-id="76300-123">Description: Determines if the data fetched in is as DBTYPE_VARIANT or DBTYPE_SQLVARIANT.</span></span><br /><br /> <span data-ttu-id="76300-124">VARIANT_TRUE: возвращается тип столбца DBTYPE_SQLVARIANT. В этом случае в буфере сохраняется структура SSVARIANT.</span><span class="sxs-lookup"><span data-stu-id="76300-124">VARIANT_TRUE: Column type is returned as DBTYPE_SQLVARIANT in which case the buffer will hold SSVARIANT structure.</span></span><br /><br /> <span data-ttu-id="76300-125">VARIANT_FALSE: возвращается столбец типа DBTYPE_VARIANT, и в буфере сохраняется структура VARIANT.</span><span class="sxs-lookup"><span data-stu-id="76300-125">VARIANT_FALSE: Column type is returned as DBTYPE_VARIANT and the buffer will have VARIANT structure.</span></span>|  
+|<span data-ttu-id="76300-126">SSPROP_ASYNCH_BULKCOPY</span><span class="sxs-lookup"><span data-stu-id="76300-126">SSPROP_ASYNCH_BULKCOPY</span></span>|<span data-ttu-id="76300-127">Для использования асинхронного режима задайте значение VARIANT_TRUE характерного для поставщика свойства SSPROP_ASYNCH_BULKCOPY сеанса до вызова метода BCPExec.</span><span class="sxs-lookup"><span data-stu-id="76300-127">To use asynchronous mode, set the provider specific session property SSPROP_ASYNCH_BULKCOPY to VARIANT_TRUE before calling the BCPExec method.</span></span> <span data-ttu-id="76300-128">Это свойство доступно в наборе свойств DBPROPSET_SQLSERVERSESSION.</span><span class="sxs-lookup"><span data-stu-id="76300-128">This property is available in the DBPROPSET_SQLSERVERSESSION property set.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="76300-129">См. также:</span><span class="sxs-lookup"><span data-stu-id="76300-129">See Also</span></span>  
+ [<span data-ttu-id="76300-130">Объекты источников данных (OLE DB)</span><span class="sxs-lookup"><span data-stu-id="76300-130">Data Source Objects &#40;OLE DB&#41;</span></span>](data-source-objects-ole-db.md)  
+  
+  

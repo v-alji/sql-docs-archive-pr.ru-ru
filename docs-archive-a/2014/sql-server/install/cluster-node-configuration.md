@@ -1,0 +1,30 @@
+---
+title: Конфигурация узла кластера | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: database-engine
+ms.topic: conceptual
+f1_keywords:
+- cluster node configuration
+- cluster node configuration, Setup
+ms.assetid: cc960cf3-3b55-44f3-961a-eac4ad05d3d9
+author: mashamsft
+ms.author: mathoma
+ms.openlocfilehash: d2e6bf33bce3eb08994e0bd5529394e033673827
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87659208"
+---
+# <a name="cluster-node-configuration"></a><span data-ttu-id="958ac-102">Настройка узла кластера</span><span class="sxs-lookup"><span data-stu-id="958ac-102">Cluster Node Configuration</span></span>
+  <span data-ttu-id="958ac-103">Для добавления или удаления узлов в экземпляре отказоустойчивого кластера используется страница «Настройка узла кластера». Чтобы установить или обновить отказоустойчивый кластер [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , необходимо запустить программу установки на каждом узле кластера.</span><span class="sxs-lookup"><span data-stu-id="958ac-103">Use the Cluster Node Configuration page to add or remove nodes from a failover cluster instance.To install or upgrade a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster, you must run the Setup program on each node of the failover cluster.</span></span> <span data-ttu-id="958ac-104">Чтобы добавить узел в существующий отказоустойчивый кластер [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , необходимо запустить программу установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на узле, который добавляется в экземпляр отказоустойчивого кластера [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="958ac-104">To add a node to an existing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster, you must run [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup on the node that is to be added to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster instance.</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="958ac-105">Варианты</span><span class="sxs-lookup"><span data-stu-id="958ac-105">Options</span></span>  
+ <span data-ttu-id="958ac-106">\*\* [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Имя экземпляра\*\* — используйте раскрывающийся список, чтобы выбрать [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] экземпляр отказоустойчивого кластера для изменения.</span><span class="sxs-lookup"><span data-stu-id="958ac-106">**[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Instance Name** - Use the drop-down list to select the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster instance to modify.</span></span>  
+  
+ <span data-ttu-id="958ac-107">**Имя узла** . В этом поле отображается имя компьютера с выполняющейся программой установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="958ac-107">**Name of this node** - This field will be populated with the name of the computer that is running [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup.</span></span> <span data-ttu-id="958ac-108">Это узел отказоустойчивого кластера, который будет добавлен в экземпляр кластера отработки отказа [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] или удален из кластера.</span><span class="sxs-lookup"><span data-stu-id="958ac-108">This is the failover cluster node that will be added to or removed from the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] failover cluster instance.</span></span>  
+  
+  
