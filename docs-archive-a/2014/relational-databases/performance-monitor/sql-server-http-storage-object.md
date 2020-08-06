@@ -1,0 +1,42 @@
+---
+title: SQL Server, HTTP_STORAGE_OBJECT | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: performance
+ms.topic: conceptual
+ms.assetid: ae849f79-c581-42a5-a5cc-0a9ebea171b9
+author: MikeRayMSFT
+ms.author: mikeray
+ms.openlocfilehash: 62cd5b8422213624cfd8609027c477760f682239
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87656348"
+---
+# <a name="sql-server-http_storage_object"></a><span data-ttu-id="34a63-102">SQL Server, HTTP_STORAGE_OBJECT</span><span class="sxs-lookup"><span data-stu-id="34a63-102">SQL Server, HTTP_STORAGE_OBJECT</span></span>
+  <span data-ttu-id="34a63-103">Объект производительности **SQLServer: HTTP_STORAGE_OBJECT** состоит из счетчиков производительности, которые отслеживают учетную запись хранения Azure.</span><span class="sxs-lookup"><span data-stu-id="34a63-103">The **SQLServer:HTTP_STORAGE_OBJECT** performance object consists of performance counters that monitor Azure Storage account.</span></span> <span data-ttu-id="34a63-104">Используя [SQL Server файлы данных в Azure](../databases/sql-server-data-files-in-microsoft-azure.md) , вы можете хранить файлы базы данных в больших двоичных объектах службы хранилища Azure.</span><span class="sxs-lookup"><span data-stu-id="34a63-104">Using [SQL Server Data Files in Azure](../databases/sql-server-data-files-in-microsoft-azure.md) feature, you can store database files in Azure Storage Blobs.</span></span> <span data-ttu-id="34a63-105">Этот объект производительности обрабатывает каждую учетную запись службы хранилища Azure как отдельный диск.</span><span class="sxs-lookup"><span data-stu-id="34a63-105">This performance object treats each Azure Storage account as a different drive.</span></span>  
+  
+|<span data-ttu-id="34a63-106">Имя счетчика</span><span class="sxs-lookup"><span data-stu-id="34a63-106">Counter Name</span></span>|<span data-ttu-id="34a63-107">Описание</span><span class="sxs-lookup"><span data-stu-id="34a63-107">Description</span></span>|  
+|------------------|-----------------|  
+|<span data-ttu-id="34a63-108">**Прочитано Байт/с**</span><span class="sxs-lookup"><span data-stu-id="34a63-108">**Read Bytes/sec**</span></span>|<span data-ttu-id="34a63-109">Объем данных, передаваемый из хранилища HTTP в секунду во время операций чтения.</span><span class="sxs-lookup"><span data-stu-id="34a63-109">Amount of data being transferred from the HTTP storage per second during read operations.</span></span>|  
+|<span data-ttu-id="34a63-110">**Скорость записи (Байт/с)**</span><span class="sxs-lookup"><span data-stu-id="34a63-110">**Write Bytes/sec**</span></span>|<span data-ttu-id="34a63-111">Объем данных, передаваемый из хранилища HTTP в секунду во время операций записи.</span><span class="sxs-lookup"><span data-stu-id="34a63-111">Amount of data being transferred from the HTTP storage per second during write operations.</span></span>|  
+|<span data-ttu-id="34a63-112">**Всего байтов/с**</span><span class="sxs-lookup"><span data-stu-id="34a63-112">**Total Bytes/sec**</span></span>|<span data-ttu-id="34a63-113">Объем данных, передаваемый из хранилища HTTP в секунду во время операций чтения или записи.</span><span class="sxs-lookup"><span data-stu-id="34a63-113">Amount of data being transferred from the HTTP storage per second during read or write operations.</span></span>|  
+|<span data-ttu-id="34a63-114">**операции чтения в секунду**</span><span class="sxs-lookup"><span data-stu-id="34a63-114">**Reads/sec**</span></span>|<span data-ttu-id="34a63-115">Число операций чтения в секунду для хранилища HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-115">Number of reads per second on the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-116">**операции записи в секунду**</span><span class="sxs-lookup"><span data-stu-id="34a63-116">**Writes/sec**</span></span>|<span data-ttu-id="34a63-117">Число операций записи в секунду для хранилища HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-117">Number of writer per second on the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-118">**Передачи/сек**</span><span class="sxs-lookup"><span data-stu-id="34a63-118">**Transfers/sec**</span></span>|<span data-ttu-id="34a63-119">Число операций чтения и записи в секунду на хранилище HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-119">Number of read and write operations per second on the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-120">**Средн. байт/чтение**</span><span class="sxs-lookup"><span data-stu-id="34a63-120">**Avg. Bytes/Read**</span></span>|<span data-ttu-id="34a63-121">Среднее число байтов, перенесенных из хранилища HTTP за операцию чтения.</span><span class="sxs-lookup"><span data-stu-id="34a63-121">Average number of bytes transferred from the HTTP storage per read.</span></span>|  
+|<span data-ttu-id="34a63-122">**Средн. байт/запись**</span><span class="sxs-lookup"><span data-stu-id="34a63-122">**Avg. Bytes/Write**</span></span>|<span data-ttu-id="34a63-123">Среднее число байтов, перенесенных из хранилища HTTP за операцию записи.</span><span class="sxs-lookup"><span data-stu-id="34a63-123">Average number of bytes transferred from the HTTP storage per write.</span></span>|  
+|<span data-ttu-id="34a63-124">**Средн. байт/передача**</span><span class="sxs-lookup"><span data-stu-id="34a63-124">**Avg. Bytes/Transfer**</span></span>|<span data-ttu-id="34a63-125">Среднее число байтов, переданных с хранилища HTTP в течение операций чтения или записи.</span><span class="sxs-lookup"><span data-stu-id="34a63-125">Average number of bytes transferred from the HTTP storage during read or write operations.</span></span>|  
+|<span data-ttu-id="34a63-126">**Средн. время чтения (мкс)**</span><span class="sxs-lookup"><span data-stu-id="34a63-126">**Avg. microsec/Read**</span></span>|<span data-ttu-id="34a63-127">Среднее число микросекунд, необходимое для выполнения каждого чтения из хранилища HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-127">The average number of microseconds it takes to do each read from the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-128">**Средн. время записи (мкс)**</span><span class="sxs-lookup"><span data-stu-id="34a63-128">**Avg. microsec/Write**</span></span>|<span data-ttu-id="34a63-129">Среднее число микросекунд, необходимое для выполнения каждой операции записи в хранилище HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-129">The average number of microseconds it takes to do each write to the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-130">**Средн. время передачи (мкс)**</span><span class="sxs-lookup"><span data-stu-id="34a63-130">**Avg. microsec/Transfer**</span></span>|<span data-ttu-id="34a63-131">Среднее число микросекунд, необходимое для выполнения каждой операции передачи в хранилище HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-131">The average number of microseconds it takes to do each transfer to the HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-132">**Необработанный ввод-вывод хранилища HTTP**</span><span class="sxs-lookup"><span data-stu-id="34a63-132">**Outstanding HTTP Storage I/O**</span></span>|<span data-ttu-id="34a63-133">Общее количество необработанных операций ввода-вывода в направлении хранилища HTTP.</span><span class="sxs-lookup"><span data-stu-id="34a63-133">The total number of outstanding I/Os towards a HTTP storage.</span></span>|  
+|<span data-ttu-id="34a63-134">**Хранилище HTTP повторных попыток ввода-вывода в секунду**</span><span class="sxs-lookup"><span data-stu-id="34a63-134">**HTTP Storage I/O Retry/sec**</span></span>|<span data-ttu-id="34a63-135">Количество запросов повторных попыток, отправленных в хранилище HTTP в секунду.</span><span class="sxs-lookup"><span data-stu-id="34a63-135">Number of retry requests sent to the HTTP storage per second.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="34a63-136">См. также:</span><span class="sxs-lookup"><span data-stu-id="34a63-136">See Also</span></span>  
+ [<span data-ttu-id="34a63-137">Наблюдение за использованием ресурсов (системный монитор)</span><span class="sxs-lookup"><span data-stu-id="34a63-137">Monitor Resource Usage &#40;System Monitor&#41;</span></span>](monitor-resource-usage-system-monitor.md)  
+  
+  

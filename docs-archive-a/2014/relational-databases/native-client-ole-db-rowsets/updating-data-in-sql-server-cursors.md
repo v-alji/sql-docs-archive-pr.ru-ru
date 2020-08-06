@@ -1,0 +1,47 @@
+---
+title: Обновление данных в курсорах SQL Server | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: native-client
+ms.topic: reference
+helpviewer_keywords:
+- updating data [SQL Server]
+- isolation levels [SQL Server]
+- delayed update mode [OLE DB]
+- immediate update mode [OLE DB]
+- cursors [OLE DB]
+- data updates [SQL Server], OLE DB
+ms.assetid: 732dafee-f2d5-4aef-aad7-3a8bf3b1e876
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 42e6221a85c30e3adb97df3a11c9cbdc49216b4d
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87657085"
+---
+# <a name="updating-data-in-sql-server-cursors"></a><span data-ttu-id="12305-102">Обновление данных в курсорах SQL Server</span><span class="sxs-lookup"><span data-stu-id="12305-102">Updating Data in SQL Server Cursors</span></span>
+  <span data-ttu-id="12305-103">При выборке и обновлении данных с помощью [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] курсоров [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] приложение-потребитель поставщика собственного клиента OLE DB связывается с теми же соображениями и ограничениями, которые применяются к любому другому клиентскому приложению.</span><span class="sxs-lookup"><span data-stu-id="12305-103">When fetching and updating data through [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] cursors, a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider consumer application is bound by the same considerations and constraints that apply to any other client application.</span></span>  
+  
+ <span data-ttu-id="12305-104">В управлении параллельным доступом к данным участвуют только строки курсоров [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="12305-104">Only rows in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] cursors participate in concurrent data-access control.</span></span> <span data-ttu-id="12305-105">Когда потребитель запрашивает изменяемый набор строк, управление параллелизмом осуществляется свойством DBPROP_LOCKMODE.</span><span class="sxs-lookup"><span data-stu-id="12305-105">When the consumer requests a modifiable rowset, the concurrency control is controlled by DBPROP_LOCKMODE.</span></span> <span data-ttu-id="12305-106">Чтобы изменить уровень управления параллельным доступом, потребитель устанавливает свойство DBPROP_LOCKMODE до того, как открывает набор строк.</span><span class="sxs-lookup"><span data-stu-id="12305-106">To modify the level of concurrent access control, the consumer sets the DBPROP_LOCKMODE property before opening the rowset.</span></span>  
+  
+ <span data-ttu-id="12305-107">Уровни изоляции транзакции могут вызвать значительные задержки при позиционировании строк, если клиентское приложение оставляет транзакции долгое время открытыми.</span><span class="sxs-lookup"><span data-stu-id="12305-107">Transaction isolation levels can cause significant lags in row positioning if client application design lets transactions remain open for long periods of time.</span></span> <span data-ttu-id="12305-108">По умолчанию [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поставщик OLE DB собственного клиента использует уровень изоляции READ COMMITTED, заданный DBPROPVAL_TI_READCOMMITTED.</span><span class="sxs-lookup"><span data-stu-id="12305-108">By default, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider uses the read-committed isolation level specified by DBPROPVAL_TI_READCOMMITTED.</span></span> <span data-ttu-id="12305-109">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Поставщик OLE DB собственного клиента поддерживает изоляцию "грязного" чтения, если параллелизм набора строк доступен только для чтения.</span><span class="sxs-lookup"><span data-stu-id="12305-109">The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider supports dirty read isolation when the rowset concurrency is read-only.</span></span> <span data-ttu-id="12305-110">Поэтому потребитель может запросить более высокий уровень изоляции в изменяемом наборе строк, но не может успешно запросить более низкий уровень.</span><span class="sxs-lookup"><span data-stu-id="12305-110">Therefore, the consumer can request a higher level of isolation in a modifiable rowset but cannot request any lower level successfully.</span></span>  
+  
+## <a name="immediate-and-delayed-update-modes"></a><span data-ttu-id="12305-111">Режимы немедленного и отложенного обновления</span><span class="sxs-lookup"><span data-stu-id="12305-111">Immediate and Delayed Update Modes</span></span>  
+ <span data-ttu-id="12305-112">В режиме немедленного обновления каждый вызов метода **IRowsetChange::SetData** приводит к обмену данными с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="12305-112">In immediate update mode, each call to **IRowsetChange::SetData** causes a round trip to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="12305-113">Если потребитель выполняет несколько изменений в одной строке, эффективнее будет осуществить все изменения в одном вызове функции **SetData**.</span><span class="sxs-lookup"><span data-stu-id="12305-113">If the consumer makes multiple changes to a single row, it is more efficient to submit all changes with a single **SetData** call.</span></span>  
+  
+ <span data-ttu-id="12305-114">В режиме отложенного обновления обмен данными с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] осуществляется для каждой строки, указанной параметрами *cRows* и *rghRows* метода **IRowsetUpdate::Update**.</span><span class="sxs-lookup"><span data-stu-id="12305-114">In delayed update mode, a roundtrip is made to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] for each row indicated in the *cRows* and *rghRows* parameters of **IRowsetUpdate::Update**.</span></span>  
+  
+ <span data-ttu-id="12305-115">В каждом режиме обмен данными представляет отдельную транзакцию, если для набора строк отсутствует открытый объект транзакции.</span><span class="sxs-lookup"><span data-stu-id="12305-115">In either mode, a roundtrip represents a distinct transaction when no transaction object is open for the rowset.</span></span>  
+  
+ <span data-ttu-id="12305-116">При использовании **IRowsetUpdate:: Update** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] собственный клиент OLE DB поставщика пытается обработать каждую указанную строку.</span><span class="sxs-lookup"><span data-stu-id="12305-116">When you are using **IRowsetUpdate::Update**, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider tries to process each indicated row.</span></span> <span data-ttu-id="12305-117">Ошибка из-за недопустимых данных, длины или значений состояния для любой строки не останавливает [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] обработку поставщика собственного клиента OLE DB.</span><span class="sxs-lookup"><span data-stu-id="12305-117">An error occurring because of invalid data, length, or status values for any row does not stop [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider processing.</span></span> <span data-ttu-id="12305-118">Можно изменить все строки, участвующие в обновлении, или ни одной.</span><span class="sxs-lookup"><span data-stu-id="12305-118">All or none of the other rows participating in the update may be modified.</span></span> <span data-ttu-id="12305-119">Потребитель должен проверить возвращаемый массив *пргровстатус* , чтобы определить сбой для какой-либо конкретной строки, когда [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поставщик собственного клиента OLE DB возвращает DB_S_ERRORSOCCURRED.</span><span class="sxs-lookup"><span data-stu-id="12305-119">The consumer must examine the returned *prgRowStatus* array to determine failure for any specific row when the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED.</span></span>  
+  
+ <span data-ttu-id="12305-120">Потребитель не должен предполагать, что строки обрабатываются в каком-то определенном порядке.</span><span class="sxs-lookup"><span data-stu-id="12305-120">A consumer should not assume that rows are processed in any specific order.</span></span> <span data-ttu-id="12305-121">Если потребителю требуется упорядоченная обработка данных нескольких строк, он должен установить этот порядок в логике приложения и открыть транзакцию, содержащую процесс упорядочивания.</span><span class="sxs-lookup"><span data-stu-id="12305-121">If a consumer requires ordered processing of data modification over more than a single row, the consumer should establish that order in the application logic and open a transaction to enclose the process.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="12305-122">См. также:</span><span class="sxs-lookup"><span data-stu-id="12305-122">See Also</span></span>  
+ [<span data-ttu-id="12305-123">Обновление данных в наборах строк</span><span class="sxs-lookup"><span data-stu-id="12305-123">Updating Data in Rowsets</span></span>](updating-data-in-rowsets.md)  
+  
+  

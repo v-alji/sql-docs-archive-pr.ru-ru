@@ -1,0 +1,128 @@
+### YamlMime:Landing
+title: Документация по SQL Server 2014
+summary: Локальная версия Microsoft SQL Server 2014 представляет собой реляционную базу данных.
+metadata:
+  title: Статьи по SQL Server 2014
+  description: Выберите область SQL Server 2014 локальная реляционная база данных, а также связанные продукты и службы, которые вас интересуют.
+  ms.prod: sql
+  ms.topic: landing-page
+  author: MightyPen
+  ms.author: genemi
+  ms.date: 07/19/2020
+  ms.openlocfilehash: b730593f26876a9138bc23b4e1679e950f90476c
+  ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/04/2020
+  ms.locfileid: "87655901"
+landingContent:
+- title: Специальные статьи
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Новые возможности в SQL Server 2014
+      url: sql-server/what-s-new-in-sql-server-2016.md?view=sql-server-2014
+    - text: Предыдущие версии (2012–2005)
+      url: /sql/toc/previous-versions-sql-server?view=sql-server-ver15
+    - text: Последняя версия SQL Server
+      url: /sql/sql-server/index?view=sql-server-ver15
+    - text: Унифицированные данные в последней версии SQL
+      url: https://www.microsoft.com/sql-server/
+- title: Разработка серверной части
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Общие сведения о ядре
+      url: database-engine/sql-server-database-engine-overview.md?view=sql-server-2014
+  - linkListType: reference
+    links:
+    - text: Автономные книги T-SQL в SQL 2014
+      url: sql-server/sql-server-offline-documentation.md?view=sql-server-2014
+    - text: Создание базы данных и другого T-SQL
+      url: /sql/t-sql/statements/create-database-transact-sql?view=sql-server-2016
+    - text: CREATE TABLE и другие инструкции T-SQL
+      url: /sql/t-sql/statements/create-table-transact-sql?view=sql-server-2016
+    - text: SELECT — JOIN — GROUP BY
+      url: /sql/t-sql/queries/select-transact-sql?view=sql-server-2016
+- title: Расширенная разработка серверной части
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: FOR XML
+      url: relational-databases/xml/xml-data-sql-server.md?view=sql-server-2014
+  - linkListType: architecture
+    links:
+    - text: Интеграция со средой CLR .NET
+      url: relational-databases/clr-integration/common-language-runtime-integration-overview.md?view=sql-server-2014
+    - text: Секционированные таблицы и индексы
+      url: relational-databases/partitions/partitioned-tables-and-indexes.md?view=sql-server-2014
+    - text: Выполняющаяся в памяти OLTP
+      url: relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md?view=sql-server-2014
+    - text: Скомпилированные в машинный код хранимые процедуры
+      url: relational-databases/in-memory-oltp/native-compilation-of-tables-and-stored-procedures.md?view=sql-server-2014
+    - text: Индексы columnstore
+      url: relational-databases/indexes/columnstore-indexes-described.md?view=sql-server-2014
+- title: Администрирование
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Установка SQL Server
+      url: database-engine/install-windows/install-sql-server.md?view=sql-server-2014
+  - linkListType: overview
+    links:
+    - text: Восстановление и непрерывность
+      url: relational-databases/backup-restore/complete-database-restores-simple-recovery-model.md?view=sql-server-2014
+    - text: Безопасность
+      url: relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database.md?view=sql-server-2014
+    - text: Диспетчер конфигураций
+      url: tools/configuration-manager/sql-server-configuration-manager-help.md?view=sql-server-2014
+    - text: Параметры sp_configure на уровне сервера
+      url: relational-databases/databases/database-properties-options-page.md?view=sql-server-2014
+    - text: Параметры запуска базы данных
+      url: database-engine/configure-windows/database-engine-service-startup-options.md?view=sql-server-2014
+  - linkListType: architecture
+    links:
+    - text: Репликация
+      url: relational-databases/replication/sql-server-replication.md?view=sql-server-2014
+    - text: Мониторинг и настройка производительности
+      url: relational-databases/performance/monitor-and-tune-for-performance.md?view=sql-server-2014
+    - text: Помощник по настройке ядра СУБД (DTA)
+      url: relational-databases/performance/database-engine-tuning-advisor.md?view=sql-server-2014
+    - text: Приложение SQL Server Profiler
+      url: tools/sql-server-profiler/sql-server-profiler.md?view=sql-server-2014
+- title: Администрирование данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Массовый импорт и экспорт данных
+      url: relational-databases/import-export/bulk-import-and-export-of-data-sql-server.md?view=sql-server-2014
+    - text: Программа массового копирования (BCP.exe)
+      url: tools/bcp-utility.md?view=sql-server-2014
+    - text: Сжатие данных
+      url: relational-databases/data-compression/data-compression.md?view=sql-server-2014
+  - linkListType: architecture
+    links:
+    - text: Служба Data Quality Service (DQS)
+      url: data-quality-services/data-quality-services.md?view=sql-server-2014
+    - text: Службы Master Data Services (MDS)
+      url: master-data-services/master-data-services.md?view=sql-server-2014
+- title: Разработка интерфейсной части
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Подключение к SQL Server
+      url: relational-databases/lesson-1-connecting-to-the-database-engine.md?view=sql-server-2014
+  - linkListType: overview
+    links:
+    - text: Управляющие объекты SQL Server (SMO)
+      url: relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide.md?view=sql-server-2014
+- title: Клиентские службы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Analysis Services (SSAS)
+      url: analysis-services/analysis-services.md?view=sql-server-2014
+    - text: Integration Services (SSIS)
+      url: integration-services/sql-server-integration-services.md?view=sql-server-2014
+    - text: Reporting Services (SSRS)
+      url: reporting-services/create-deploy-and-manage-mobile-and-paginated-reports.md?view=sql-server-2014
