@@ -1,0 +1,32 @@
+---
+title: Справочник по пользовательскому интерфейсу (Analysis Services) | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: analysis-services
+ms.topic: conceptual
+ms.assetid: c3e6ac4b-1435-459e-8678-ee2c8abdfad9
+author: minewiskan
+ms.author: owend
+ms.openlocfilehash: b751e2dfd9950ba7a25bc3cde36f3625ab473131
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87657921"
+---
+# <a name="user-interface-reference-analysis-services"></a><span data-ttu-id="bbdee-102">Справочник по пользовательскому интерфейсу (службы Analysis Services)</span><span class="sxs-lookup"><span data-stu-id="bbdee-102">User Interface Reference (Analysis Services)</span></span>
+  <span data-ttu-id="bbdee-103">В этом разделе содержатся разделы справки по [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="bbdee-103">This section includes Help topics for [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)].</span></span> <span data-ttu-id="bbdee-104">Эти разделы доступны также из пользовательского интерфейса. Для обращения к ним нужно нажать клавишу F1 или кнопку **Справка** на страницах мастеров, конструкторов и в диалоговых окнах.</span><span class="sxs-lookup"><span data-stu-id="bbdee-104">These topics are also available from the user interface by pressing the F1 key or by clicking **Help** on wizard pages, designers, and dialog boxes.</span></span>  
+  
+## <a name="topic-list"></a><span data-ttu-id="bbdee-105">Список разделов</span><span class="sxs-lookup"><span data-stu-id="bbdee-105">Topic List</span></span>  
+  
+|<span data-ttu-id="bbdee-106">Section</span><span class="sxs-lookup"><span data-stu-id="bbdee-106">Section</span></span>|<span data-ttu-id="bbdee-107">Содержит</span><span class="sxs-lookup"><span data-stu-id="bbdee-107">Contains</span></span>|  
+|-------------|--------------|  
+|[<span data-ttu-id="bbdee-108">Analysis Services мастера &#40;многомерных данных&#41;</span><span class="sxs-lookup"><span data-stu-id="bbdee-108">Analysis Services Wizards &#40;Multidimensional Data&#41;</span></span>](analysis-services-wizards-multidimensional-data.md)|<span data-ttu-id="bbdee-109">Разделы справки по мастерам (многомерным) служб [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bbdee-109">Help topics for [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] wizards (multidimensional).</span></span>|  
+|[<span data-ttu-id="bbdee-110">Конструкторы и диалоговые окна служб интеллектуального анализа данных</span><span class="sxs-lookup"><span data-stu-id="bbdee-110">Data Mining Designers and Dialog Boxes</span></span>](data-mining-designers-and-dialog-boxes.md)|<span data-ttu-id="bbdee-111">Разделы справки по мастерам (интеллектуального анализа данных) служб [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bbdee-111">Help topics for [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] wizards (data mining)</span></span>|  
+|[<span data-ttu-id="bbdee-112">Analysis Services конструкторов и диалоговых окон &#40;многомерных данных&#41;</span><span class="sxs-lookup"><span data-stu-id="bbdee-112">Analysis Services Designers and Dialog Boxes &#40;Multidimensional Data&#41;</span></span>](analysis-services-designers-and-dialog-boxes-multidimensional-data.md)|<span data-ttu-id="bbdee-113">Разделы справки по конструкторам служб [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] , а также по диалоговым окнам в средах [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] и [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bbdee-113">Help topics for [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] designers and dialog boxes in [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] and in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span></span> <span data-ttu-id="bbdee-114">(многомерные)</span><span class="sxs-lookup"><span data-stu-id="bbdee-114">(multidimensional)</span></span>|  
+|[<span data-ttu-id="bbdee-115">Analysis Services конструкторы и диалоговые окна &#40;табличные&#41;</span><span class="sxs-lookup"><span data-stu-id="bbdee-115">Analysis Services Designers and Dialog Boxes &#40;Tabular&#41;</span></span>](analysis-services-designers-and-dialog-boxes-tabular.md)|<span data-ttu-id="bbdee-116">Разделы справки по конструкторам [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] и по диалоговым окнам в средах [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] и [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="bbdee-116">Help topics for [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] designers and dialog boxes in [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] and in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)] tabular modeling.</span></span>|  
+|[<span data-ttu-id="bbdee-117">Конструкторы и диалоговые окна служб интеллектуального анализа данных</span><span class="sxs-lookup"><span data-stu-id="bbdee-117">Data Mining Designers and Dialog Boxes</span></span>](data-mining-designers-and-dialog-boxes.md)|<span data-ttu-id="bbdee-118">Разделы справки по конструкторам служб [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] , а также по диалоговым окнам в средах [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] и [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bbdee-118">Help topics for [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] designers and dialog boxes in [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] and in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span></span> <span data-ttu-id="bbdee-119">(интеллектуальный анализ данных)</span><span class="sxs-lookup"><span data-stu-id="bbdee-119">(data mining)</span></span>|  
+  
+  

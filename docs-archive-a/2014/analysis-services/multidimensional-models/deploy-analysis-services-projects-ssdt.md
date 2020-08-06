@@ -1,0 +1,36 @@
+---
+title: Развертывание проектов Analysis Services (SSDT) | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: analysis-services
+ms.topic: conceptual
+helpviewer_keywords:
+- deploy [Analysis Services]
+- projects [Analysis Services], deploying
+- Business Intelligence Development Studio, deploying projects [Analysis Services]
+ms.assetid: 29490a5b-1573-4a35-9277-10c6a6e4ef0e
+author: minewiskan
+ms.author: owend
+ms.openlocfilehash: 5317eea19d088a8d3f9d8bfb86da4e0429d62c3e
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87664600"
+---
+# <a name="deploy-analysis-services-projects-ssdt"></a><span data-ttu-id="49f1c-102">Развертывание проектов служб Analysis Services (среда SSDT)</span><span class="sxs-lookup"><span data-stu-id="49f1c-102">Deploy Analysis Services Projects (SSDT)</span></span>
+  <span data-ttu-id="49f1c-103">В процессе разработки проекта служб [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] в среде [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]проект часто развертывается на сервере разработки для создания базы данных служб [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] , определенной проектом.</span><span class="sxs-lookup"><span data-stu-id="49f1c-103">During development of an [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] project in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)], you frequently deploy the project to a development server in order to create the [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] database defined by the project.</span></span> <span data-ttu-id="49f1c-104">Это необходимо для тестирования проекта; например для обзора ячеек в кубе, обзора элементов измерения или проверки формул ключевых показателей эффективности.</span><span class="sxs-lookup"><span data-stu-id="49f1c-104">This is required to test the project; for example, to browse cells in the cube, browse dimension members, or verify key performance indicators (KPIs) formulas.</span></span>  
+  
+## <a name="deploying-a-project"></a><span data-ttu-id="49f1c-105">Развертывание проекта</span><span class="sxs-lookup"><span data-stu-id="49f1c-105">Deploying a Project</span></span>  
+ <span data-ttu-id="49f1c-106">Проект можно развернуть независимо или же развернуть все проекты в решении.</span><span class="sxs-lookup"><span data-stu-id="49f1c-106">You can deploy a project independently, or you can deploy all of the projects within the solution.</span></span> <span data-ttu-id="49f1c-107">При развертывании проекта последовательно произойдет следующее.</span><span class="sxs-lookup"><span data-stu-id="49f1c-107">When you deploy a project, several things happen in sequence.</span></span> <span data-ttu-id="49f1c-108">Во-первых, будет строиться проект.</span><span class="sxs-lookup"><span data-stu-id="49f1c-108">First, the project is built.</span></span> <span data-ttu-id="49f1c-109">Этот шаг создает выходные файлы, определяющие базу данных служб [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] и ее составляющие объекты.</span><span class="sxs-lookup"><span data-stu-id="49f1c-109">This step creates the output files that define the [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] database and its constituent objects.</span></span> <span data-ttu-id="49f1c-110">Во-вторых, проверяется целевой сервер.</span><span class="sxs-lookup"><span data-stu-id="49f1c-110">Next, the destination server is validated.</span></span> <span data-ttu-id="49f1c-111">И наконец, на целевом сервере создается целевая база данных и ее объекты.</span><span class="sxs-lookup"><span data-stu-id="49f1c-111">Finally, the destination database and its objects are created on the destination server.</span></span> <span data-ttu-id="49f1c-112">Во время развертывания его механизм полностью заменяет любую существующую базу данных содержимым проекта, если только эти объекты не были созданы проектом во время предыдущего развертывания.</span><span class="sxs-lookup"><span data-stu-id="49f1c-112">During deployment, the deployment engine totally replaces any pre-existing database with the contents of the project unless those objects were created by the project during a previous deployment.</span></span>  
+  
+ <span data-ttu-id="49f1c-113">После первоначального развертывания в папке \обж создается файл IncrementalSnapshot.xml \<Project Name> .</span><span class="sxs-lookup"><span data-stu-id="49f1c-113">After an initial deployment, an IncrementalSnapshot.xml file is generated in the \<Project Name>\obj folder.</span></span> <span data-ttu-id="49f1c-114">Этот файл нужен для определения, изменялась ли база данных или ее объекты на целевом сервере вне проекта.</span><span class="sxs-lookup"><span data-stu-id="49f1c-114">This file is used to determine if the database or its objects on the destination server have changed outside of the project.</span></span> <span data-ttu-id="49f1c-115">Если изменение имело место, система предложит переписать все объекты в целевой базе данных.</span><span class="sxs-lookup"><span data-stu-id="49f1c-115">If so, you will be prompted to overwrite all objects in the destination database.</span></span> <span data-ttu-id="49f1c-116">Если все изменения были сделаны в проекте и проект настроен для добавочного развертывания, на целевом сервере будут развернуты только изменения.</span><span class="sxs-lookup"><span data-stu-id="49f1c-116">If all changes were made within the project and the project is configured for incremental deployment, only the changes will be deployed to the destination server.</span></span>  
+  
+ <span data-ttu-id="49f1c-117">Конфигурация проекта и соответствующие параметры определяют свойства развертывания, которые будут применяться при развертывании проекта.</span><span class="sxs-lookup"><span data-stu-id="49f1c-117">The project configuration and its associated settings determine the deployment properties that will be used to deploy the project.</span></span> <span data-ttu-id="49f1c-118">В общем проекте каждый разработчик использует свою собственную конфигурацию с собственными параметрами конфигурации проекта.</span><span class="sxs-lookup"><span data-stu-id="49f1c-118">For a shared project, each developer can use their own configuration with their own project configuration options.</span></span> <span data-ttu-id="49f1c-119">Например, каждый разработчик может указать отдельный тестовый сервер для работы отдельно от других разработчиков.</span><span class="sxs-lookup"><span data-stu-id="49f1c-119">For example, each developer can specify a different test server to work in isolation from other developers.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="49f1c-120">См. также:</span><span class="sxs-lookup"><span data-stu-id="49f1c-120">See Also</span></span>  
+ [<span data-ttu-id="49f1c-121">Создание проекта служб Analysis Services (среда SSDT)</span><span class="sxs-lookup"><span data-stu-id="49f1c-121">Create an Analysis Services Project &#40;SSDT&#41;</span></span>](create-an-analysis-services-project-ssdt.md)  
+  
+  

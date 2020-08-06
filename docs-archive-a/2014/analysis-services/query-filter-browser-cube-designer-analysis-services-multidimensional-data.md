@@ -1,0 +1,64 @@
+---
+title: Запрос и фильтр (вкладка «браузер», конструктор кубов) (Analysis Services-многомерные данные) | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: analysis-services
+ms.topic: conceptual
+f1_keywords:
+- sql12.asvs.cubeeditor.browsecube.filterpane.f1
+ms.assetid: f5cf0bb1-3afb-4856-a2ef-614deb4e7e49
+author: minewiskan
+ms.author: owend
+ms.openlocfilehash: 66bd299e210b3d00384395177cdd6e89d1c00183
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87657961"
+---
+# <a name="query-and-filter-browser-tab-cube-designer-analysis-services---multidimensional-data"></a><span data-ttu-id="d0d1e-102">Запрос и фильтр (вкладка «Браузер», конструктор кубов) (службы Analysis Services — многомерные данные)</span><span class="sxs-lookup"><span data-stu-id="d0d1e-102">Query and Filter (Browser Tab, Cube Designer) (Analysis Services - Multidimensional Data)</span></span>
+  <span data-ttu-id="d0d1e-103">Эта область вкладки **Браузер** в конструкторе кубов содержит область запросов и фильтров, которая помогает выбирать из куба данные, используемые при просмотре или в запросах.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-103">This area of the **Browser** tab in Cube Designer contains a query and filter area, to help you choose data from the cube to use in browsing or in queries.</span></span> <span data-ttu-id="d0d1e-104">Можно добавить любое количество кубов и просмотреть результаты в области данных или экспортировать их в отчет с помощью функции «Анализ в Excel», чтобы получить представление о том, как данные будут выглядеть для конечных пользователей.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-104">You can add as many cube objects as you want, and then view the results in the data area, or export the results to a report using Analyze in Excel to visualize how the data would be viewed by end users.</span></span>  
+  
+> [!WARNING]  
+>  <span data-ttu-id="d0d1e-105">При работе с данными в этой области по умолчанию **Браузер** использует режим графического конструирования.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-105">When you are working with data in this area, by default the **Browser** uses the graphical design mode.</span></span> <span data-ttu-id="d0d1e-106">В то же время запрос можно изменять и непосредственно с помощью выражений MDX, для этого нажмите кнопку-переключатель **Режим конструирования** .</span><span class="sxs-lookup"><span data-stu-id="d0d1e-106">However, you can edit the query directly using MDX, by clicking the **Design Mode** toggle button.</span></span> <span data-ttu-id="d0d1e-107">При этом панель, позволяющая разрабатывать фильтры по измерениям, исчезает.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-107">When you do so, the pane that lets you design filters on dimensions disappears.</span></span> <span data-ttu-id="d0d1e-108">При необходимости добавить фильтр переключитесь обратно в режим графического конструирования.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-108">If you want to add a filter, you can switch back to graphical design mode.</span></span>  
+  
+ <span data-ttu-id="d0d1e-109">По умолчанию при выполнении запроса для соединения с источником данных используются учетные данные текущего пользователя, а не указанные на странице **Сведения об олицетворении** .</span><span class="sxs-lookup"><span data-stu-id="d0d1e-109">By default, the credentials of the current user, not the credentials specified in the **Impersonation Information** page, are used to connect to the data source when a query is executed.</span></span> <span data-ttu-id="d0d1e-110">Однако контекст пользователя для запроса или отчета также можно изменить, нажав кнопку **Сменить пользователя** на **Панели инструментов**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-110">However, you can also change the user context for the query or report by clicking **Change User** on the **Toolbar**.</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="d0d1e-111">Варианты</span><span class="sxs-lookup"><span data-stu-id="d0d1e-111">Options</span></span>  
+ <span data-ttu-id="d0d1e-112">**Измерение**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-112">**Dimension**</span></span>  
+ <span data-ttu-id="d0d1e-113">Выбрать измерение, в котором произвести срез вложенного куба.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-113">Select the dimension on which to slice the subcube.</span></span>  
+  
+ <span data-ttu-id="d0d1e-114">**Иерархия**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-114">**Hierarchy**</span></span>  
+ <span data-ttu-id="d0d1e-115">Выбрать иерархию, в которой произвести срез вложенного куба.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-115">Select the hierarchy on which to slice the subcube.</span></span>  
+  
+ <span data-ttu-id="d0d1e-116">**Оператор**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-116">**Operator**</span></span>  
+ <span data-ttu-id="d0d1e-117">Выберите оператор, определяющий, как выражение в поле **Критерии фильтра** применяется к выбранной иерархии.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-117">Select the operator that defines how the expression in **Filter Expression** is applied to the selected hierarchy.</span></span> <span data-ttu-id="d0d1e-118">Нижеприведенная таблица описывает доступные операторы.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-118">The following table describes the available operators.</span></span>  
+  
+|<span data-ttu-id="d0d1e-119">Значение</span><span class="sxs-lookup"><span data-stu-id="d0d1e-119">Value</span></span>|<span data-ttu-id="d0d1e-120">Описание</span><span class="sxs-lookup"><span data-stu-id="d0d1e-120">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="d0d1e-121">**Равно**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-121">**Equal**</span></span>|<span data-ttu-id="d0d1e-122">Результаты ограничены набором, определенным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-122">The results are restricted to the set defined in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-123">**Не равно**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-123">**Not Equal**</span></span>|<span data-ttu-id="d0d1e-124">Результаты ограничены элементами, исключенными набором, определенным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-124">The results are restricted to the members excluded by the set defined in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-125">**Окне**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-125">**In**</span></span>|<span data-ttu-id="d0d1e-126">Результаты ограничены именованным набором, выбранным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-126">The results are restricted to the named set chosen in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-127">**Не входит**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-127">**Not In**</span></span>|<span data-ttu-id="d0d1e-128">Результаты ограничены элементами, исключенными именованным набором, выбранным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-128">The results are restricted to the members excluded by the named set chosen in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-129">**Содержит**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-129">**Contains**</span></span>|<span data-ttu-id="d0d1e-130">Результаты ограничены элементами, чьи имена содержат строку в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-130">The results are restricted to members whose member names contain the string in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-131">**Начинается с**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-131">**Begins With**</span></span>|<span data-ttu-id="d0d1e-132">Результаты ограничены элементами, чьи имена начинаются со строки в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-132">The results are restricted to members whose member names begin with the string in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-133">**Диапазон (включая границы)**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-133">**Range (Inclusive)**</span></span>|<span data-ttu-id="d0d1e-134">Результаты ограничены диапазоном, выбранным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-134">The results are restricted to the range chosen in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-135">**Диапазон (исключая границы)**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-135">**Range (Exclusive)**</span></span>|<span data-ttu-id="d0d1e-136">Результаты ограничены элементами, исключенными диапазоном, выбранным в **Критерии фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-136">The results are restricted to the members excluded by the range chosen in **Filter Expression**.</span></span>|  
+|<span data-ttu-id="d0d1e-137">**MDX**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-137">**MDX**</span></span>|<span data-ttu-id="d0d1e-138">Результаты ограничиваются многомерными выражениями, установленными в поле **Критерий фильтра**.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-138">The results are restricted to the Multidimensional Expressions (MDX) expression set in **Filter Expression**.</span></span>|  
+  
+ <span data-ttu-id="d0d1e-139">**Критерий фильтра**</span><span class="sxs-lookup"><span data-stu-id="d0d1e-139">**Filter Expression**</span></span>  
+ <span data-ttu-id="d0d1e-140">Введите выражение, которое должно быть рассчитано **Оператором**, ограничивающее доступные для просмотра результаты.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-140">Type the expression that is to be evaluated by **Operator**, which restricts the results to be browsed.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="d0d1e-141">Это поле — динамический элемент ввода данных, меняющийся, чтобы отражать типы данных, необходимые для выбранного оператора.</span><span class="sxs-lookup"><span data-stu-id="d0d1e-141">This field is a dynamic data entry element, changing appearance to reflect the types of data necessary for the selected operator.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="d0d1e-142">См. также:</span><span class="sxs-lookup"><span data-stu-id="d0d1e-142">See Also</span></span>  
+ <span data-ttu-id="d0d1e-143">[Конструктор кубов &#40;Analysis Services многомерных данных&#41;](cube-designer-analysis-services-multidimensional-data.md) </span><span class="sxs-lookup"><span data-stu-id="d0d1e-143">[Cube Designer &#40;Analysis Services - Multidimensional Data&#41;](cube-designer-analysis-services-multidimensional-data.md) </span></span>  
+ <span data-ttu-id="d0d1e-144">[Обозреватель &#40;конструктор кубов&#41; &#40;Analysis Services многомерных данных&#41;](browser-cube-designer-analysis-services-multidimensional-data.md) </span><span class="sxs-lookup"><span data-stu-id="d0d1e-144">[Browser &#40;Cube Designer&#41; &#40;Analysis Services - Multidimensional Data&#41;](browser-cube-designer-analysis-services-multidimensional-data.md) </span></span>  
+ <span data-ttu-id="d0d1e-145">[Панель инструментов &#40;вкладка «браузер», конструктор кубов&#41; &#40;Analysis Services многомерных данных&#41;](toolbar-browser-tab-cube-designer-analysis-services-multidimensional-data.md) </span><span class="sxs-lookup"><span data-stu-id="d0d1e-145">[Toolbar &#40;Browser Tab, Cube Designer&#41; &#40;Analysis Services - Multidimensional Data&#41;](toolbar-browser-tab-cube-designer-analysis-services-multidimensional-data.md) </span></span>  
+ <span data-ttu-id="d0d1e-146">[Анализ в Excel &#40;вкладка «браузер», конструктор кубов&#41; &#40;Analysis Services многомерных данных&#41;](analyze-in-excel-browser-cube-designer-analysis-services-multidimensional-data.md) </span><span class="sxs-lookup"><span data-stu-id="d0d1e-146">[Analyze in Excel &#40;Browser Tab, Cube Designer&#41; &#40;Analysis Services - Multidimensional Data&#41;](analyze-in-excel-browser-cube-designer-analysis-services-multidimensional-data.md) </span></span>  
+ [<span data-ttu-id="d0d1e-147">Вкладка браузера &#40;метаданных, конструктор кубов&#41; &#40;Analysis Services многомерных данных&#41;</span><span class="sxs-lookup"><span data-stu-id="d0d1e-147">Metadata &#40;Browser Tab, Cube Designer&#41; &#40;Analysis Services - Multidimensional Data&#41;</span></span>](metadata-browser-tab-cube-designer-analysis-services-multidimensional-data.md)  
+  
+  

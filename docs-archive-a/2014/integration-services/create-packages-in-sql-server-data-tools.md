@@ -1,0 +1,64 @@
+---
+title: Создание пакетов в SQL Server Data Tools | Документы Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: integration-services
+ms.topic: conceptual
+helpviewer_keywords:
+- SSIS packages, creating
+- Integration Services packages, creating
+- packages [Integration Services], creating
+- SQL Server Integration Services packages, creating
+ms.assetid: bb3c085b-1458-49fa-8348-6a76b6e97ea6
+author: chugugrace
+ms.author: chugu
+ms.openlocfilehash: 330e0271421dc620f7c4fad9c6944331ebe94881
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87658320"
+---
+# <a name="create-packages-in-sql-server-data-tools"></a><span data-ttu-id="4aa2c-102">Создание пакетов в SQL Server Data Tools</span><span class="sxs-lookup"><span data-stu-id="4aa2c-102">Create Packages in SQL Server Data Tools</span></span>
+  <span data-ttu-id="4aa2c-103">Пакет, созданный в среде [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)] с помощью конструктора служб [!INCLUDE[ssIS](../includes/ssis-md.md)] , сохраняется в файловой системе.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-103">The packages that you create in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)] using [!INCLUDE[ssIS](../includes/ssis-md.md)] Designer are saved to the file system.</span></span> <span data-ttu-id="4aa2c-104">Чтобы сохранить пакет в версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] или в хранилище пакетов, необходимо сохранить копию пакета.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-104">To save a package to [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] or to the package store, you need to save a copy of the package.</span></span> <span data-ttu-id="4aa2c-105">Дополнительные сведения см. в разделе [Сохранение одной копии пакета](../../2014/integration-services/save-a-copy-of-a-package.md).</span><span class="sxs-lookup"><span data-stu-id="4aa2c-105">For more information, see [Save a Copy of a Package](../../2014/integration-services/save-a-copy-of-a-package.md).</span></span>  
+  
+ <span data-ttu-id="4aa2c-106">Создать новый пакет в среде [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]можно одним из следующих методов.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-106">In [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)], you can create a new package by using one of the following methods:</span></span>  
+  
+-   <span data-ttu-id="4aa2c-107">На основе шаблона пакета в составе служб [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] ;</span><span class="sxs-lookup"><span data-stu-id="4aa2c-107">Use the package template that [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] includes.</span></span>  
+  
+-   <span data-ttu-id="4aa2c-108">Создание настраиваемого шаблона</span><span class="sxs-lookup"><span data-stu-id="4aa2c-108">Use a custom template</span></span>  
+  
+     <span data-ttu-id="4aa2c-109">Для использования пользовательских пакетов в качестве шаблонов для создания новых пакетов просто скопируйте их в папку DataTransformationItems.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-109">To use custom packages as templates for creating new packages, you simply copy them to the DataTransformationItems folder.</span></span> <span data-ttu-id="4aa2c-110">По умолчанию эта папка находится в каталоге «C:\Program Files\Microsoft Visual Studio 9,0\Common7\IDE\PrivateAssemblies\ProjectItems\DataTransformationProject».</span><span class="sxs-lookup"><span data-stu-id="4aa2c-110">By default, this folder is in C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\ProjectItems\DataTransformationProject.</span></span>  
+  
+-   <span data-ttu-id="4aa2c-111">Копирование существующего пакета.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-111">Copy an existing package.</span></span>  
+  
+     <span data-ttu-id="4aa2c-112">Если существующие пакеты содержат функциональные возможности, которые нужно использовать повторно, то поток управления и поток данных будет быстрее создать путем копирования и вставки объектов из других пакетов.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-112">If existing packages include functionality that you want to reuse, you can build the control flow and data flows in the new package more quickly by copying and pasting objects from other packages.</span></span> <span data-ttu-id="4aa2c-113">Дополнительные сведения о копировании и вставке в проектах [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] см. в разделе [Повторное использование объектов пакета](reuse-of-package-objects.md).</span><span class="sxs-lookup"><span data-stu-id="4aa2c-113">For more information about using copy and paste in [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] projects, see [Reuse of Package Objects](reuse-of-package-objects.md).</span></span>  
+  
+     <span data-ttu-id="4aa2c-114">При создании нового пакета с помощью копирования существующего пакета или с помощью шаблона имя и идентификатор GUID существующего пакета также копируются.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-114">If you create a new package by copying an existing package or by using a custom package as a template, the name and the GUID of the existing package are copied as well.</span></span> <span data-ttu-id="4aa2c-115">Необходимо обновить имя и идентификатор GUID нового пакета, чтобы отличать его от файла, из которого он был скопирован.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-115">You should update the name and the GUID of the new package to help differentiate it from the package from which it was copied.</span></span> <span data-ttu-id="4aa2c-116">Например, если у пакетов будет одинаковый идентификатор GUID, это затруднит идентификацию пакета, к которому относятся записанные в журнал данные.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-116">For example, if packages have the same GUID, it is more difficult to identify the package to which log data belongs.</span></span> <span data-ttu-id="4aa2c-117">Можно повторно сформировать идентификатор GUID в свойстве `ID` и обновить значение свойства `Name` в окне свойств среды [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4aa2c-117">You can regenerate the GUID in the `ID` property and update the value of the `Name` property by using the Properties window in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span></span> <span data-ttu-id="4aa2c-118">Дополнительные сведения см. в разделах [Установка свойств пакета](set-package-properties.md) и [Программа dtutil](dtutil-utility.md).</span><span class="sxs-lookup"><span data-stu-id="4aa2c-118">For more information, see [Set Package Properties](set-package-properties.md) and [dtutil Utility](dtutil-utility.md).</span></span>  
+  
+-   <span data-ttu-id="4aa2c-119">На основе пользовательского пакета, выбранного в качестве шаблона.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-119">Use a custom package that you have designated as a template.</span></span>  
+  
+-   <span data-ttu-id="4aa2c-120">Запустите мастер импорта и экспорта [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="4aa2c-120">Run the [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Import and Export Wizard</span></span>  
+  
+     <span data-ttu-id="4aa2c-121">Мастер импорта и экспорта [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] создает готовый пакет для выполнения простого импорта и экспорта.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-121">The [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Import and Export Wizard creates a complete package for a simple import or export.</span></span> <span data-ttu-id="4aa2c-122">В процессе работы мастера настраиваются все соединения, источник и назначение, а также добавляются преобразования данных, необходимые для немедленного импорта или экспорта.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-122">This wizard configures the connections, source, and destination, and adds any data transformations that are required to let you run the import or export immediately.</span></span> <span data-ttu-id="4aa2c-123">При необходимости можно сохранить пакет для последующего запуска или для доработки и расширения в среде [!INCLUDE[ssBIDevStudio](../includes/ssbidevstudio-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4aa2c-123">You can optionally save the package to run it again later, or to refine and enhance the package in [!INCLUDE[ssBIDevStudio](../includes/ssbidevstudio-md.md)].</span></span> <span data-ttu-id="4aa2c-124">Однако после сохранения пакета его следует добавить в существующий проект служб [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] , прежде чем он станет доступным для запуска и изменения в среде [!INCLUDE[ssBIDevStudio](../includes/ssbidevstudio-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4aa2c-124">However, if you save the package, you must add the package to an existing [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] project before you can change the package or run the package in [!INCLUDE[ssBIDevStudio](../includes/ssbidevstudio-md.md)].</span></span>  
+  
+ <span data-ttu-id="4aa2c-125">В следующих разделах описано создание и удаление пакетов в среде [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4aa2c-125">The following procedures describe how to create or delete a package in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span></span>  
+  
+ <span data-ttu-id="4aa2c-126">Видеоматериалы, которые демонстрируют способ создания базового пакета с помощью шаблона пакетов по умолчанию, см. в статье [Создание базового пакета (SQL Server Video)](https://go.microsoft.com/fwlink/?LinkId=131023).</span><span class="sxs-lookup"><span data-stu-id="4aa2c-126">For a video that demonstrates how to create a basic package using the default package template, see [Creating a Basic Package (SQL Server Video)](https://go.microsoft.com/fwlink/?LinkId=131023).</span></span>  
+  
+### <a name="to-create-a-package-in-sql-server-data-tools-using-the-package-template"></a><span data-ttu-id="4aa2c-127">Создание пакета в SQL Server Data Tools с использованием шаблона пакета</span><span class="sxs-lookup"><span data-stu-id="4aa2c-127">To create a package in SQL Server Data Tools using the Package Template</span></span>  
+  
+1.  <span data-ttu-id="4aa2c-128">В среде [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]откройте проект служб [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] , в котором необходимо создать пакет.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-128">In [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)], open the [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] project in which you want to create a package.</span></span>  
+  
+2.  <span data-ttu-id="4aa2c-129">Находясь в обозревателе решений, правой кнопкой мыши щелкните папку **Пакеты служб SSIS** и выберите **Создать пакет служб SSIS**.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-129">In Solution Explorer, right-click the **SSIS Packages** folder, and then click **New SSIS Package**.</span></span>  
+  
+3.  <span data-ttu-id="4aa2c-130">При необходимости добавьте к пакету поток управления, задачи потока данных и обработчики событий.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-130">Optionally, add control flow, data flow tasks, and event handlers to the package.</span></span> <span data-ttu-id="4aa2c-131">Дополнительные сведения см. в разделах [Поток управления](control-flow/control-flow.md), [Поток данных](data-flow/data-flow.md) и [Обработчики событий в службах Integration Services (SSIS)](integration-services-ssis-event-handlers.md).</span><span class="sxs-lookup"><span data-stu-id="4aa2c-131">For more information, see [Control Flow](control-flow/control-flow.md), [Data Flow](data-flow/data-flow.md), and [Integration Services &#40;SSIS&#41; Event Handlers](integration-services-ssis-event-handlers.md).</span></span>  
+  
+4.  <span data-ttu-id="4aa2c-132">В меню **Файл** выберите команду **Сохранить выбранные элементы** , чтобы сохранить новый пакет.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-132">On the **File** menu, click **Save Selected Items** to save the new package.</span></span>  
+  
+    > [!NOTE]  
+    >  <span data-ttu-id="4aa2c-133">Можно сохранить пустой пакет.</span><span class="sxs-lookup"><span data-stu-id="4aa2c-133">You can save an empty package.</span></span>  
+  
+  

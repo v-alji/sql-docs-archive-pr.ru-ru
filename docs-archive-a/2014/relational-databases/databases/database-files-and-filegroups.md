@@ -1,0 +1,81 @@
+---
+title: Файлы и файловые группы базы данных | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: configuration
+ms.topic: conceptual
+helpviewer_keywords:
+- databases [SQL Server], files
+- filegroups [SQL Server]
+- transaction logs [SQL Server], about
+- transaction logs [SQL Server], files
+- .mdf files
+- data files [SQL Server]
+- default filegroups
+- files [SQL Server], about files and filegroups
+- secondary files [SQL Server]
+- log files [SQL Server]
+- .ndf files
+- files [SQL Server]
+- .ldf files
+- database files [SQL Server]
+- databases [SQL Server], filegroups
+- filegroups [SQL Server], types
+- primary filegroups [SQL Server]
+- user-defined filegroups [SQL Server]
+- filegroups [SQL Server], about filegroups
+- primary files [SQL Server]
+- file types [SQL Server]
+ms.assetid: 9ca11918-480d-4838-9198-cec221ef6ad0
+author: stevestein
+ms.author: sstein
+ms.openlocfilehash: 91e22e536a91878609feedf2977ffa7d78a54d61
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87658829"
+---
+# <a name="database-files-and-filegroups"></a><span data-ttu-id="1fb1f-102">Файлы и файловые группы базы данных</span><span class="sxs-lookup"><span data-stu-id="1fb1f-102">Database Files and Filegroups</span></span>
+  <span data-ttu-id="1fb1f-103">Каждая база данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] имеет как минимум два рабочих системных файла: файл данных и файл журнала.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-103">At a minimum, every [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database has two operating system files: a data file and a log file.</span></span> <span data-ttu-id="1fb1f-104">Файлы данных содержат данные и объекты, такие как таблицы, индексы, хранимые процедуры и представления.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-104">Data files contain data and objects such as tables, indexes, stored procedures, and views.</span></span> <span data-ttu-id="1fb1f-105">Файлы журнала содержат сведения, необходимые для восстановления всех транзакций в базе данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-105">Log files contain the information that is required to recover all transactions in the database.</span></span> <span data-ttu-id="1fb1f-106">Файлы данных могут быть объединены в файловые группы для удобства распределения и администрирования.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-106">Data files can be grouped together in filegroups for allocation and administration purposes.</span></span>  
+  
+## <a name="database-files"></a><span data-ttu-id="1fb1f-107">Файлы базы данных</span><span class="sxs-lookup"><span data-stu-id="1fb1f-107">Database Files</span></span>  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] <span data-ttu-id="1fb1f-108">имеют три типа файлов.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-108">databases have three types of files, as shown in the following table.</span></span>  
+  
+|<span data-ttu-id="1fb1f-109">Файл</span><span class="sxs-lookup"><span data-stu-id="1fb1f-109">File</span></span>|<span data-ttu-id="1fb1f-110">Описание</span><span class="sxs-lookup"><span data-stu-id="1fb1f-110">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="1fb1f-111">Первичная</span><span class="sxs-lookup"><span data-stu-id="1fb1f-111">Primary</span></span>|<span data-ttu-id="1fb1f-112">Первичный файл данных содержит сведения, необходимые для запуска базы данных, и ссылки на другие файлы в базе данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-112">The primary data file contains the startup information for the database and points to the other files in the database.</span></span> <span data-ttu-id="1fb1f-113">Данные и объекты пользователя могут храниться в данном файле или во вторичном файле данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-113">User data and objects can be stored in this file or in secondary data files.</span></span> <span data-ttu-id="1fb1f-114">В каждой базе данных имеется один первичный файл данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-114">Every database has one primary data file.</span></span> <span data-ttu-id="1fb1f-115">Для имени первичного файла данных рекомендуется расширение MDF.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-115">The recommended file name extension for primary data files is .mdf.</span></span>|  
+|<span data-ttu-id="1fb1f-116">Вторичная</span><span class="sxs-lookup"><span data-stu-id="1fb1f-116">Secondary</span></span>|<span data-ttu-id="1fb1f-117">Вторичные файлы данных не являются обязательными; это пользовательские файлы, в которых хранятся данные пользователя.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-117">Secondary data files are optional, are user-defined, and store user data.</span></span> <span data-ttu-id="1fb1f-118">Вторичные файлы могут быть использованы для распределения данных на несколько дисков, в этом случае каждый файл записывается на отдельный диск.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-118">Secondary files can be used to spread data across multiple disks by putting each file on a different disk drive.</span></span> <span data-ttu-id="1fb1f-119">Кроме того, если размер базы данных превышает максимальный размер для одного файла Windows, можно использовать вторичные файлы данных, таким образом база данных сможет расти дальше.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-119">Additionally, if a database exceeds the maximum size for a single Windows file, you can use secondary data files so the database can continue to grow.</span></span><br /><br /> <span data-ttu-id="1fb1f-120">Для имени вторичного файла данных рекомендуется расширение NDF.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-120">The recommended file name extension for secondary data files is .ndf.</span></span>|  
+|<span data-ttu-id="1fb1f-121">Журнал транзакций</span><span class="sxs-lookup"><span data-stu-id="1fb1f-121">Transaction Log</span></span>|<span data-ttu-id="1fb1f-122">Файлы журнала транзакций содержат сведения, используемые для восстановления базы данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-122">The transaction log files hold the log information that is used to recover the database.</span></span> <span data-ttu-id="1fb1f-123">Для каждой базы данных должен существовать хотя бы один файл журнала.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-123">There must be at least one log file for each database.</span></span> <span data-ttu-id="1fb1f-124">Для файлов журнала транзакций рекомендуется расширение LDF.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-124">The recommended file name extension for transaction logs is .ldf.</span></span>|  
+  
+ <span data-ttu-id="1fb1f-125">Например, простая база данных с именем **Sales** может содержать один первичный файл, содержащий все данные и объекты, и один файл журнала, содержащий сведения журнала транзакций.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-125">For example, a simple database named **Sales** can be created that includes one primary file that contains all data and objects and a log file that contains the transaction log information.</span></span> <span data-ttu-id="1fb1f-126">Более сложная база данных с именем **Orders** может содержать один первичный файл и пять вторичных файлов.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-126">Alternatively, a more complex database named **Orders** can be created that includes one primary file and five secondary files.</span></span> <span data-ttu-id="1fb1f-127">Данные и объекты внутри базы данных распределяются по всем шести файлам, а четыре файла журнала содержат сведения журнала транзакций.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-127">The data and objects within the database spread across all six files, and the four log files contain the transaction log information.</span></span>  
+  
+ <span data-ttu-id="1fb1f-128">По умолчанию, и данные, и журналы транзакций помещаются на один и тот же диск и имеют один и тот же путь.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-128">By default, the data and transaction logs are put on the same drive and path.</span></span> <span data-ttu-id="1fb1f-129">Это делается для управления однодисковыми системами.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-129">This is done to handle single-disk systems.</span></span> <span data-ttu-id="1fb1f-130">Однако для производственных сред это может быть неоптимальным решением.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-130">However, this may not be optimal for production environments.</span></span> <span data-ttu-id="1fb1f-131">Рекомендуется помещать данные и файлы журнала на разные диски.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-131">We recommend that you put data and log files on separate disks.</span></span>  
+  
+## <a name="filegroups"></a><span data-ttu-id="1fb1f-132">Файловые группы</span><span class="sxs-lookup"><span data-stu-id="1fb1f-132">Filegroups</span></span>  
+ <span data-ttu-id="1fb1f-133">У каждой базы данных есть первичная файловая группа.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-133">Every database has a primary filegroup.</span></span> <span data-ttu-id="1fb1f-134">Эта файловая группа содержит первичный файл данных и все вторичные файлы, не входящие в другие файловые группы.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-134">This filegroup contains the primary data file and any secondary files that are not put into other filegroups.</span></span> <span data-ttu-id="1fb1f-135">Пользовательские файловые группы могут создаваться для удобства администрирования, распределения и размещения данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-135">User-defined filegroups can be created to group data files together for administrative, data allocation, and placement purposes.</span></span>  
+  
+ <span data-ttu-id="1fb1f-136">Например, три файла, Data1.ndf, Data2.ndf и Data3.ndf, могут быть созданы на трех дисках соответственно и отнесены к файловой группе **fgroup1**.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-136">For example, three files, Data1.ndf, Data2.ndf, and Data3.ndf, can be created on three disk drives, respectively, and assigned to the filegroup **fgroup1**.</span></span> <span data-ttu-id="1fb1f-137">В этом случае можно создать таблицу на основе файловой группы **fgroup1**.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-137">A table can then be created specifically on the filegroup **fgroup1**.</span></span> <span data-ttu-id="1fb1f-138">Запросы данных из таблицы будут распределены по трем дискам, и это улучшит производительность.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-138">Queries for data from the table will be spread across the three disks; this will improve performance.</span></span> <span data-ttu-id="1fb1f-139">Подобного улучшения производительности можно достичь и с помощью одного файла, созданного на чередующемся наборе дискового массива RAID.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-139">The same performance improvement can be accomplished by using a single file created on a RAID (redundant array of independent disks) stripe set.</span></span> <span data-ttu-id="1fb1f-140">Тем не менее файлы и файловые группы позволяют без труда добавлять новые файлы на новые диски.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-140">However, files and filegroups let you easily add new files to new disks.</span></span>  
+  
+ <span data-ttu-id="1fb1f-141">Все файлы данных хранятся в файловых группах, перечисленных в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-141">All data files are stored in the filegroups listed in the following table.</span></span>  
+  
+|<span data-ttu-id="1fb1f-142">Файловая группа</span><span class="sxs-lookup"><span data-stu-id="1fb1f-142">Filegroup</span></span>|<span data-ttu-id="1fb1f-143">Описание</span><span class="sxs-lookup"><span data-stu-id="1fb1f-143">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="1fb1f-144">Первичная</span><span class="sxs-lookup"><span data-stu-id="1fb1f-144">Primary</span></span>|<span data-ttu-id="1fb1f-145">Файловая группа, содержащая первичный файл.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-145">The filegroup that contains the primary file.</span></span> <span data-ttu-id="1fb1f-146">Все системные таблицы размещены в первичной файловой группе.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-146">All system tables are allocated to the primary filegroup.</span></span>|  
+|<span data-ttu-id="1fb1f-147">Определяемые пользователем маршруты</span><span class="sxs-lookup"><span data-stu-id="1fb1f-147">User-defined</span></span>|<span data-ttu-id="1fb1f-148">Любая файловая группа, созданная пользователем при создании или изменении базы данных.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-148">Any filegroup that is specifically created by the user when the user first creates or later modifies the database.</span></span>|  
+  
+### <a name="default-filegroup"></a><span data-ttu-id="1fb1f-149">Файловая группа по умолчанию</span><span class="sxs-lookup"><span data-stu-id="1fb1f-149">Default Filegroup</span></span>  
+ <span data-ttu-id="1fb1f-150">Если в базе данных создаются объекты без указания файловой группы, к которой они относятся, они назначаются файловой группе по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-150">When objects are created in the database without specifying which filegroup they belong to, they are assigned to the default filegroup.</span></span> <span data-ttu-id="1fb1f-151">В любом случае только одна файловая группа создается как файловая группа по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-151">At any time, exactly one filegroup is designated as the default filegroup.</span></span> <span data-ttu-id="1fb1f-152">Файлы в файловой группе по умолчанию должны быть достаточно большими, чтобы вмещать новые объекты, не назначенные другим файловым группам.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-152">The files in the default filegroup must be large enough to hold any new objects not allocated to other filegroups.</span></span>  
+  
+ <span data-ttu-id="1fb1f-153">Файловая группа PRIMARY является группой по умолчанию, если только она не была изменена инструкцией ALTER DATABASE.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-153">The PRIMARY filegroup is the default filegroup unless it is changed by using the ALTER DATABASE statement.</span></span> <span data-ttu-id="1fb1f-154">Системные объекты и таблицы распределяются внутри первичной файловой группы, а не новой файловой группой по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="1fb1f-154">Allocation for the system objects and tables remains within the PRIMARY filegroup, not the new default filegroup.</span></span>  
+  
+## <a name="related-content"></a><span data-ttu-id="1fb1f-155">См. также</span><span class="sxs-lookup"><span data-stu-id="1fb1f-155">Related Content</span></span>  
+ [<span data-ttu-id="1fb1f-156">CREATE DATABASE (SQL Server Transact-SQL)</span><span class="sxs-lookup"><span data-stu-id="1fb1f-156">CREATE DATABASE &#40;SQL Server Transact-SQL&#41;</span></span>](/sql/t-sql/statements/create-database-sql-server-transact-sql)  
+  
+ [<span data-ttu-id="1fb1f-157">Параметры инструкции ALTER DATABASE для файлов и файловых групп (Transact-SQL)</span><span class="sxs-lookup"><span data-stu-id="1fb1f-157">ALTER DATABASE File and Filegroup Options &#40;Transact-SQL&#41;</span></span>](/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options)  
+  
+ [<span data-ttu-id="1fb1f-158">Присоединение и отсоединение базы данных (SQL Server)</span><span class="sxs-lookup"><span data-stu-id="1fb1f-158">Database Detach and Attach &#40;SQL Server&#41;</span></span>](database-detach-and-attach-sql-server.md)  
+  
+  

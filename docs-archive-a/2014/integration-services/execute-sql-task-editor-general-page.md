@@ -1,0 +1,118 @@
+---
+title: Редактор задачи «Выполнение SQL» (страница «Общие») | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: integration-services
+ms.topic: conceptual
+f1_keywords:
+- sql12.dts.designer.executesqltask.general.f1
+helpviewer_keywords:
+- Execute SQL Task Editor
+ms.assetid: beb39086-28ce-46af-b6d8-f7b4fb8d9069
+author: chugugrace
+ms.author: chugu
+ms.openlocfilehash: 32bec035646c976442eb66ff1270b961835b243b
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87656477"
+---
+# <a name="execute-sql-task-editor-general-page"></a><span data-ttu-id="8365e-102">Редактор задачи «Выполнение SQL» (страница «Общие»)</span><span class="sxs-lookup"><span data-stu-id="8365e-102">Execute SQL Task Editor (General Page)</span></span>
+  <span data-ttu-id="8365e-103">Используйте страницу **Общие** диалогового окна **Редактор задачи «Выполнение SQL»** для настройки задачи «Выполнение SQL» и формирования инструкции SQL, которую запускает задача.</span><span class="sxs-lookup"><span data-stu-id="8365e-103">Use the **General** page of the **Execute SQL Task Editor** dialog box to configure the Execute SQL task and provide the SQL statement that the task runs.</span></span>  
+  
+ <span data-ttu-id="8365e-104">Сведения об этой задаче см. в разделах [Задача "Выполнение SQL"](control-flow/execute-sql-task.md), [Параметры и коды возврата в задаче "Выполнение SQL"](../../2014/integration-services/parameters-and-return-codes-in-the-execute-sql-task.md) и [Результирующие наборы в задаче "Выполнение SQL"](../../2014/integration-services/result-sets-in-the-execute-sql-task.md).</span><span class="sxs-lookup"><span data-stu-id="8365e-104">To learn about this task, see [Execute SQL Task](control-flow/execute-sql-task.md), [Parameters and Return Codes in the Execute SQL Task](../../2014/integration-services/parameters-and-return-codes-in-the-execute-sql-task.md), and [Result Sets in the Execute SQL Task](../../2014/integration-services/result-sets-in-the-execute-sql-task.md).</span></span> <span data-ttu-id="8365e-105">Дополнительные сведения о языке Transact-SQL см. в [Справочнике по Transact-SQL (компонент Database Engine)](/sql/t-sql/language-reference).</span><span class="sxs-lookup"><span data-stu-id="8365e-105">To learn more about the Transact-SQL query language, see [Transact-SQL Reference &#40;Database Engine&#41;](/sql/t-sql/language-reference).</span></span>  
+  
+## <a name="static-options"></a><span data-ttu-id="8365e-106">Статические параметры</span><span class="sxs-lookup"><span data-stu-id="8365e-106">Static Options</span></span>  
+ <span data-ttu-id="8365e-107">**имя**;</span><span class="sxs-lookup"><span data-stu-id="8365e-107">**Name**</span></span>  
+ <span data-ttu-id="8365e-108">Укажите уникальное имя для задачи «Выполнение SQL» в рабочем процессе.</span><span class="sxs-lookup"><span data-stu-id="8365e-108">Provide a unique name for the Execute SQL task in the workflow.</span></span> <span data-ttu-id="8365e-109">Предоставляемое имя будет отображаться в конструкторе служб [!INCLUDE[ssIS](../includes/ssis-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="8365e-109">The name that is provided will be displayed within [!INCLUDE[ssIS](../includes/ssis-md.md)] Designer.</span></span>  
+  
+ <span data-ttu-id="8365e-110">**Описание**</span><span class="sxs-lookup"><span data-stu-id="8365e-110">**Description**</span></span>  
+ <span data-ttu-id="8365e-111">Приведите описание задачи «Выполнение SQL».</span><span class="sxs-lookup"><span data-stu-id="8365e-111">Describe the Execute SQL task.</span></span> <span data-ttu-id="8365e-112">Рекомендуется описать назначение задачи, чтобы сделать пакеты самодокументируемыми и более простыми в обслуживании.</span><span class="sxs-lookup"><span data-stu-id="8365e-112">As a best practice, to make packages self-documenting and easier to maintain, describe the task in terms of its purpose.</span></span>  
+  
+ <span data-ttu-id="8365e-113">**Время ожидания**</span><span class="sxs-lookup"><span data-stu-id="8365e-113">**TimeOut**</span></span>  
+ <span data-ttu-id="8365e-114">Укажите максимальное число секунд времени работы задачи перед истечением времени ожидания. Значение 0 указывает на бесконечное время работы.</span><span class="sxs-lookup"><span data-stu-id="8365e-114">Specify the maximum number of seconds the task will run before timing out. A value of 0 indicates an infinite time.</span></span> <span data-ttu-id="8365e-115">Значение по умолчанию равно 0.</span><span class="sxs-lookup"><span data-stu-id="8365e-115">The default is 0.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="8365e-116">Хранимые процедуры не завершаются по истечении времени ожидания, если в них моделируются функции ожидания при помощи предоставления времени для выполнения соединений и завершения транзакций, большего, чем время в секундах, задаваемое параметром **Время ожидания**.</span><span class="sxs-lookup"><span data-stu-id="8365e-116">Stored procedures do not time out if they emulate sleep functionality by providing time for connections to be made and transactions to complete that is greater than the number of seconds specified by **TimeOut**.</span></span> <span data-ttu-id="8365e-117">Однако хранимые процедуры, выполняющие запросы, всегда ограничены по времени, что задается параметром **Время ожидания**.</span><span class="sxs-lookup"><span data-stu-id="8365e-117">However, stored procedures that execute queries are always subject to the time restriction specified by **TimeOut**.</span></span>  
+  
+ <span data-ttu-id="8365e-118">**CodePage**</span><span class="sxs-lookup"><span data-stu-id="8365e-118">**CodePage**</span></span>  
+ <span data-ttu-id="8365e-119">Укажите кодовую страницу, используемую при преобразовании значений переменных в Юникоде.</span><span class="sxs-lookup"><span data-stu-id="8365e-119">Specify the code page to use when translating Unicode values in variables.</span></span> <span data-ttu-id="8365e-120">По умолчанию используется кодовая страница локального компьютера.</span><span class="sxs-lookup"><span data-stu-id="8365e-120">The default value is the code page of the local computer.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="8365e-121">Если задача «Выполнение SQL» использует диспетчер соединений ADO или ODBC, свойство **Кодовая страница** недоступно.</span><span class="sxs-lookup"><span data-stu-id="8365e-121">When the Execute SQL task uses an ADO or ODBC connection manager, the **CodePage** property is not available.</span></span> <span data-ttu-id="8365e-122">Если решению необходимо использовать кодовую страницу, с задачей «Выполнение SQL» следует применять диспетчер соединений OLE DB или ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="8365e-122">If your solution requires the use of a code page, use an OLE DB or an ADO.NET connection manager with the Execute SQL task.</span></span>  
+  
+ <span data-ttu-id="8365e-123">**TypeConversionMode**</span><span class="sxs-lookup"><span data-stu-id="8365e-123">**TypeConversionMode**</span></span>  
+ <span data-ttu-id="8365e-124">Когда этому свойству задается значение `Allowed`, задача «Выполнение SQL» пытается преобразовать выходной параметр и результаты запроса в тип данных переменной, к которой относятся эти результаты.</span><span class="sxs-lookup"><span data-stu-id="8365e-124">When you set this property to `Allowed`, the Execute SQL Task will attempt to convert output parameter and query results to the data type of the variable the results are assigned to.</span></span> <span data-ttu-id="8365e-125">Это относится к типу результирующего набора **Одна строка** .</span><span class="sxs-lookup"><span data-stu-id="8365e-125">This applies to the **Single row** result set type.</span></span>  
+  
+ <span data-ttu-id="8365e-126">**ResultSet**</span><span class="sxs-lookup"><span data-stu-id="8365e-126">**ResultSet**</span></span>  
+ <span data-ttu-id="8365e-127">Укажите ожидаемый тип результата выполнения инструкции SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-127">Specify the result type expected by the SQL statement being run.</span></span> <span data-ttu-id="8365e-128">Выберите из **Одна строка**, **Полный результирующий набор**, **XML**или **Нет**.</span><span class="sxs-lookup"><span data-stu-id="8365e-128">Choose among **Single row**, **Full result set**, **XML**, or **None**.</span></span>  
+  
+ <span data-ttu-id="8365e-129">**ConnectionType**</span><span class="sxs-lookup"><span data-stu-id="8365e-129">**ConnectionType**</span></span>  
+ <span data-ttu-id="8365e-130">Выберите тип, используемый диспетчером соединений для соединения с источником данных.</span><span class="sxs-lookup"><span data-stu-id="8365e-130">Choose the type of connection manager to use to connect to the data source.</span></span> <span data-ttu-id="8365e-131">В качестве возможных типов соединения могут быть: **OLE DB**, **ODBC**, **ADO**, **ADO.NET** и **SQLMOBILE**.</span><span class="sxs-lookup"><span data-stu-id="8365e-131">Available connection types include **OLE DB**, **ODBC**, **ADO**, **ADO.NET** and **SQLMOBILE**.</span></span>  
+  
+ <span data-ttu-id="8365e-132">**См. также:** подробные сведения о [диспетчере подключений OLE DB](connection-manager/ole-db-connection-manager.md), [диспетчере подключений ODBC](connection-manager/odbc-connection-manager.md), [диспетчере подключений ADO](connection-manager/ado-connection-manager.md), [диспетчере подключений ADO.NET](connection-manager/ado-net-connection-manager.md), [диспетчере подключений SQL Server Compact Edition](connection-manager/sql-server-compact-edition-connection-manager.md).</span><span class="sxs-lookup"><span data-stu-id="8365e-132">**Related Topics:** [OLE DB Connection Manager](connection-manager/ole-db-connection-manager.md), [ODBC Connection Manager](connection-manager/odbc-connection-manager.md), [ADO Connection Manager](connection-manager/ado-connection-manager.md), [ADO.NET Connection Manager](connection-manager/ado-net-connection-manager.md), [SQL Server Compact Edition Connection Manager](connection-manager/sql-server-compact-edition-connection-manager.md)</span></span>  
+  
+ <span data-ttu-id="8365e-133">**Соединение**</span><span class="sxs-lookup"><span data-stu-id="8365e-133">**Connection**</span></span>  
+ <span data-ttu-id="8365e-134">Выберите соединение из списка определенных диспетчеров соединений.</span><span class="sxs-lookup"><span data-stu-id="8365e-134">Choose the connection from a list of defined connection managers.</span></span> <span data-ttu-id="8365e-135">Для создания подключения выберите \<**New connection...**>.</span><span class="sxs-lookup"><span data-stu-id="8365e-135">To create a new connection, select \<**New connection...**>.</span></span>  
+  
+ <span data-ttu-id="8365e-136">**SQLSourceType**</span><span class="sxs-lookup"><span data-stu-id="8365e-136">**SQLSourceType**</span></span>  
+ <span data-ttu-id="8365e-137">Выберите тип источника для инструкции SQL, выполняемой этой задачей.</span><span class="sxs-lookup"><span data-stu-id="8365e-137">Select the source type of the SQL statement that the task runs.</span></span>  
+  
+ <span data-ttu-id="8365e-138">В зависимости от типа диспетчера соединений, используемого задачей «Выполнение SQL», в параметризованных инструкциях SQL необходимо использовать определенные маркеры параметров.</span><span class="sxs-lookup"><span data-stu-id="8365e-138">Depending on the connection manager type that Execute SQL task uses, you must use specific parameter markers in parameterized SQL statements.</span></span>  
+  
+ <span data-ttu-id="8365e-139">**См. также:** подраздел «Выполнение параметризованных команд SQL» в разделе [Execute SQL Task](control-flow/execute-sql-task.md)</span><span class="sxs-lookup"><span data-stu-id="8365e-139">**Related Topics:** Running Parameterized SQL Commands section in [Execute SQL Task](control-flow/execute-sql-task.md)</span></span>  
+  
+ <span data-ttu-id="8365e-140">Это свойство имеет параметры, указанные в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="8365e-140">This property has the options listed in the following table.</span></span>  
+  
+|<span data-ttu-id="8365e-141">Значение</span><span class="sxs-lookup"><span data-stu-id="8365e-141">Value</span></span>|<span data-ttu-id="8365e-142">Описание</span><span class="sxs-lookup"><span data-stu-id="8365e-142">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="8365e-143">**Прямой ввод**</span><span class="sxs-lookup"><span data-stu-id="8365e-143">**Direct input**</span></span>|<span data-ttu-id="8365e-144">Задайте источник для инструкции Transact-SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-144">Set the source to a Transact-SQL statement.</span></span> <span data-ttu-id="8365e-145">При выборе этого значения отображается динамический параметр **SQLStatement**.</span><span class="sxs-lookup"><span data-stu-id="8365e-145">Selecting this value displays the dynamic option, **SQLStatement**.</span></span>|  
+|<span data-ttu-id="8365e-146">**Соединение с файлом**</span><span class="sxs-lookup"><span data-stu-id="8365e-146">**File connection**</span></span>|<span data-ttu-id="8365e-147">Выберите файл, содержащий инструкцию Transact-SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-147">Select a file that contains a Transact-SQL statement.</span></span> <span data-ttu-id="8365e-148">При установке этого параметра отображается динамический параметр **Подключение файла**.</span><span class="sxs-lookup"><span data-stu-id="8365e-148">Setting this option displays the dynamic option, **FileConnection**.</span></span>|  
+|<span data-ttu-id="8365e-149">**Переменная**</span><span class="sxs-lookup"><span data-stu-id="8365e-149">**Variable**</span></span>|<span data-ttu-id="8365e-150">В качестве источника задайте переменную, определяющую инструкцию Transact-SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-150">Set the source to a variable that defines the Transact-SQL statement.</span></span> <span data-ttu-id="8365e-151">При выборе этого значения отображается динамический параметр **SourceVariable**.</span><span class="sxs-lookup"><span data-stu-id="8365e-151">Selecting this value displays the dynamic option, **SourceVariable**.</span></span>|  
+  
+ <span data-ttu-id="8365e-152">**QueryIsStoredProcedure**</span><span class="sxs-lookup"><span data-stu-id="8365e-152">**QueryIsStoredProcedure**</span></span>  
+ <span data-ttu-id="8365e-153">Указывает, является ли заданная для запуска инструкция SQL хранимой процедурой.</span><span class="sxs-lookup"><span data-stu-id="8365e-153">Indicates whether the specified SQL statement to be run is a stored procedure.</span></span> <span data-ttu-id="8365e-154">Если задача использует диспетчер соединений ADO, это свойство доступно только для чтения и записи.</span><span class="sxs-lookup"><span data-stu-id="8365e-154">This property is read/write only if the task uses the ADO connection manager.</span></span> <span data-ttu-id="8365e-155">В противном случае свойство доступно только для чтения и имеет значение `false`.</span><span class="sxs-lookup"><span data-stu-id="8365e-155">Otherwise the property is read-only and its value is `false`.</span></span>  
+  
+ <span data-ttu-id="8365e-156">**BypassPrepare**</span><span class="sxs-lookup"><span data-stu-id="8365e-156">**BypassPrepare**</span></span>  
+ <span data-ttu-id="8365e-157">Укажите, нужно ли разработать инструкцию SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-157">Indicate whether the SQL statement is prepared.</span></span>  <span data-ttu-id="8365e-158">`true` ― пропустить подготовку; `false` ― подготовить инструкцию SQL перед выполнением.</span><span class="sxs-lookup"><span data-stu-id="8365e-158">`true` skips preparation; `false` prepares the SQL statement before running it.</span></span> <span data-ttu-id="8365e-159">Этот параметр доступен только с соединениями OLE DB, поддерживающими подготовку.</span><span class="sxs-lookup"><span data-stu-id="8365e-159">This option is available only with OLE DB connections that support preparation.</span></span>  
+  
+ <span data-ttu-id="8365e-160">**См. также:**  [Подготовленное выполнение](../relational-databases/native-client-odbc-queries/executing-statements/prepared-execution.md)</span><span class="sxs-lookup"><span data-stu-id="8365e-160">**Related Topics:**  [Prepared Execution](../relational-databases/native-client-odbc-queries/executing-statements/prepared-execution.md)</span></span>  
+  
+ <span data-ttu-id="8365e-161">**Обзор**</span><span class="sxs-lookup"><span data-stu-id="8365e-161">**Browse**</span></span>  
+ <span data-ttu-id="8365e-162">Укажите расположение файла, содержащего инструкцию SQL, при помощи диалогового окна **Открыть** .</span><span class="sxs-lookup"><span data-stu-id="8365e-162">Locate a file that contains a SQL statement by using the **Open** dialog box.</span></span> <span data-ttu-id="8365e-163">Выберите файл, содержимое которого копируется как инструкция SQL в свойство **SQLStatement** .</span><span class="sxs-lookup"><span data-stu-id="8365e-163">Select a file to copy the contents of the file as a SQL statement into the **SQLStatement** property.</span></span>  
+  
+ <span data-ttu-id="8365e-164">**Создать запрос**</span><span class="sxs-lookup"><span data-stu-id="8365e-164">**Build Query**</span></span>  
+ <span data-ttu-id="8365e-165">Создайте инструкцию SQL при помощи диалогового окна **Построитель запросов** , графического средства для создания запросов.</span><span class="sxs-lookup"><span data-stu-id="8365e-165">Create an SQL statement using the **Query Builder** dialog box, a graphical tool used to create queries.</span></span> <span data-ttu-id="8365e-166">Этот параметр доступен, если параметр **SQLSourceType** установлен в значение **Прямой ввод**.</span><span class="sxs-lookup"><span data-stu-id="8365e-166">This option is available when the **SQLSourceType** option is set to **Direct input**.</span></span>  
+  
+ <span data-ttu-id="8365e-167">**Анализ запроса**</span><span class="sxs-lookup"><span data-stu-id="8365e-167">**Parse Query**</span></span>  
+ <span data-ttu-id="8365e-168">Проверьте синтаксис инструкции SQL.</span><span class="sxs-lookup"><span data-stu-id="8365e-168">Validate the syntax of the SQL statement.</span></span>  
+  
+## <a name="sqlsourcetype-dynamic-options"></a><span data-ttu-id="8365e-169">Динамические параметры SQLSourceType</span><span class="sxs-lookup"><span data-stu-id="8365e-169">SQLSourceType Dynamic Options</span></span>  
+  
+### <a name="sqlsourcetype--direct-input"></a><span data-ttu-id="8365e-170">WQLQuerySource = Прямой ввод</span><span class="sxs-lookup"><span data-stu-id="8365e-170">SQLSourceType = Direct input</span></span>  
+ <span data-ttu-id="8365e-171">**SQLStatement**</span><span class="sxs-lookup"><span data-stu-id="8365e-171">**SQLStatement**</span></span>  
+ <span data-ttu-id="8365e-172">Введите инструкцию SQL для выполнения в окне параметров или нажмите кнопку обзора (...) для ввода инструкции SQL в диалоговом окне **Ввод SQL-запроса**, либо нажмите кнопку **Создать запрос** для составления инструкции при помощи диалогового окна **Построитель запросов**.</span><span class="sxs-lookup"><span data-stu-id="8365e-172">Type the SQL statement to execute in the option box, or click the browse button (...) to type the SQL statement in the **Enter SQL Query** dialog box, or click **Build Query** to compose the statement using the **Query Builder** dialog box.</span></span>  
+  
+ <span data-ttu-id="8365e-173">**См. также:** [Построитель запросов](../../2014/integration-services/query-builder.md)</span><span class="sxs-lookup"><span data-stu-id="8365e-173">**Related Topics:** [Query Builder](../../2014/integration-services/query-builder.md)</span></span>  
+  
+### <a name="sqlsourcetype--file-connection"></a><span data-ttu-id="8365e-174">WQLQuerySource = Подключение файла</span><span class="sxs-lookup"><span data-stu-id="8365e-174">SQLSourceType = File connection</span></span>  
+ <span data-ttu-id="8365e-175">**FileConnection**</span><span class="sxs-lookup"><span data-stu-id="8365e-175">**FileConnection**</span></span>  
+ <span data-ttu-id="8365e-176">Выберите существующий диспетчер подключений файлов или создайте его, щелкнув пункт \<**New connection...**>.</span><span class="sxs-lookup"><span data-stu-id="8365e-176">Select an existing File connection manager, or click \<**New connection...**> to create a new connection manager.</span></span>  
+  
+ <span data-ttu-id="8365e-177">**См. также:** подробные сведения о [диспетчере файловых подключений](connection-manager/file-connection-manager.md) и о [редакторе диспетчера файловых подключений](../../2014/integration-services/file-connection-manager-editor.md).</span><span class="sxs-lookup"><span data-stu-id="8365e-177">**Related Topics:** [File Connection Manager](connection-manager/file-connection-manager.md), [File Connection Manager Editor](../../2014/integration-services/file-connection-manager-editor.md)</span></span>  
+  
+### <a name="sqlsourcetype--variable"></a><span data-ttu-id="8365e-178">SQLSourceType = Переменная</span><span class="sxs-lookup"><span data-stu-id="8365e-178">SQLSourceType = Variable</span></span>  
+ <span data-ttu-id="8365e-179">**SourceVariable**</span><span class="sxs-lookup"><span data-stu-id="8365e-179">**SourceVariable**</span></span>  
+ <span data-ttu-id="8365e-180">Выберите существующую переменную или щелкните \<**New variable...**>, чтобы создать новую.</span><span class="sxs-lookup"><span data-stu-id="8365e-180">Select an existing variable, or click \<**New variable...**> to create a new variable.</span></span>  
+  
+ <span data-ttu-id="8365e-181">**См. также:** подробные сведения о [переменных в службах Integration Services &#40;SSIS&#41;](integration-services-ssis-variables.md) и о [добавлении переменной](../../2014/integration-services/add-variable.md).</span><span class="sxs-lookup"><span data-stu-id="8365e-181">**Related Topics:** [Integration Services &#40;SSIS&#41; Variables](integration-services-ssis-variables.md), [Add Variable](../../2014/integration-services/add-variable.md)</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="8365e-182">См. также:</span><span class="sxs-lookup"><span data-stu-id="8365e-182">See Also</span></span>  
+ <span data-ttu-id="8365e-183">[Справочник по сообщениям об ошибках служб Integration Services](../../2014/integration-services/integration-services-error-and-message-reference.md) </span><span class="sxs-lookup"><span data-stu-id="8365e-183">[Integration Services Error and Message Reference](../../2014/integration-services/integration-services-error-and-message-reference.md) </span></span>  
+ <span data-ttu-id="8365e-184">[Редактор задачи "Выполнение SQL" &#40;страница "Сопоставление параметров"&#41;](../../2014/integration-services/execute-sql-task-editor-parameter-mapping-page.md) </span><span class="sxs-lookup"><span data-stu-id="8365e-184">[Execute SQL Task Editor &#40;Parameter Mapping Page&#41;](../../2014/integration-services/execute-sql-task-editor-parameter-mapping-page.md) </span></span>  
+ [<span data-ttu-id="8365e-185">Редактор задачи "Выполнение SQL" &#40;страница "результирующий набор"&#41;</span><span class="sxs-lookup"><span data-stu-id="8365e-185">Execute SQL Task Editor &#40;Result Set Page&#41;</span></span>](../../2014/integration-services/execute-sql-task-editor-result-set-page.md)  
+  
+  

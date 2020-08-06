@@ -1,0 +1,78 @@
+---
+title: Веб-служба сервера отчетов | Документы Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services
+ms.topic: reference
+helpviewer_keywords:
+- SSIS, Web service
+- Web service [Reporting Services]
+- Reporting Services, extending
+- SQL Server Reporting Services, Web service
+- Reporting Services, Web service
+- XML Web service [Reporting Services]
+- Report Server Web service
+ms.assetid: 16c21dec-6b46-4497-9a0c-1b0f2b6ab8fc
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: 8bb43a0fa52a243bd250f70fac16e18d949f8197
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87659357"
+---
+# <a name="report-server-web-service"></a><span data-ttu-id="cff61-102">веб-служба сервера отчетов</span><span class="sxs-lookup"><span data-stu-id="cff61-102">Report Server Web Service</span></span>
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<span data-ttu-id="cff61-103">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]предоставляет доступ ко всем функциональным возможностям сервера отчетов через веб-службу сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-103">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] provides access to the full functionality of the report server through the Report Server Web service.</span></span> <span data-ttu-id="cff61-104">Веб-службой сервера отчетов является веб-служба XML с API-интерфейсом протокола SOAP.</span><span class="sxs-lookup"><span data-stu-id="cff61-104">The Report Server Web service is an XML Web service with a SOAP API.</span></span> <span data-ttu-id="cff61-105">Она применяет протокол SOAP через протокол HTTP и действует как интерфейс связи между клиентскими программами и сервером отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-105">It uses SOAP over HTTP and acts as a communications interface between client programs and the report server.</span></span> <span data-ttu-id="cff61-106">Веб-служба предоставляет две конечные точки — одну для выполнения отчета, а другую для управления отчетом — при помощи методов, которые предоставляют функциональные возможности сервера отчетов и дают возможность создавать пользовательские средства для любого периода жизненного цикла отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-106">The Web service provides two endpoints - one for report execution and one for report management - with methods that expose the functionality of the report server and enable you to create custom tools for any part of the report life cycle.</span></span>  
+  
+ <span data-ttu-id="cff61-107">Имеются три основных способа разработки приложений служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] на основе веб-службы.</span><span class="sxs-lookup"><span data-stu-id="cff61-107">There are three primary ways to develop [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] applications based on the Web service.</span></span> <span data-ttu-id="cff61-108">Вы можете:</span><span class="sxs-lookup"><span data-stu-id="cff61-108">You can:</span></span>  
+  
+-   <span data-ttu-id="cff61-109">Разрабатывайте приложения с помощью [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] и [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] пакета SDK.</span><span class="sxs-lookup"><span data-stu-id="cff61-109">Develop applications using [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] and the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] SDK.</span></span> <span data-ttu-id="cff61-110">Дополнительные сведения об использовании платформы [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] для создания приложений веб-службы см. в разделе [Построение приложений с помощью веб-службы и платформы .NET Framework](../report-server-web-service/net-framework/building-applications-using-the-web-service-and-the-net-framework.md).</span><span class="sxs-lookup"><span data-stu-id="cff61-110">For more information about using the [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] to build Web service applications, see [Building Applications Using the Web Service and the .NET Framework](../report-server-web-service/net-framework/building-applications-using-the-web-service-and-the-net-framework.md).</span></span>  
+  
+-   <span data-ttu-id="cff61-111">Разрабатывать приложения с использованием программы **rs** (RS.exe), среды скриптов служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cff61-111">Develop applications using the **rs** utility (RS.exe), the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] script environment.</span></span> <span data-ttu-id="cff61-112">Скрипты служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] и [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] можно использовать для запуска любых операций веб-службы сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-112">With [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] and [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] scripts, you can run any of the Report Server Web service operations.</span></span> <span data-ttu-id="cff61-113">Дополнительные сведения о написании скриптов в [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] см. в разделе [Создание скриптов с помощью программы rs.exe и веб-службы](../tools/script-with-the-rs-exe-utility-and-the-web-service.md).</span><span class="sxs-lookup"><span data-stu-id="cff61-113">For more information about scripting in [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], see [Script with the rs.exe Utility and the Web Service](../tools/script-with-the-rs-exe-utility-and-the-web-service.md).</span></span>  
+  
+-   <span data-ttu-id="cff61-114">Разрабатывать приложения с использованием любого набора средств разработки с поддержкой протокола SOAP.</span><span class="sxs-lookup"><span data-stu-id="cff61-114">Develop applications using any SOAP-enabled set of development tools.</span></span> <span data-ttu-id="cff61-115">Дополнительные сведения см. в разделе [Роль протокола SOAP в службах Reporting Services](../report-server-web-service/the-role-of-soap-in-reporting-services.md).</span><span class="sxs-lookup"><span data-stu-id="cff61-115">For more information, see [The Role of SOAP in Reporting Services](../report-server-web-service/the-role-of-soap-in-reporting-services.md).</span></span>  
+  
+## <a name="programming-diagram"></a><span data-ttu-id="cff61-116">Диаграмма программирования</span><span class="sxs-lookup"><span data-stu-id="cff61-116">Programming Diagram</span></span>  
+ <span data-ttu-id="cff61-117">![Способы разработки веб-службы сервера отчетов](../../../2014/reporting-services/media/reportserviceswebserviceprog-01.gif "Способы разработки веб-службы сервера отчетов")</span><span class="sxs-lookup"><span data-stu-id="cff61-117">![Report Server Web service development options](../../../2014/reporting-services/media/reportserviceswebserviceprog-01.gif "Report Server Web service development options")</span></span>  
+<span data-ttu-id="cff61-118">Доступные способы разработки веб-службы для служб Reporting Services</span><span class="sxs-lookup"><span data-stu-id="cff61-118">Reporting Services available Web service development options</span></span>  
+  
+## <a name="in-this-section"></a><span data-ttu-id="cff61-119">в этом разделе</span><span class="sxs-lookup"><span data-stu-id="cff61-119">In This Section</span></span>  
+ [<span data-ttu-id="cff61-120">Методы веб-службы сервера отчетов</span><span class="sxs-lookup"><span data-stu-id="cff61-120">Report Server Web Service Methods</span></span>](../report-server-web-service/methods/report-server-web-service-methods.md)  
+ <span data-ttu-id="cff61-121">Описывает функции и методы каждой веб-службы сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-121">Describes the features and methods of each Report Server Web service.</span></span>  
+  
+ [<span data-ttu-id="cff61-122">The Role of SOAP in Reporting Services</span><span class="sxs-lookup"><span data-stu-id="cff61-122">The Role of SOAP in Reporting Services</span></span>](../report-server-web-service/the-role-of-soap-in-reporting-services.md)  
+ <span data-ttu-id="cff61-123">Предоставляет общие сведения о протоколе SOAP, дает описание его использования в веб-службах сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-123">Provides an overview of SOAP and how it is used in the Report Server Web services.</span></span>  
+  
+ [<span data-ttu-id="cff61-124">Доступ к API-интерфейсу SOAP</span><span class="sxs-lookup"><span data-stu-id="cff61-124">Accessing the SOAP API</span></span>](../report-server-web-service/accessing-the-soap-api.md)  
+ <span data-ttu-id="cff61-125">Описывает язык WSDL и предоставляет URL-адреса для доступа к файлу WSDL служб Reporting Services.</span><span class="sxs-lookup"><span data-stu-id="cff61-125">Describes the Web Service Description Language (WSDL) and provides URLs for accessing a Reporting Services WSDL file.</span></span>  
+  
+ [<span data-ttu-id="cff61-126">Создание приложений с помощью веб-службы и .NET Framework</span><span class="sxs-lookup"><span data-stu-id="cff61-126">Building Applications Using the Web Service and the .NET Framework</span></span>](../report-server-web-service/net-framework/building-applications-using-the-web-service-and-the-net-framework.md)  
+ <span data-ttu-id="cff61-127">Содержит сведения о разработке приложений и веб-служб, которые вызывают API-интерфейс протокола SOAP служб Reporting Services.</span><span class="sxs-lookup"><span data-stu-id="cff61-127">Contains information about developing applications and Web services that call the Reporting Services SOAP API.</span></span>  
+  
+ [<span data-ttu-id="cff61-128">Создание скриптов с помощью программы rs.exe и веб-службы</span><span class="sxs-lookup"><span data-stu-id="cff61-128">Script with the rs.exe Utility and the Web Service</span></span>](../tools/script-with-the-rs-exe-utility-and-the-web-service.md)  
+ <span data-ttu-id="cff61-129">Содержит общие сведения о среде исполнения сценариев служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="cff61-129">Provides an overview of the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] scripting environment.</span></span>  
+  
+ [<span data-ttu-id="cff61-130">Технический справочник (службы SSRS)</span><span class="sxs-lookup"><span data-stu-id="cff61-130">Technical Reference &#40;SSRS&#41;</span></span>](../../../2014/reporting-services/technical-reference-ssrs.md)  
+ <span data-ttu-id="cff61-131">Содержит справочные материалы по методам веб-служб сервера отчетов и по соответствующим сложным типам.</span><span class="sxs-lookup"><span data-stu-id="cff61-131">Contains reference material specific to Report Server Web services methods and corresponding complex types.</span></span>  
+  
+## <a name="user-requirements-for-web-service-development"></a><span data-ttu-id="cff61-132">Требования к пользователям для разработки с использованием веб-службы</span><span class="sxs-lookup"><span data-stu-id="cff61-132">User Requirements for Web Service Development</span></span>  
+ <span data-ttu-id="cff61-133">Для разработки приложений с использованием веб-службы сервера отчетов необходимо следующее.</span><span class="sxs-lookup"><span data-stu-id="cff61-133">To develop applications using the Report Server Web service, you need:</span></span>  
+  
+-   [!INCLUDE[msCoName](../../includes/msconame-md.md)] <span data-ttu-id="cff61-134">Internet Explorer 5.5 или более поздней версии, установленный на компьютере с подключением к Интернету и доступом к серверу отчетов.</span><span class="sxs-lookup"><span data-stu-id="cff61-134">Internet Explorer 5.5 or later installed on a computer with an Internet connection to and access to the report server.</span></span>  
+  
+-   [!INCLUDE[msCoName](../../includes/msconame-md.md)]<span data-ttu-id="cff61-135">[!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] [!INCLUDE[msCoName](../../includes/msconame-md.md)] или [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] Пакет SDK, установленный на компьютере, если требуется разрабатывать и развертывать [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] приложения с помощью [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="cff61-135">[!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] or the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] SDK installed on a computer if you want to develop and deploy [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] applications using the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)].</span></span>  
+  
+-   <span data-ttu-id="cff61-136">Подробное представление о [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] функциях и возможностях.</span><span class="sxs-lookup"><span data-stu-id="cff61-136">An in-depth understanding of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] features and capabilities.</span></span>  
+  
+-   <span data-ttu-id="cff61-137">Глубокое понимание протокола SOAP и служб [!INCLUDE[vstecwebservices](../../includes/vstecwebservices-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cff61-137">A firm understanding of SOAP and [!INCLUDE[vstecwebservices](../../includes/vstecwebservices-md.md)].</span></span>  
+  
+-   <span data-ttu-id="cff61-138">Опыт разработки на [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] совместимом языке [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[csprcs](../../includes/csprcs-md.md)] , например или [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] , если вы планируете использовать в [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] качестве платформы разработки.</span><span class="sxs-lookup"><span data-stu-id="cff61-138">Development experience in a [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]-compatible language such as [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[csprcs](../../includes/csprcs-md.md)] or [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)], if you plan to use the [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] as your development platform.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="cff61-139">См. также:</span><span class="sxs-lookup"><span data-stu-id="cff61-139">See Also</span></span>  
+ [<span data-ttu-id="cff61-140">Веб-службы сервера отчетов</span><span class="sxs-lookup"><span data-stu-id="cff61-140">Report Server Web Service</span></span>](../report-server-web-service/report-server-web-service.md)  
+  
+  

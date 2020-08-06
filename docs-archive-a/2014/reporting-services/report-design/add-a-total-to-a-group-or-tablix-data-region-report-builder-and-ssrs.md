@@ -1,0 +1,53 @@
+---
+title: Добавление итога в группу или область данных табликса (построитель отчетов и службы SSRS) | Документы Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+ms.assetid: cf1b96c3-7f0f-4c94-ad08-5239c77ccfe4
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: f626621a37a327ae32664ab9444e72ce4931ac0e
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87654803"
+---
+# <a name="add-a-total-to-a-group-or-tablix-data-region-report-builder-and-ssrs"></a><span data-ttu-id="f99fa-102">Добавление итога в группу или область данных табликса (построитель отчетов и службы SSRS)</span><span class="sxs-lookup"><span data-stu-id="f99fa-102">Add a Total to a Group or Tablix Data Region (Report Builder and SSRS)</span></span>
+  <span data-ttu-id="f99fa-103">Можно добавлять итоги к области данных табликса или ко всей области данных.</span><span class="sxs-lookup"><span data-stu-id="f99fa-103">You can add totals in a tablix data region for a group or for the entire data region.</span></span> <span data-ttu-id="f99fa-104">По умолчанию итогом считается сумма данных с числовыми значениями, отличными от NULL, в группе или в области данных, вычисленная после применения фильтров.</span><span class="sxs-lookup"><span data-stu-id="f99fa-104">By default, a total is the sum of the numeric, non-null data in a group or in the data region, after filters are applied.</span></span> <span data-ttu-id="f99fa-105">Чтобы добавить итоги к группе, выберите пункт **Добавить итоги** в контекстном меню для группы на панели «Группирование».</span><span class="sxs-lookup"><span data-stu-id="f99fa-105">To add totals for a group, click **Add Total** on the shortcut menu for the group in the Grouping pane.</span></span> <span data-ttu-id="f99fa-106">Для добавления итогов в отдельную ячейку области тела табликса нужно в контекстном меню для этой ячейки выбрать пункт **Добавить итог** .</span><span class="sxs-lookup"><span data-stu-id="f99fa-106">To add totals for an individual cell in the tablix body area, click **Add Total** on the shortcut menu for the cell.</span></span> <span data-ttu-id="f99fa-107">Команда **Добавить итог** чувствительна к контексту и доступна только для числовых полей.</span><span class="sxs-lookup"><span data-stu-id="f99fa-107">The **Add Total** command is context-sensitive and enabled only for numeric fields.</span></span> <span data-ttu-id="f99fa-108">В зависимости от выбранной ячейки табликса можно добавить итог для одной ячейки, выбрав эту ячейку в области тела табликса, или для всей группы, выбрав ячейку в области группы строк либо в области группы столбцов табликса.</span><span class="sxs-lookup"><span data-stu-id="f99fa-108">Depending on the tablix cell that you select, you can add a total for a single cell by selecting a cell in the tablix body area or for the entire group by selecting a cell in the tablix row group area or the tablix column group area.</span></span> <span data-ttu-id="f99fa-109">Дополнительные сведения об областях табликса см. в разделе [Область данных табликса (построитель отчетов и службы SSRS)](../tablix-data-region-report-builder-and-ssrs.md).</span><span class="sxs-lookup"><span data-stu-id="f99fa-109">For more information about tablix areas, see [Tablix Data Region &#40;Report Builder and SSRS&#41;](../tablix-data-region-report-builder-and-ssrs.md).</span></span>  
+  
+ <span data-ttu-id="f99fa-110">После добавления итога можно заменить применяемую по умолчанию функцию Sum другой агрегатной функцией из списка встроенных функций отчета.</span><span class="sxs-lookup"><span data-stu-id="f99fa-110">After you add a total, you can change the default function Sum to a different aggregate function from the list of built-in report functions.</span></span> <span data-ttu-id="f99fa-111">Дополнительные сведения см. в разделе [агрегатные функции справочник &#40;построитель отчетов и SSRS&#41;](report-builder-functions-aggregate-functions-reference.md).[!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f99fa-111">For more information, see [Aggregate Functions Reference &#40;Report Builder and SSRS&#41;](report-builder-functions-aggregate-functions-reference.md).[!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]</span></span>  
+  
+### <a name="to-add-a-total-for-an-individual-value-in-the-tablix-body-area"></a><span data-ttu-id="f99fa-112">Добавление итога для индивидуального значения в области тела табликса</span><span class="sxs-lookup"><span data-stu-id="f99fa-112">To add a total for an individual value in the tablix body area</span></span>  
+  
+-   <span data-ttu-id="f99fa-113">В области данных табликса щелкните правой кнопкой мыши ячейку, к которой вы хотите добавить итог.</span><span class="sxs-lookup"><span data-stu-id="f99fa-113">In the tablix data region body area, right-click the cell where you want to add the total.</span></span> <span data-ttu-id="f99fa-114">Ячейка должна содержать числовое поле.</span><span class="sxs-lookup"><span data-stu-id="f99fa-114">The cell must contain a numeric field.</span></span> <span data-ttu-id="f99fa-115">Наведите указатель мыши на **Добавить итог**, после чего выберите пункт **Строка** или пункт **Столбец**.</span><span class="sxs-lookup"><span data-stu-id="f99fa-115">Point to **Add Total**, and then click **Row** or **Column**.</span></span>  
+  
+     <span data-ttu-id="f99fa-116">К области данных за пределами текущей группы добавляется новая строка или столбец, причем поле в выделенной ячейке имеет итог по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="f99fa-116">A new row or column outside the current group is added to the data region, with a default total for the field in the cell you clicked.</span></span>  
+  
+     <span data-ttu-id="f99fa-117">Если область данных табликса представляет собой таблицу, то автоматически добавляется строка.</span><span class="sxs-lookup"><span data-stu-id="f99fa-117">If the tablix data region is a table, a row is automatically added.</span></span>  
+  
+### <a name="to-add-totals-for-a-row-group"></a><span data-ttu-id="f99fa-118">Добавление итогов к группе строк</span><span class="sxs-lookup"><span data-stu-id="f99fa-118">To add totals for a row group</span></span>  
+  
+-   <span data-ttu-id="f99fa-119">В области групп строк табликса правой кнопкой мыши щелкните ячейку группы строк, для которой вы хотите добавить итоги, наведите указатель мыши на пункт **Добавить итог**и выберите пункт **До** или **После**.</span><span class="sxs-lookup"><span data-stu-id="f99fa-119">In the tablix data region row group area, right-click a cell in the row group area for which you want totals, point to **Add Total**, and then click **Before** or **After**.</span></span>  
+  
+     <span data-ttu-id="f99fa-120">К области данных за пределами текущей группы добавляется новая строка, после чего к каждому числовому полю в строке добавляется итог по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="f99fa-120">A new row outside the current group is added to the data region, and then a default total is added for each numeric field in the row.</span></span>  
+  
+### <a name="to-add-totals-for-a-column-group"></a><span data-ttu-id="f99fa-121">Добавление итогов к группе столбцов</span><span class="sxs-lookup"><span data-stu-id="f99fa-121">To add totals for a column group</span></span>  
+  
+-   <span data-ttu-id="f99fa-122">В области групп строк табликса щелкните правой кнопкой мыши ячейку в группе столбцов, для которой вы хотите добавить итоги, наведите указатель мыши на пункт **Добавить итог**и выберите пункт **До** или **После**.</span><span class="sxs-lookup"><span data-stu-id="f99fa-122">In the tablix data region row group area, right-click a cell in the column group area for which you want totals, then point to **Add Total**, and click **Before** or **After**.</span></span>  
+  
+     <span data-ttu-id="f99fa-123">К области данных за пределами текущей группы добавляется новый столбец, после чего к каждому числовому полю в столбце добавляется итог по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="f99fa-123">A new column outside the current group is added to the data region, and then a default total is added for each numeric field in the column.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f99fa-124">См. также:</span><span class="sxs-lookup"><span data-stu-id="f99fa-124">See Also</span></span>  
+ <span data-ttu-id="f99fa-125">[Область выражения для суммирования, агрегатных функций и встроенных коллекций &#40;построитель отчетов и SSRS&#41;](expression-scope-for-totals-aggregates-and-built-in-collections.md) </span><span class="sxs-lookup"><span data-stu-id="f99fa-125">[Expression Scope for Totals, Aggregates, and Built-in Collections &#40;Report Builder and SSRS&#41;](expression-scope-for-totals-aggregates-and-built-in-collections.md) </span></span>  
+ <span data-ttu-id="f99fa-126">[Область данных табликса &#40;построитель отчетов и SSRS&#41;](../tablix-data-region-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="f99fa-126">[Tablix Data Region &#40;Report Builder and SSRS&#41;](../tablix-data-region-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="f99fa-127">[Таблицы &#40;построитель отчетов и службы SSRS&#41;](tables-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="f99fa-127">[Tables &#40;Report Builder  and SSRS&#41;](tables-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="f99fa-128">[Матрицы &#40;построитель отчетов и службы SSRS&#41;](create-a-matrix-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="f99fa-128">[Matrices &#40;Report Builder and SSRS&#41;](create-a-matrix-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="f99fa-129">[Содержит &#40;построитель отчетов и SSRS&#41;](create-invoices-and-forms-with-lists-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="f99fa-129">[Lists &#40;Report Builder and SSRS&#41;](create-invoices-and-forms-with-lists-report-builder-and-ssrs.md) </span></span>  
+ [<span data-ttu-id="f99fa-130">Таблицы, матрицы и списки (построитель отчетов и службы SSRS)</span><span class="sxs-lookup"><span data-stu-id="f99fa-130">Tables, Matrices, and Lists &#40;Report Builder and SSRS&#41;</span></span>](tables-matrices-and-lists-report-builder-and-ssrs.md)  
+  
+  
