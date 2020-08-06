@@ -1,0 +1,70 @@
+---
+title: Назначения ролей | Документы Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+helpviewer_keywords:
+- users [Reporting Services]
+- roles [Reporting Services]
+- role-based security [Reporting Services], role assignments
+- groups [Reporting Services]
+- security [Reporting Services], role assignments
+ms.assetid: 600e112c-1897-48a6-93c0-6e9f3f12dc01
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: f156a009dfce8d91c3d3c8460160a4fdad62b573
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87664701"
+---
+# <a name="role-assignments"></a><span data-ttu-id="89fe0-102">Назначения ролей</span><span class="sxs-lookup"><span data-stu-id="89fe0-102">Role Assignments</span></span>
+  <span data-ttu-id="89fe0-103">В службах [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)]*назначения ролей* определяют доступ к сохраненным элементам и к самому серверу отчетов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-103">In [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)], *role assignments* determine access to stored items and to the report server itself.</span></span> <span data-ttu-id="89fe0-104">Назначение ролей состоит из следующих частей.</span><span class="sxs-lookup"><span data-stu-id="89fe0-104">A role assignment has the following parts:</span></span>  
+  
+-   <span data-ttu-id="89fe0-105">Защищаемый элемент, доступом к которому нужно управлять.</span><span class="sxs-lookup"><span data-stu-id="89fe0-105">A securable item for which you want to control access.</span></span> <span data-ttu-id="89fe0-106">Примеры защищаемых элементов — это папки, отчеты и ресурсы.</span><span class="sxs-lookup"><span data-stu-id="89fe0-106">Examples of securable items include folders, reports, and resources.</span></span>  
+  
+-   <span data-ttu-id="89fe0-107">Учетная запись пользователя или группы, которая может быть проверена службой безопасности Windows или другим механизмом проверки подлинности.</span><span class="sxs-lookup"><span data-stu-id="89fe0-107">A user or group account that can be authenticated by Windows security or another authentication mechanism.</span></span>  
+  
+-   <span data-ttu-id="89fe0-108">Определение ролей, которые определяют набор задач.</span><span class="sxs-lookup"><span data-stu-id="89fe0-108">Role definitions that define a set of tasks.</span></span> <span data-ttu-id="89fe0-109">Примеры определения ролей: **Системный администратор**, **Диспетчер содержимого**и **Издатель**.</span><span class="sxs-lookup"><span data-stu-id="89fe0-109">Examples of role definitions include **System Administrator**, **Content Manager**, and **Publisher**.</span></span>  
+  
+ <span data-ttu-id="89fe0-110">Назначения ролей наследуются в иерархии папок.</span><span class="sxs-lookup"><span data-stu-id="89fe0-110">Role assignments are inherited within the folder hierarchy.</span></span> <span data-ttu-id="89fe0-111">Назначение ролей, заданное для папки, будет автоматически унаследовано всеми отчетами, общими источниками данных, ресурсами и вложенными папками этой папки.</span><span class="sxs-lookup"><span data-stu-id="89fe0-111">The role assignment that is defined for a folder is automatically inherited by all reports, shared data sources, resources, and subfolders contained within that folder.</span></span> <span data-ttu-id="89fe0-112">Можно заменить унаследованные параметры безопасности, определив назначения ролей для отдельных элементов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-112">You can override inherited security by defining role assignments for individual items.</span></span> <span data-ttu-id="89fe0-113">Все части иерархии папок должны быть защищены, по меньшей мере, одним назначением роли.</span><span class="sxs-lookup"><span data-stu-id="89fe0-113">All parts of the folder hierarchy must be secured by at least one role assignment.</span></span> <span data-ttu-id="89fe0-114">Нельзя создать незащищенный элемент или задать настройки так, чтобы получился незащищенный элемент.</span><span class="sxs-lookup"><span data-stu-id="89fe0-114">You cannot create an unsecured item or manipulate settings in a way that produces an unsecured item.</span></span>  
+  
+ <span data-ttu-id="89fe0-115">Следующая диаграмма показывает назначение ролей, которое сопоставляет группу и отдельного пользователя с ролью **Издатель** для папки В.</span><span class="sxs-lookup"><span data-stu-id="89fe0-115">The following diagram illustrates a role assignment that maps a group and a specific user to the **Publisher** role for Folder B.</span></span>  
+  
+ <span data-ttu-id="89fe0-116">![Диаграмма назначения ролей](../media/report-securityarch.gif "Диаграмма назначения ролей")</span><span class="sxs-lookup"><span data-stu-id="89fe0-116">![Role assignments diagram](../media/report-securityarch.gif "Role assignments diagram")</span></span>  
+<span data-ttu-id="89fe0-117">Диаграмма назначения ролей</span><span class="sxs-lookup"><span data-stu-id="89fe0-117">Role assignments diagram</span></span>  
+  
+## <a name="system-level-and-item-level-role-assignments"></a><span data-ttu-id="89fe0-118">Назначение ролей на уровне системы и на уровне элемента</span><span class="sxs-lookup"><span data-stu-id="89fe0-118">System-Level and Item-Level Role Assignments</span></span>  
+ <span data-ttu-id="89fe0-119">Безопасность служб [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] на основе ролей организована на нескольких уровнях.</span><span class="sxs-lookup"><span data-stu-id="89fe0-119">Role-based security in [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] is organized into the following levels:</span></span>  
+  
+-   <span data-ttu-id="89fe0-120">Назначения ролей на уровне элемента управляют доступом к отчетам, папкам, моделям отчетов, общим источникам данных и ресурсам в иерархии папок сервера отчетов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-120">Item-level role assignments control access to reports, folders, report models, shared data sources, and resources in the report server folder hierarchy.</span></span> <span data-ttu-id="89fe0-121">Назначения ролей на уровне элемента определяются при создании назначения роли отдельному элементу или корневой папке.</span><span class="sxs-lookup"><span data-stu-id="89fe0-121">Item-level role assignments are defined when create a role assignment on a specific item or on the Home folder.</span></span>  
+  
+-   <span data-ttu-id="89fe0-122">Назначения системных ролей разрешают операции, применяемые к серверу в целом (например, управление задачами системного уровня).</span><span class="sxs-lookup"><span data-stu-id="89fe0-122">System role assignments authorize operations that are scoped to the server as a whole (for example, the ability to manage jobs is a system level operation).</span></span> <span data-ttu-id="89fe0-123">Назначение системной роли не эквивалентно назначению роли системного администратора.</span><span class="sxs-lookup"><span data-stu-id="89fe0-123">A system role assignment is not the equivalent of a system administrator.</span></span> <span data-ttu-id="89fe0-124">Оно не предоставляет разрешений на полное управление сервером отчетов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-124">It does not confer advanced permissions that grant full control of a report server.</span></span>  
+  
+ <span data-ttu-id="89fe0-125">Назначение системной роли не дает доступа к элементам иерархии папок.</span><span class="sxs-lookup"><span data-stu-id="89fe0-125">A system role assignment does not authorize access to items in the folder hierarchy.</span></span> <span data-ttu-id="89fe0-126">Защищенность системы и элемента взаимно исключают друг друга.</span><span class="sxs-lookup"><span data-stu-id="89fe0-126">System and item security are mutually exclusive.</span></span> <span data-ttu-id="89fe0-127">Для любого данного пользователя или группы может потребоваться создать одновременно назначения роли на уровне системы и на уровне элемента, чтобы предоставить адекватный доступ к серверу отчетов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-127">For any given user or group, you might need to create both a system-level and item-level role assignment to provide sufficient access to a report server.</span></span>  
+  
+## <a name="users-and-groups-in-role-assignments"></a><span data-ttu-id="89fe0-128">Пользователи и группы в назначении ролей</span><span class="sxs-lookup"><span data-stu-id="89fe0-128">Users and Groups in Role Assignments</span></span>  
+ <span data-ttu-id="89fe0-129">Учетные записи пользователей и групп, указанные в назначениях ролей, — это доменные учетные записи.</span><span class="sxs-lookup"><span data-stu-id="89fe0-129">The users or group accounts that you specify in role assignments are domain accounts.</span></span> <span data-ttu-id="89fe0-130">Сервер отчетов ссылается (но не создает и не изменяет) на пользователей и группы домена [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows (или иной модели безопасности, если используется настраиваемый модуль безопасности).</span><span class="sxs-lookup"><span data-stu-id="89fe0-130">The report server references, but does not create or manage, users and groups from a [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows domain (or another security model if you are using a custom security extension).</span></span>  
+  
+ <span data-ttu-id="89fe0-131">Среди всех назначений ролей, применяемых к данному элементу, никакие два не могут указывать одного и того же пользователя или группу.</span><span class="sxs-lookup"><span data-stu-id="89fe0-131">Of all the role assignments that apply to any given item, no two can specify the same user or group.</span></span> <span data-ttu-id="89fe0-132">Если учетная запись пользователя входит в учетную запись группы, и существуют назначения ролей для них обеих, пользователю будет доступен комбинированный набор задач для обоих назначений.</span><span class="sxs-lookup"><span data-stu-id="89fe0-132">If a user account is also a member of a group account, and you have role assignments for both, the combined set of tasks for both role assignments are available to the user.</span></span>  
+  
+ <span data-ttu-id="89fe0-133">Когда пользователь добавляется в группу, которая уже принимает участие в назначении ролей, необходимо перезагрузить службы IIS, чтобы новые назначения ролей подействовали на этого пользователя.</span><span class="sxs-lookup"><span data-stu-id="89fe0-133">When you add a user to a group that is already part of a role assignment, you must reset Internet Information Services (IIS) for the new role assignment to take effect for that user.</span></span>  
+  
+## <a name="predefined-role-assignments"></a><span data-ttu-id="89fe0-134">Предопределенное назначение ролей</span><span class="sxs-lookup"><span data-stu-id="89fe0-134">Predefined Role Assignments</span></span>  
+ <span data-ttu-id="89fe0-135">По умолчанию применяются предопределенные назначения ролей, что позволяет локальным администраторам управлять сервером отчетов.</span><span class="sxs-lookup"><span data-stu-id="89fe0-135">By default, predefined role assignments are implemented that allow local administrators to manage the report server.</span></span> <span data-ttu-id="89fe0-136">Чтобы предоставить доступ другим пользователям, нужно добавить дополнительные назначения ролей.</span><span class="sxs-lookup"><span data-stu-id="89fe0-136">You must add additional role assignments to grant access to other users.</span></span>  
+  
+ <span data-ttu-id="89fe0-137">Дополнительные сведения о стандартных назначениях ролей, обеспечивающих безопасность по умолчанию, см. в разделе [Стандартные роли](role-definitions-predefined-roles.md).</span><span class="sxs-lookup"><span data-stu-id="89fe0-137">For more information about the predefined role assignments that provide default security, see [Predefined Roles](role-definitions-predefined-roles.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="89fe0-138">См. также:</span><span class="sxs-lookup"><span data-stu-id="89fe0-138">See Also</span></span>  
+ <span data-ttu-id="89fe0-139">[Создание, удаление или изменение роли &#40;Management Studio&#41;](role-definitions-create-delete-or-modify.md) </span><span class="sxs-lookup"><span data-stu-id="89fe0-139">[Create, Delete, or Modify a Role &#40;Management Studio&#41;](role-definitions-create-delete-or-modify.md) </span></span>  
+ <span data-ttu-id="89fe0-140">[Предоставление пользователям доступа к серверу отчетов &#40;диспетчер отчетов&#41;](grant-user-access-to-a-report-server.md) </span><span class="sxs-lookup"><span data-stu-id="89fe0-140">[Grant User Access to a Report Server &#40;Report Manager&#41;](grant-user-access-to-a-report-server.md) </span></span>  
+ <span data-ttu-id="89fe0-141">[Изменение или удаление назначения роли &#40;диспетчер отчетов&#41;](role-assignments-modify-or-delete.md) </span><span class="sxs-lookup"><span data-stu-id="89fe0-141">[Modify or Delete a Role Assignment &#40;Report Manager&#41;](role-assignments-modify-or-delete.md) </span></span>  
+ <span data-ttu-id="89fe0-142">[Установка разрешений для элементов сервера отчетов на сайте SharePoint &#40;Reporting Services в режиме интеграции с SharePoint&#41;](set-permissions-for-report-server-items-on-a-sharepoint-site.md) </span><span class="sxs-lookup"><span data-stu-id="89fe0-142">[Set Permissions for Report Server Items on a SharePoint Site &#40;Reporting Services in SharePoint Integrated Mode&#41;](set-permissions-for-report-server-items-on-a-sharepoint-site.md) </span></span>  
+ [<span data-ttu-id="89fe0-143">Предоставление разрешений на сервер отчетов в собственном режиме</span><span class="sxs-lookup"><span data-stu-id="89fe0-143">Granting Permissions on a Native Mode Report Server</span></span>](granting-permissions-on-a-native-mode-report-server.md)  
+  
+  
