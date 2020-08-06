@@ -56,7 +56,7 @@ ms.locfileid: "87734494"
 
  ![Средство настройки PowerPivot для SharePoint 2013](../media/ssas-powerpivot-configtool-4-sharepoint2013-mainpage-configure.gif "Средство настройки PowerPivot для SharePoint 2013")
 
-||Описание:|
+||Описание|
 |-|-----------------|
 |**одного**|Окно «Список задач».|
 |**открыт**|Отдельные действия.|
