@@ -1,0 +1,55 @@
+---
+title: Определение ссылки на местную валюту (мастер бизнес-аналитики) | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: analysis-services
+ms.topic: conceptual
+f1_keywords:
+- sql12.asvs.biwizard.currencyconversion.localcurrency.f1
+ms.assetid: 74993b0d-dfca-476b-acba-d66c593680a5
+author: minewiskan
+ms.author: owend
+ms.openlocfilehash: bcd5c01839ecc7ae120089f17a1b909f18464e9d
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87734581"
+---
+# <a name="define-local-currency-reference-business-intelligence-wizard"></a><span data-ttu-id="341e8-102">Определение ссылки на местную валюту (мастер бизнес-аналитики)</span><span class="sxs-lookup"><span data-stu-id="341e8-102">Define Local Currency Reference (Business Intelligence Wizard)</span></span>
+  <span data-ttu-id="341e8-103">Используйте страницу **Определение ссылки на местную валюту** , чтобы определить местные валюты для функции конвертации валют, которая обеспечивает типы конвертации "Многие ко многим" и "Многие к одному", указанные на странице **Выбор типа конвертации валют** .</span><span class="sxs-lookup"><span data-stu-id="341e8-103">Use the **Define Local Currency Reference** page to define the local currencies for currency conversion functionality that covers the many-to-many or many-to-one conversion types specified on the **Select Conversion Type** page.</span></span> <span data-ttu-id="341e8-104">Местная валюта — это валюта, в формате которой хранятся транзакции для мер, выбранных на странице **Выбор мер** .</span><span class="sxs-lookup"><span data-stu-id="341e8-104">A local currency is the currency in which the transactions for measures selected in the **Select Measures** page are stored.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="341e8-105">Эта страница не выводится на экран, если мастер бизнес-аналитики был запущен из конструктора измерений, а также если щелкнуть правой кнопкой мыши измерение в обозревателе решений в среде [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="341e8-105">This page does not appear if the Business Intelligence Wizard was started from Dimension Designer or by right-clicking a dimension in Solution Explorer in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].</span></span> <span data-ttu-id="341e8-106">Эта страница также не отображается, если на странице **Выбор типа конвертации валют** был выбран параметр **Один ко многим** .</span><span class="sxs-lookup"><span data-stu-id="341e8-106">This page also does not appear if **One-to-Many** was selected on the **Select Conversion Type** page.</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="341e8-107">Варианты</span><span class="sxs-lookup"><span data-stu-id="341e8-107">Options</span></span>  
+ <span data-ttu-id="341e8-108">**Идентификаторы в таблице фактов**</span><span class="sxs-lookup"><span data-stu-id="341e8-108">**Identifiers in the fact table**</span></span>  
+ <span data-ttu-id="341e8-109">Выберите, чтобы указать атрибут, содержащий идентификаторы валют для локальных валют в измерении валют, на которое ссылается таблица фактов, содержащая меры, выбранные на странице **Выбор мер** .</span><span class="sxs-lookup"><span data-stu-id="341e8-109">Select to specify an attribute that provides currency identifiers for local currencies in a currency dimension referenced by the fact table that contains the measures selected on the **Select Measures** page.</span></span> <span data-ttu-id="341e8-110">(Измерение валют, `Type` свойство которого имеет значение *Currency*.)</span><span class="sxs-lookup"><span data-stu-id="341e8-110">(A currency dimension in one whose `Type` property is set to *Currency*.)</span></span>  
+  
+ <span data-ttu-id="341e8-111">Используйте этот параметр, если транзакция сама по себе определяет локальную валюту для данной транзакции.</span><span class="sxs-lookup"><span data-stu-id="341e8-111">Use this option when the transaction itself determines the local currency for that transaction.</span></span> <span data-ttu-id="341e8-112">Например, в [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] образце базы данных — [!INCLUDE[ssAWDWsp](../includes/ssawdwsp-md.md)] Группа мер «Интернет-продажи» имеет связь обычного измерения с измерением «Валюта».</span><span class="sxs-lookup"><span data-stu-id="341e8-112">For example, in the [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] sample database-[!INCLUDE[ssAWDWsp](../includes/ssawdwsp-md.md)], the Internet Sales measure group has a regular dimension relationship to the Currency dimension.</span></span> <span data-ttu-id="341e8-113">Таблица фактов для группы мер содержит внешний ключевой столбец, который связывает идентификаторы валют в таблице измерений и это измерение.</span><span class="sxs-lookup"><span data-stu-id="341e8-113">The fact table for that measure group contains a foreign key column that references the currency identifiers in the dimension table for that dimension.</span></span>  
+  
+ <span data-ttu-id="341e8-114">**Измерение валют и атрибут, на который ссылаются фактические данные**</span><span class="sxs-lookup"><span data-stu-id="341e8-114">**Currency dimension and attribute referenced by the fact data**</span></span>  
+ <span data-ttu-id="341e8-115">Выберите атрибут валюты в пределах измерения валют, элементы которого представляют идентификаторы валют для локальных валют.</span><span class="sxs-lookup"><span data-stu-id="341e8-115">Select the currency attribute within a currency dimension whose members represent currency identifiers for local currencies.</span></span> <span data-ttu-id="341e8-116">(Атрибутом Currency является, `Type` свойство которого имеет значение *Currency*.)</span><span class="sxs-lookup"><span data-stu-id="341e8-116">(A currency attribute is one whose `Type` property is set to *Currency*.)</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="341e8-117"> Этот параметр недоступен, если не выбран параметр **Идентификаторы в таблице фактов** .</span><span class="sxs-lookup"><span data-stu-id="341e8-117">This option is not available if the **Identifiers in the fact table** option is not selected.</span></span>  
+  
+ <span data-ttu-id="341e8-118">**Атрибуты в таблице измерения**</span><span class="sxs-lookup"><span data-stu-id="341e8-118">**Attributes in the dimension table**</span></span>  
+ <span data-ttu-id="341e8-119">Выберите, чтобы указать атрибут из измерения, связанного с группой мер, которое содержит идентификаторы валют для локальных валют.</span><span class="sxs-lookup"><span data-stu-id="341e8-119">Select to specify an attribute from a dimension related to the measure group that contains currency identifiers for local currencies.</span></span>  
+  
+ <span data-ttu-id="341e8-120">Используйте этот параметр, когда связь между транзакцией и другой бизнес-сущностью, такой, как местоположение, определяет локальную валюту для данной транзакции.</span><span class="sxs-lookup"><span data-stu-id="341e8-120">Use this option when the relationship between a transaction and another business entity, such as a location, determines the local currency for that transaction.</span></span> <span data-ttu-id="341e8-121">Например, в [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] образце базы данных — [!INCLUDE[ssAWDWsp](../includes/ssawdwsp-md.md)] Группа мер «финансовая отчетность» имеет ссылочную связь измерений с измерением «Валюта» через измерение «Организация».</span><span class="sxs-lookup"><span data-stu-id="341e8-121">For example, in the [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] sample database-[!INCLUDE[ssAWDWsp](../includes/ssawdwsp-md.md)], the Financial Reporting measure group has a referenced dimension relationship to the Currency dimension through the Organization dimension.</span></span> <span data-ttu-id="341e8-122">Таким образом, таблица фактов для группы мер Financial Reporting содержит внешний ключевой столбец, ссылающийся на элементы таблицы измерений для измерения организации.</span><span class="sxs-lookup"><span data-stu-id="341e8-122">That is, the fact table for the Financial Reporting measure group contains a foreign key column that references members in the dimension table for the Organization dimension.</span></span> <span data-ttu-id="341e8-123">Таблица измерения «Организация», в свою очередь, содержит внешний ключевой столбец, который ссылается на идентификаторы валют в таблице измерения «Валюта».</span><span class="sxs-lookup"><span data-stu-id="341e8-123">The dimension table for the Organization dimension, in turn, contains a foreign key column that references the currency identifiers in the dimension table for the Currency dimension.</span></span>  
+  
+ <span data-ttu-id="341e8-124">**Атрибут измерения, ссылающийся на валюту**</span><span class="sxs-lookup"><span data-stu-id="341e8-124">**Dimension attribute that references currency**</span></span>  
+ <span data-ttu-id="341e8-125">Выберите атрибут валюты в пределах измерения, элементы которого ссылаются на идентификаторы валют для локальных валют.</span><span class="sxs-lookup"><span data-stu-id="341e8-125">Select the attribute within a dimension whose members reference the currency identifiers for local currency.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="341e8-126"> Этот параметр недоступен, если не выбран параметр **Атрибуты в таблице измерения** .</span><span class="sxs-lookup"><span data-stu-id="341e8-126">This option is not available if the **Attributes in the dimension table** option is not selected.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="341e8-127">См. также:</span><span class="sxs-lookup"><span data-stu-id="341e8-127">See Also</span></span>  
+ <span data-ttu-id="341e8-128">[Справка F1 мастера бизнес-аналитики](business-intelligence-wizard-f1-help.md) </span><span class="sxs-lookup"><span data-stu-id="341e8-128">[Business Intelligence Wizard F1 Help](business-intelligence-wizard-f1-help.md) </span></span>  
+ <span data-ttu-id="341e8-129">[Конструктор кубов &#40;Analysis Services многомерных данных&#41;](cube-designer-analysis-services-multidimensional-data.md) </span><span class="sxs-lookup"><span data-stu-id="341e8-129">[Cube Designer &#40;Analysis Services - Multidimensional Data&#41;](cube-designer-analysis-services-multidimensional-data.md) </span></span>  
+ [<span data-ttu-id="341e8-130">Конструктор измерений &#40;Analysis Services многомерных данных&#41;</span><span class="sxs-lookup"><span data-stu-id="341e8-130">Dimension Designer &#40;Analysis Services - Multidimensional Data&#41;</span></span>](dimension-designer-analysis-services-multidimensional-data.md)  
+  
+  

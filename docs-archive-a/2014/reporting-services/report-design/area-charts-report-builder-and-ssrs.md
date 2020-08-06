@@ -1,0 +1,59 @@
+---
+title: Диаграммы с областями (построитель отчетов и службы SSRS) | Документы Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+ms.assetid: 245b236d-1d55-4744-b752-80bd133502aa
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: f401efa0abd5eac8ab39e511bc6b16a4f381ebdf
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87733642"
+---
+# <a name="area-charts-report-builder-and-ssrs"></a><span data-ttu-id="1d45b-102">Диаграммы с областями (построитель отчетов и службы SSRS)</span><span class="sxs-lookup"><span data-stu-id="1d45b-102">Area Charts (Report Builder and SSRS)</span></span>
+  <span data-ttu-id="1d45b-103">В диаграммах с областями данные выводятся в виде точек, соединенных линией, с закрашенными ниже этой линии областями.</span><span class="sxs-lookup"><span data-stu-id="1d45b-103">An area chart displays a series as a set of points connected by a line, with all the area filled in below the line.</span></span> <span data-ttu-id="1d45b-104">Дополнительные сведения о добавлении данных в диаграммы с областями см. в разделе [Диаграммы (построитель отчетов и службы SSRS)](charts-report-builder-and-ssrs.md).</span><span class="sxs-lookup"><span data-stu-id="1d45b-104">For more information on how to add data to an area chart, see [Charts &#40;Report Builder and SSRS&#41;](charts-report-builder-and-ssrs.md).</span></span>  
+  
+ <span data-ttu-id="1d45b-105">На следующей иллюстрации показан пример диаграммы с областями с накоплением.</span><span class="sxs-lookup"><span data-stu-id="1d45b-105">The following illustration shows an example of a stacked area chart.</span></span> <span data-ttu-id="1d45b-106">Рассматриваемые данные хорошо подходят для отображения на диаграмме с областями с накоплением, поскольку эта диаграмма позволяет отображать итоги для всех рядов, а также пропорциональную долю каждого ряда в общем итоге.</span><span class="sxs-lookup"><span data-stu-id="1d45b-106">The data is well suited for display on a stacked area chart because the chart can display totals for all series as well as the proportion that each series contributes to the total.</span></span>  
+  
+ <span data-ttu-id="1d45b-107">![Диаграмма с областями](../media/areachart.gif "Диаграмма с областями")</span><span class="sxs-lookup"><span data-stu-id="1d45b-107">![Area chart](../media/areachart.gif "Area chart")</span></span>  
+  
+> [!NOTE]  
+>  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
+  
+## <a name="variations"></a><span data-ttu-id="1d45b-108">Варианты</span><span class="sxs-lookup"><span data-stu-id="1d45b-108">Variations</span></span>  
+  
+-   <span data-ttu-id="1d45b-109">**С областями с накоплением**.</span><span class="sxs-lookup"><span data-stu-id="1d45b-109">**Stacked area**.</span></span> <span data-ttu-id="1d45b-110">Диаграмма с областями, в которой несколько рядов наложены по вертикали.</span><span class="sxs-lookup"><span data-stu-id="1d45b-110">An area chart where multiple series are stacked vertically.</span></span> <span data-ttu-id="1d45b-111">Если в диаграмме только один ряд, то диаграмма с областями с накоплением будет выглядеть точно так же, как обычная диаграмма с областями.</span><span class="sxs-lookup"><span data-stu-id="1d45b-111">If there is only one series in your chart, the stacked area chart will display the same as an area chart.</span></span>  
+  
+-   <span data-ttu-id="1d45b-112">**С областями с накоплением процентных значений**.</span><span class="sxs-lookup"><span data-stu-id="1d45b-112">**Percent stacked area**.</span></span> <span data-ttu-id="1d45b-113">Диаграмма с областями, в которой несколько рядов наложены по вертикали для подгонки под всю область диаграммы.</span><span class="sxs-lookup"><span data-stu-id="1d45b-113">An area chart where multiple series are stacked vertically to fit the entire chart area.</span></span> <span data-ttu-id="1d45b-114">Если в диаграмме только один ряд, то диаграмма с областями с накоплением будет выглядеть точно так же, как обычная диаграмма с областями.</span><span class="sxs-lookup"><span data-stu-id="1d45b-114">If there is only one series in your chart, the stacked area chart will display the same as an area chart.</span></span>  
+  
+-   <span data-ttu-id="1d45b-115">**Гладкая диаграмма с областями**.</span><span class="sxs-lookup"><span data-stu-id="1d45b-115">**Smooth area**.</span></span> <span data-ttu-id="1d45b-116">Диаграмма с областями, в которой точки данных соединены сглаженной, а не ломаной линией.</span><span class="sxs-lookup"><span data-stu-id="1d45b-116">An area chart where the data points are connected by a smooth line instead of a regular line.</span></span> <span data-ttu-id="1d45b-117">Гладкая диаграмма с областями используется вместо обычной диаграммы с областями, если более важно показать тренды, а не представить значения отдельных точек данных.</span><span class="sxs-lookup"><span data-stu-id="1d45b-117">Use a smooth area chart instead of an area chart when you are more concerned with displaying trends than with displaying the values of individual data points.</span></span>  
+  
+## <a name="data-considerations-for-area-charts"></a><span data-ttu-id="1d45b-118">Данные для диаграмм с областями</span><span class="sxs-lookup"><span data-stu-id="1d45b-118">Data Considerations for Area Charts</span></span>  
+  
+-   <span data-ttu-id="1d45b-119">Не считая графика, диаграмма с областями представляет собой единственный тип диаграммы, на которой данные представлены с помощью гладкой кривой.</span><span class="sxs-lookup"><span data-stu-id="1d45b-119">Along with the line chart, the area chart is the only chart type that displays data contiguously.</span></span> <span data-ttu-id="1d45b-120">Поэтому диаграммы с областями обычно используются для представления данных, относящихся к непрерывному промежутку времени.</span><span class="sxs-lookup"><span data-stu-id="1d45b-120">For this reason, an area chart is commonly used to represent data that occurs over a continuous period of time.</span></span>  
+  
+-   <span data-ttu-id="1d45b-121">Диаграмма с областями с накоплением процентных значений может применяться для отображения пропорциональных данных, которые изменяются во времени.</span><span class="sxs-lookup"><span data-stu-id="1d45b-121">A percent stacked area chart is useful for showing proportional data that occurs over time.</span></span>  
+  
+-   <span data-ttu-id="1d45b-122">Если имеется только один ряд, то диаграмма с областями с накоплением отображается как простая диаграмма с областями.</span><span class="sxs-lookup"><span data-stu-id="1d45b-122">If there is only one series, a stacked area chart will be drawn as an area chart.</span></span>  
+  
+-   <span data-ttu-id="1d45b-123">Если простая диаграмма с областями используется для представления нескольких рядов с похожими значениями, области могут перекрываться, скрывая значения важных точек данных.</span><span class="sxs-lookup"><span data-stu-id="1d45b-123">In a plain area chart, if the values in multiple series are similar, the areas may overlap, obscuring important data point values.</span></span> <span data-ttu-id="1d45b-124">Эту проблему можно решить, изменив тип диаграммы на диаграмму с областями с накоплением, которая предназначена для отображения в области диаграммы нескольких рядов.</span><span class="sxs-lookup"><span data-stu-id="1d45b-124">You can resolve this issue by changing the chart type to a stacked area chart, which is designed to show multiple series on an area chart.</span></span>  
+  
+-   <span data-ttu-id="1d45b-125">Если диаграмма с областями с накоплением содержит пропуски, это может означать, что набор данных включает пустые значения, которые отображаются как свободные разделы на диаграмме с областями с накоплением.</span><span class="sxs-lookup"><span data-stu-id="1d45b-125">If your stacked area chart contains gaps, it is possible that your dataset includes empty values, which will be shown as a vacant section on a stacked area chart.</span></span> <span data-ttu-id="1d45b-126">Если набор данных включает пустые значения, рассмотрите возможность вставки пустых точек на диаграмме.</span><span class="sxs-lookup"><span data-stu-id="1d45b-126">If your dataset includes empty values, consider inserting empty points on the chart.</span></span> <span data-ttu-id="1d45b-127">При добавление пустых точек пустые области диаграммы будут заполнены отличающимся цветом, чтобы указать нулевые значения или значения NULL.</span><span class="sxs-lookup"><span data-stu-id="1d45b-127">Adding empty points will fill in the empty areas on the chart with a different color to indicate null or zero values.</span></span> <span data-ttu-id="1d45b-128">Дополнительные сведения см. [в разделе Добавление пустых точек в диаграмму &#40;построитель отчетов и службы SSRS&#41;](add-empty-points-to-a-chart-report-builder-and-ssrs.md).</span><span class="sxs-lookup"><span data-stu-id="1d45b-128">For more information, see [Add Empty Points to the Chart &#40;Report Builder and SSRS&#41;](add-empty-points-to-a-chart-report-builder-and-ssrs.md).</span></span>  
+  
+-   <span data-ttu-id="1d45b-129">По своему назначению типы диаграммы с областями очень похожи на гистограммы и графики.</span><span class="sxs-lookup"><span data-stu-id="1d45b-129">Area chart types are very similar to column and line charts in behavior.</span></span> <span data-ttu-id="1d45b-130">Если сравнивается несколько рядов, рассмотрите возможность использования гистограммы вместо диаграммы с областями.</span><span class="sxs-lookup"><span data-stu-id="1d45b-130">If you are making a comparison between multiple series, consider using a column chart instead.</span></span> <span data-ttu-id="1d45b-131">Если проводится анализ трендов за какой-то промежуток времени, рассмотрите возможность использования графика.</span><span class="sxs-lookup"><span data-stu-id="1d45b-131">If you are analyzing trends over a period of time, consider using a line chart.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="1d45b-132">См. также:</span><span class="sxs-lookup"><span data-stu-id="1d45b-132">See Also</span></span>  
+ <span data-ttu-id="1d45b-133">[Диаграммы (построитель отчетов и службы SSRS)](charts-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="1d45b-133">[Charts &#40;Report Builder and SSRS&#41;](charts-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="1d45b-134">[Типы диаграмм (построитель отчетов и службы SSRS)](chart-types-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="1d45b-134">[Chart Types &#40;Report Builder and SSRS&#41;](chart-types-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="1d45b-135">[Графики (построитель отчетов и службы SSRS)](line-charts-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="1d45b-135">[Line Charts &#40;Report Builder and SSRS&#41;](line-charts-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="1d45b-136">[Изменение типа диаграммы (построитель отчетов и службы SSRS)](change-a-chart-type-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="1d45b-136">[Change a Chart Type &#40;Report Builder and SSRS&#41;](change-a-chart-type-report-builder-and-ssrs.md) </span></span>  
+ [<span data-ttu-id="1d45b-137">Точки данных со значением NULL и пустые точки в диаграммах (построитель отчетов и службы SSRS)</span><span class="sxs-lookup"><span data-stu-id="1d45b-137">Empty and Null Data Points in Charts &#40;Report Builder and SSRS&#41;</span></span>](empty-and-null-data-points-in-charts-report-builder-and-ssrs.md)  
+  
+  

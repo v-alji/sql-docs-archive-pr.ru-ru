@@ -1,0 +1,56 @@
+---
+title: Выбор источника данных | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+f1_keywords:
+- sql12.rtp.rptwizard.selectdatasource.f1
+ms.assetid: cdd84ad8-7c6a-41ac-bf51-1b0973434829
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: 641aa04f7fe658123aa21cc1bd21264ec0ee28ea
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87730074"
+---
+# <a name="select-the-data-source"></a><span data-ttu-id="a25f4-102">Выбор источника данных</span><span class="sxs-lookup"><span data-stu-id="a25f4-102">Select the Data Source</span></span>
+  <span data-ttu-id="a25f4-103">Эта страница мастера отчетов предназначена для определения источника данных для отчета.</span><span class="sxs-lookup"><span data-stu-id="a25f4-103">Use this page of the Report Wizard to define a data source for the report.</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="a25f4-104">Варианты</span><span class="sxs-lookup"><span data-stu-id="a25f4-104">Options</span></span>  
+ <span data-ttu-id="a25f4-105">**Общий источник данных**</span><span class="sxs-lookup"><span data-stu-id="a25f4-105">**Shared data source**</span></span>  
+ <span data-ttu-id="a25f4-106">Выберите пункт **Общий источник данных** , чтобы использовать общий источник данных, для которого уже заданы необходимые сведения о соединении.</span><span class="sxs-lookup"><span data-stu-id="a25f4-106">Select **Shared Data Source** to use a predefined shared data source that already has the data source connection information you want to use.</span></span> <span data-ttu-id="a25f4-107">Список содержит все общие источники данных, включенные в проект.</span><span class="sxs-lookup"><span data-stu-id="a25f4-107">The list contains all shared data sources that are included in the project.</span></span>  
+  
+ <span data-ttu-id="a25f4-108">**Новый источник данных**</span><span class="sxs-lookup"><span data-stu-id="a25f4-108">**New data source**</span></span>  
+ <span data-ttu-id="a25f4-109">Выберите пункт **Создать источник данных** , чтобы определить новый источник данных.</span><span class="sxs-lookup"><span data-stu-id="a25f4-109">Select **New data source** to define a new data source.</span></span> <span data-ttu-id="a25f4-110">Сведения об источнике данных будут использованы только в текущем отчете.</span><span class="sxs-lookup"><span data-stu-id="a25f4-110">The data source information will be used only with the current report.</span></span>  
+  
+ <span data-ttu-id="a25f4-111">**имя**;</span><span class="sxs-lookup"><span data-stu-id="a25f4-111">**Name**</span></span>  
+ <span data-ttu-id="a25f4-112">Введите имя для соединения с источником данных.</span><span class="sxs-lookup"><span data-stu-id="a25f4-112">Type a name for the connection to the data source.</span></span> <span data-ttu-id="a25f4-113">Имя источника данных должно быть уникальным в пределах отчета.</span><span class="sxs-lookup"><span data-stu-id="a25f4-113">The data source name must be unique within the report.</span></span>  
+  
+ <span data-ttu-id="a25f4-114">**Тип**</span><span class="sxs-lookup"><span data-stu-id="a25f4-114">**Type**</span></span>  
+ <span data-ttu-id="a25f4-115">Выберите тип источника данных, который вы используете (например, если вы используете [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] базу данных, выберите [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ).</span><span class="sxs-lookup"><span data-stu-id="a25f4-115">Select the type of data source you are using (for example, if you are using a [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] database, choose [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]).</span></span>  
+  
+ <span data-ttu-id="a25f4-116">**Строка подключения**</span><span class="sxs-lookup"><span data-stu-id="a25f4-116">**Connection string**</span></span>  
+ <span data-ttu-id="a25f4-117">Введите строку соединения для источника данных.</span><span class="sxs-lookup"><span data-stu-id="a25f4-117">Type a connection string for the data source.</span></span> <span data-ttu-id="a25f4-118">Дополнительные сведения о строках подключения см. [в разделе подключения к данным, источники данных и строки подключения в Reporting Services](../../2014/reporting-services/data-connections-data-sources-and-connection-strings-in-reporting-services.md).</span><span class="sxs-lookup"><span data-stu-id="a25f4-118">For more information about connection strings, see [Data Connections, Data Sources, and Connection Strings in Reporting Services](../../2014/reporting-services/data-connections-data-sources-and-connection-strings-in-reporting-services.md).</span></span>  
+  
+ <span data-ttu-id="a25f4-119">Нажмите кнопку **Изменить** , чтобы указать сервер источника данных в диалоговом окне **Свойства соединения** .</span><span class="sxs-lookup"><span data-stu-id="a25f4-119">Click **Edit** to specify the data source server in the **Connection Properties** dialog box.</span></span> <span data-ttu-id="a25f4-120">Можно указать как локальный, так удаленный источник данных.</span><span class="sxs-lookup"><span data-stu-id="a25f4-120">You can specify a local or remote data source.</span></span>  
+  
+ <span data-ttu-id="a25f4-121">Нажмите кнопку **Учетные данные** , чтобы ввести учетные данные базы данных.</span><span class="sxs-lookup"><span data-stu-id="a25f4-121">Click **Credentials** to supply database credentials.</span></span> <span data-ttu-id="a25f4-122">Указываемые учетные данные должны быть достаточными для подключения к источнику данных для конструирования отчета.</span><span class="sxs-lookup"><span data-stu-id="a25f4-122">At a minimum, the credentials you specify must be sufficient for you to connect to the data source for report design purposes.</span></span> <span data-ttu-id="a25f4-123">Когда отчет развертывается на сервере отчетов, учетные данные базы данных должны включать всех пользователей отчета.</span><span class="sxs-lookup"><span data-stu-id="a25f4-123">When the report is deployed on a report server, the database credentials must accommodate all users of the report.</span></span> <span data-ttu-id="a25f4-124">Например, если необходимо, чтобы все пользователи отчета соединялись с источником данных под своими учетными данными, выберите **Использовать проверку подлинности Windows (встроенная безопасность)**.</span><span class="sxs-lookup"><span data-stu-id="a25f4-124">For example, if you want all report users to connect to the data source using their credentials, choose **Use Windows Authentication (Integrated Security)**.</span></span> <span data-ttu-id="a25f4-125">Указанные учетные данные должны быть действительными для источника данных, поэтому при выборе проверки подлинности Windows убедитесь в том, что источник данных принимает соединения от всех учетных записей, от которых будет запускаться отчет.</span><span class="sxs-lookup"><span data-stu-id="a25f4-125">The credentials you specify must be valid for the data source, so if you choose Windows Authentication, be sure that the data source accepts connections from all user accounts that will be running the report.</span></span> <span data-ttu-id="a25f4-126">Управление учетными данными базы данных может производиться независимо от отчета.</span><span class="sxs-lookup"><span data-stu-id="a25f4-126">Database credentials can be managed separately from the report.</span></span> <span data-ttu-id="a25f4-127">Дополнительные сведения см. в разделе [Управление источниками данных отчета](report-data/manage-report-data-sources.md).</span><span class="sxs-lookup"><span data-stu-id="a25f4-127">For more information, see [Manage Report Data Sources](report-data/manage-report-data-sources.md).</span></span>  
+  
+ <span data-ttu-id="a25f4-128">**Сделать этот источник данных общим**</span><span class="sxs-lookup"><span data-stu-id="a25f4-128">**Make this a shared data source**</span></span>  
+ <span data-ttu-id="a25f4-129">Выберите этот параметр, чтобы сохранить источник данных не в отчете, а в качестве общего источника данных для проекта.</span><span class="sxs-lookup"><span data-stu-id="a25f4-129">Select this option to store the data source in the project as a shared data source, instead of in the report.</span></span> <span data-ttu-id="a25f4-130">После этого им можно будет пользоваться в качестве источника данных для других отчетов в этом проекте.</span><span class="sxs-lookup"><span data-stu-id="a25f4-130">That way, you can use it as the data source for other reports in the project.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="a25f4-131">См. также:</span><span class="sxs-lookup"><span data-stu-id="a25f4-131">See Also</span></span>  
+ <span data-ttu-id="a25f4-132">[Внедренные и общие подключения к данным или источники данных &#40;построитель отчетов и службы SSRS&#41;](../../2014/reporting-services/embedded-and-shared-data-connections-or-data-sources-report-builder-and-ssrs.md) </span><span class="sxs-lookup"><span data-stu-id="a25f4-132">[Embedded and Shared Data Connections or Data Sources &#40;Report Builder and SSRS&#41;](../../2014/reporting-services/embedded-and-shared-data-connections-or-data-sources-report-builder-and-ssrs.md) </span></span>  
+ <span data-ttu-id="a25f4-133">[Задание учетных данных и сведениях о соединении для источников данных отчета](report-data/specify-credential-and-connection-information-for-report-data-sources.md) </span><span class="sxs-lookup"><span data-stu-id="a25f4-133">[Specify Credential and Connection Information for Report Data Sources](report-data/specify-credential-and-connection-information-for-report-data-sources.md) </span></span>  
+ <span data-ttu-id="a25f4-134">[Сервер отчетов Reporting Services](../../2014/reporting-services/reporting-services-report-server.md) </span><span class="sxs-lookup"><span data-stu-id="a25f4-134">[Reporting Services Report Server](../../2014/reporting-services/reporting-services-report-server.md) </span></span>  
+ <span data-ttu-id="a25f4-135">[Файл конфигурации RSReportDesigner](report-server/rsreportdesigner-configuration-file.md) </span><span class="sxs-lookup"><span data-stu-id="a25f4-135">[RSReportDesigner Configuration File](report-server/rsreportdesigner-configuration-file.md) </span></span>  
+ <span data-ttu-id="a25f4-136">[Подключения к данным, источники данных и строки подключения в Reporting Services](../../2014/reporting-services/data-connections-data-sources-and-connection-strings-in-reporting-services.md) </span><span class="sxs-lookup"><span data-stu-id="a25f4-136">[Data Connections, Data Sources, and Connection Strings in Reporting Services](../../2014/reporting-services/data-connections-data-sources-and-connection-strings-in-reporting-services.md) </span></span>  
+ [<span data-ttu-id="a25f4-137">Справка мастера отчетов</span><span class="sxs-lookup"><span data-stu-id="a25f4-137">Report Wizard Help</span></span>](../../2014/reporting-services/report-wizard-help.md)  
+  
+  
