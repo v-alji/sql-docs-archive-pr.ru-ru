@@ -1,0 +1,68 @@
+---
+title: MSSQLSERVER_1505 | Документация Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: supportability
+ms.topic: conceptual
+helpviewer_keywords:
+- 1505 (Database Engine error)
+ms.assetid: ef4df75d-0f36-4c8b-b36c-e427f65f91ca
+author: MashaMSFT
+ms.author: mathoma
+ms.openlocfilehash: 74c152404cf2d3710bbe98b29da7a96d86f58859
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87730726"
+---
+# <a name="mssqlserver_1505"></a><span data-ttu-id="e788f-102">MSSQLSERVER_1505</span><span class="sxs-lookup"><span data-stu-id="e788f-102">MSSQLSERVER_1505</span></span>
+    
+## <a name="details"></a><span data-ttu-id="e788f-103">Сведения</span><span class="sxs-lookup"><span data-stu-id="e788f-103">Details</span></span>  
+  
+|||  
+|-|-|  
+|<span data-ttu-id="e788f-104">Название продукта</span><span class="sxs-lookup"><span data-stu-id="e788f-104">Product Name</span></span>|<span data-ttu-id="e788f-105">SQL Server</span><span class="sxs-lookup"><span data-stu-id="e788f-105">SQL Server</span></span>|  
+|<span data-ttu-id="e788f-106">Идентификатор события</span><span class="sxs-lookup"><span data-stu-id="e788f-106">Event ID</span></span>|<span data-ttu-id="e788f-107">1505</span><span class="sxs-lookup"><span data-stu-id="e788f-107">1505</span></span>|  
+|<span data-ttu-id="e788f-108">Источник события</span><span class="sxs-lookup"><span data-stu-id="e788f-108">Event Source</span></span>|<span data-ttu-id="e788f-109">MSSQLSERVER</span><span class="sxs-lookup"><span data-stu-id="e788f-109">MSSQLSERVER</span></span>|  
+|<span data-ttu-id="e788f-110">Компонент</span><span class="sxs-lookup"><span data-stu-id="e788f-110">Component</span></span>|<span data-ttu-id="e788f-111">SQLEngine</span><span class="sxs-lookup"><span data-stu-id="e788f-111">SQLEngine</span></span>|  
+|<span data-ttu-id="e788f-112">Символическое имя</span><span class="sxs-lookup"><span data-stu-id="e788f-112">Symbolic Name</span></span>|<span data-ttu-id="e788f-113">DUP_KEY</span><span class="sxs-lookup"><span data-stu-id="e788f-113">DUP_KEY</span></span>|  
+|<span data-ttu-id="e788f-114">Текст сообщения</span><span class="sxs-lookup"><span data-stu-id="e788f-114">Message Text</span></span>|<span data-ttu-id="e788f-115">Выполнение инструкции CREATE UNIQUE INDEX прервано, так как обнаружен повторяющийся ключ, относящийся к имени объекта "%.\*ls" и имени индекса "%.\*ls".</span><span class="sxs-lookup"><span data-stu-id="e788f-115">CREATE UNIQUE INDEX terminated because a duplicate key was found for object name '%.\*ls' and index name '%.\*ls'.</span></span>  <span data-ttu-id="e788f-116">Повторяющимся значением ключа является %ls.</span><span class="sxs-lookup"><span data-stu-id="e788f-116">The duplicate key value is %ls.</span></span>|  
+  
+## <a name="explanation"></a><span data-ttu-id="e788f-117">Объяснение</span><span class="sxs-lookup"><span data-stu-id="e788f-117">Explanation</span></span>  
+ <span data-ttu-id="e788f-118">Эта ошибка происходит при попытке создать уникальный индекс, а указанное повторяющееся значение содержится больше чем в одной строке в таблице.</span><span class="sxs-lookup"><span data-stu-id="e788f-118">This error occurs when you attempt to create a unique index and more than one row in the table contains the specified duplicate value.</span></span> <span data-ttu-id="e788f-119">Уникальный индекс создается при создании индекса и указании ключевого слова UNIQUE либо при создании ограничения UNIQUE.</span><span class="sxs-lookup"><span data-stu-id="e788f-119">A unique index is created when you create an index and specify the UNIQUE keyword, or when you create a UNIQUE constraint.</span></span> <span data-ttu-id="e788f-120">Таблица не может содержать какие-либо строки, которые имеют повторяющиеся значения в столбцах, определенных в индексе или ограничении.</span><span class="sxs-lookup"><span data-stu-id="e788f-120">The table cannot contain any rows that have duplicate values in the columns defined in the index or constraint.</span></span>  
+  
+ <span data-ttu-id="e788f-121">Давайте рассмотрим данные в таблице **Employee**:</span><span class="sxs-lookup"><span data-stu-id="e788f-121">Consider the data in the following **Employee** table:</span></span>  
+  
+|<span data-ttu-id="e788f-122">LastName</span><span class="sxs-lookup"><span data-stu-id="e788f-122">LastName</span></span>|<span data-ttu-id="e788f-123">FirstName</span><span class="sxs-lookup"><span data-stu-id="e788f-123">FirstName</span></span>|<span data-ttu-id="e788f-124">Название должности</span><span class="sxs-lookup"><span data-stu-id="e788f-124">JobTitle</span></span>|<span data-ttu-id="e788f-125">HireDate</span><span class="sxs-lookup"><span data-stu-id="e788f-125">HireDate</span></span>|  
+|--------------|---------------|--------------|--------------|  
+|<span data-ttu-id="e788f-126">Уолтерс</span><span class="sxs-lookup"><span data-stu-id="e788f-126">Walters</span></span>|<span data-ttu-id="e788f-127">Роб</span><span class="sxs-lookup"><span data-stu-id="e788f-127">Rob</span></span>|<span data-ttu-id="e788f-128">Старший конструктор средств</span><span class="sxs-lookup"><span data-stu-id="e788f-128">Senior Tool Designer</span></span>|<span data-ttu-id="e788f-129">2004-11-19</span><span class="sxs-lookup"><span data-stu-id="e788f-129">2004-11-19</span></span>|  
+|<span data-ttu-id="e788f-130">Коричневый</span><span class="sxs-lookup"><span data-stu-id="e788f-130">Brown</span></span>|<span data-ttu-id="e788f-131">Кевин</span><span class="sxs-lookup"><span data-stu-id="e788f-131">Kevin</span></span>|<span data-ttu-id="e788f-132">Специалист по маркетингу</span><span class="sxs-lookup"><span data-stu-id="e788f-132">Marketing Assistant</span></span>|<span data-ttu-id="e788f-133">NULL</span><span class="sxs-lookup"><span data-stu-id="e788f-133">NULL</span></span>|  
+|<span data-ttu-id="e788f-134">Коричневый</span><span class="sxs-lookup"><span data-stu-id="e788f-134">Brown</span></span>|<span data-ttu-id="e788f-135">Джо</span><span class="sxs-lookup"><span data-stu-id="e788f-135">Jo</span></span>|<span data-ttu-id="e788f-136">Инженер-проектировщик</span><span class="sxs-lookup"><span data-stu-id="e788f-136">Design Engineer</span></span>|<span data-ttu-id="e788f-137">NULL</span><span class="sxs-lookup"><span data-stu-id="e788f-137">NULL</span></span>|  
+|<span data-ttu-id="e788f-138">Уолтерс</span><span class="sxs-lookup"><span data-stu-id="e788f-138">Walters</span></span>|<span data-ttu-id="e788f-139">Роб</span><span class="sxs-lookup"><span data-stu-id="e788f-139">Rob</span></span>|<span data-ttu-id="e788f-140">Конструктор средств</span><span class="sxs-lookup"><span data-stu-id="e788f-140">Tool Designer</span></span>|<span data-ttu-id="e788f-141">2001-08-09</span><span class="sxs-lookup"><span data-stu-id="e788f-141">2001-08-09</span></span>|  
+  
+ <span data-ttu-id="e788f-142">Из-за того, что в строках есть повторяющиеся значения, мы не можем создать уникальный индекс по столбцу **LastName** или сочетанию столбцов **LastName**, **FirstName**.</span><span class="sxs-lookup"><span data-stu-id="e788f-142">A unique index can not be created on the column combinations **LastName** or **LastName**, **FirstName** because of duplicate values in the rows.</span></span>  
+  
+ <span data-ttu-id="e788f-143">Менее очевидно, что в столбце **HireDate** также может нарушаться уникальность.</span><span class="sxs-lookup"><span data-stu-id="e788f-143">Less obvious is the potential for a uniqueness violation in the **HireDate** column.</span></span> <span data-ttu-id="e788f-144">В целях индексирования значения NULL рассматриваются как равные.</span><span class="sxs-lookup"><span data-stu-id="e788f-144">For indexing purposes, NULL values compare as equal.</span></span> <span data-ttu-id="e788f-145">Следовательно, нельзя создать уникальный индекс или ограничение, если значения ключа NULL присутствуют больше чем в одной строке.</span><span class="sxs-lookup"><span data-stu-id="e788f-145">Therefore, you cannot create a unique index or constraint if the key values are NULL in more than one row.</span></span> <span data-ttu-id="e788f-146">С учетом вышесказанного мы не можем создать уникальный индекс по столбцу **HireDate** или сочетанию столбцов **LastName**, **HireDate**.</span><span class="sxs-lookup"><span data-stu-id="e788f-146">Given the data above, a unique index cannot be created on the column combinations **HireDate** or **LastName**, **HireDate**.</span></span>  
+  
+ <span data-ttu-id="e788f-147">В сообщении об ошибке 1505 возвращается первая строка, нарушающая ограничение уникальности.</span><span class="sxs-lookup"><span data-stu-id="e788f-147">Error message 1505 returns the first row that violates the uniqueness constraint.</span></span> <span data-ttu-id="e788f-148">В таблице могут быть другие повторяющиеся строки.</span><span class="sxs-lookup"><span data-stu-id="e788f-148">There may be other duplicate rows in the table.</span></span> <span data-ttu-id="e788f-149">Чтобы найти все повторяющиеся строки, выполните запрос к указанной таблице и используйте предложения GROUP BY и HAVING, чтобы получить информацию о повторяющихся строках.</span><span class="sxs-lookup"><span data-stu-id="e788f-149">To find all duplicate rows, query the specified table and use the GROUP BY and HAVING clauses to report the duplicate rows.</span></span> <span data-ttu-id="e788f-150">Например, следующий запрос возвращает строки таблицы **Employee**, в которых есть повторяющиеся значения имени и фамилии:</span><span class="sxs-lookup"><span data-stu-id="e788f-150">For example, the following query returns the rows in the **Employee** table that have duplicate first and last names.</span></span>  
+  
+ <span data-ttu-id="e788f-151">Выберите LastName, FirstName, Count ( \* ) из dbo. Группа сотрудников по фамилии, FirstName Count ( \* ) > 1;</span><span class="sxs-lookup"><span data-stu-id="e788f-151">SELECT LastName, FirstName, count(\*) FROM dbo.Employee GROUP BY LastName, FirstName HAVING count(\*) > 1;</span></span>  
+  
+## <a name="user-action"></a><span data-ttu-id="e788f-152">Действие пользователя</span><span class="sxs-lookup"><span data-stu-id="e788f-152">User Action</span></span>  
+ <span data-ttu-id="e788f-153">Рассмотрим следующие решения.</span><span class="sxs-lookup"><span data-stu-id="e788f-153">Consider the following solutions.</span></span>  
+  
+-   <span data-ttu-id="e788f-154">Добавить или удалить столбцы в определении индекса или ограничения, чтобы создать уникальное сочетание.</span><span class="sxs-lookup"><span data-stu-id="e788f-154">Add or remove columns in the index or constraint definition to create a unique composite.</span></span> <span data-ttu-id="e788f-155">В предыдущем примере мы можем решить проблему повторения значений, добавив в определение индекса или ограничения столбец **MiddleName**.</span><span class="sxs-lookup"><span data-stu-id="e788f-155">In the previous example, adding a **MiddleName** column to the index or constraint definition might resolve the duplication problem.</span></span>  
+  
+-   <span data-ttu-id="e788f-156">Выбирайте столбцы, определенные как NOT NULL, при определении столбцов для уникального индекса или ограничения уникальности.</span><span class="sxs-lookup"><span data-stu-id="e788f-156">Select columns that are defined as NOT NULL when you choose columns for a unique index or constraint.</span></span> <span data-ttu-id="e788f-157">При этом исключается возможность возникновения нарушения уникальности, когда больше чем в одной строке содержится значение NULL в значениях ключа.</span><span class="sxs-lookup"><span data-stu-id="e788f-157">This eliminates the possibility of a uniqueness violation caused when more than one row contains NULL in the key values.</span></span>  
+  
+-   <span data-ttu-id="e788f-158">Если дублирование значений является результатом ошибок ввода данных, исправьте данные вручную и затем создайте индекс или ограничение.</span><span class="sxs-lookup"><span data-stu-id="e788f-158">If the duplicate values are the result of data entry errors, manually correct the data and then create the index or constraint.</span></span> <span data-ttu-id="e788f-159">Дополнительные сведения об удалении повторяющихся строк в таблице см. в статье 139444 базы знаний Майкрософт: [Удаление повторяющихся строк из таблицы в SQL Server](https://support.microsoft.com/kb/139444).</span><span class="sxs-lookup"><span data-stu-id="e788f-159">For information about removing duplicate rows in a table, see Knowledge Base article 139444: [How to remove duplicate rows from a table in SQL Server](https://support.microsoft.com/kb/139444).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="e788f-160">См. также:</span><span class="sxs-lookup"><span data-stu-id="e788f-160">See Also</span></span>  
+ <span data-ttu-id="e788f-161">[CREATE INDEX (Transact-SQL)](/sql/t-sql/statements/create-index-transact-sql) </span><span class="sxs-lookup"><span data-stu-id="e788f-161">[CREATE INDEX &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-index-transact-sql) </span></span>  
+ <span data-ttu-id="e788f-162">[Создание уникальных индексов](../indexes/indexes.md) </span><span class="sxs-lookup"><span data-stu-id="e788f-162">[Create Unique Indexes](../indexes/indexes.md) </span></span>  
+ [<span data-ttu-id="e788f-163">Создание ограничений уникальности</span><span class="sxs-lookup"><span data-stu-id="e788f-163">Create Unique Constraints</span></span>](../tables/create-unique-constraints.md)  
+  
+  

@@ -1,0 +1,75 @@
+---
+title: Страница "Параметры сайта" (диспетчер отчетов) | Документация Майкрософт
+ms.custom: ''
+ms.date: 05/24/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: reporting-services-native
+ms.topic: conceptual
+ms.assetid: 4d67a01c-eae4-49ba-a6e8-8e983c0248f5
+author: maggiesMSFT
+ms.author: maggies
+manager: kfile
+ms.openlocfilehash: 75805a4e30293195b23cd5b75f1de3a01a1e76d6
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87731394"
+---
+# <a name="site-settings-page-report-manager"></a><span data-ttu-id="21c8d-102">Страница «Настройки сайта» (диспетчер отчетов)</span><span class="sxs-lookup"><span data-stu-id="21c8d-102">Site Settings Page (Report Manager)</span></span>
+  <span data-ttu-id="21c8d-103">Страница «Настройки сайта» позволяет изменить заголовок приложения, настроить серверные значения по умолчанию для ограничений журналов отчетов и значения времени ожидания обработки отчетов, а также управлять назначениями системных ролей и общими расписаниями.</span><span class="sxs-lookup"><span data-stu-id="21c8d-103">Use the Site Settings page to change the application title, set server-wide defaults for report history limits and report processing timeout values, manage system-level role assignments, and manage shared schedules.</span></span> <span data-ttu-id="21c8d-104">Для просмотра этой страницы требуются разрешения диспетчера содержимого или системного администратора.</span><span class="sxs-lookup"><span data-stu-id="21c8d-104">You must have Content Manager and System Administrator permissions to view this page.</span></span>  
+  
+> [!NOTE]  
+>  <span data-ttu-id="21c8d-105">Следующие функции доступны не во всех выпусках SQL Server: журналы отчетов, выполнение отчетов и общие расписания.</span><span class="sxs-lookup"><span data-stu-id="21c8d-105">The following features are not available in every edition of SQL Server: report history, report execution, and shared schedules.</span></span> <span data-ttu-id="21c8d-106">Перечень функций, поддерживаемых в разных выпусках [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], см. в разделе [Features Supported by the Editions of SQL Server 2014](../../2014/getting-started/features-supported-by-the-editions-of-sql-server-2014.md).</span><span class="sxs-lookup"><span data-stu-id="21c8d-106">For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2014](../../2014/getting-started/features-supported-by-the-editions-of-sql-server-2014.md).</span></span>  
+  
+## <a name="navigation"></a><span data-ttu-id="21c8d-107">Навигация</span><span class="sxs-lookup"><span data-stu-id="21c8d-107">Navigation</span></span>  
+ <span data-ttu-id="21c8d-108">Чтобы перейти к этому местоположению в пользовательском интерфейсе, используйте следующую процедуру.</span><span class="sxs-lookup"><span data-stu-id="21c8d-108">Use the following procedure to navigate to this location in the user interface (UI).</span></span>  
+  
+### <a name="to-open-the-site-settings-page"></a><span data-ttu-id="21c8d-109">Открытие страницы «Настройки сайта»</span><span class="sxs-lookup"><span data-stu-id="21c8d-109">To open the Site Settings page</span></span>  
+  
+1.  <span data-ttu-id="21c8d-110">Откройте диспетчер отчетов.</span><span class="sxs-lookup"><span data-stu-id="21c8d-110">Open Report Manager.</span></span>  
+  
+2.  <span data-ttu-id="21c8d-111">В верхней части страницы щелкните **Настройки сайта**.</span><span class="sxs-lookup"><span data-stu-id="21c8d-111">At the top of the page, click **Site Settings**.</span></span> <span data-ttu-id="21c8d-112">Откроется страница свойств сайта «Общие».</span><span class="sxs-lookup"><span data-stu-id="21c8d-112">This opens the General Properties page of the site.</span></span>  
+  
+     <span data-ttu-id="21c8d-113">**Примечание.** Если в меню нет пункта **Параметры сайта** , значит у вас нет необходимых разрешений, дополнительные сведения см. в подразделе "Параметры сайта" статьи [Настройка сервера отчетов в собственном режиме для ЛОКАЛЬНОГО администрирования &#40;SSRS&#41;](report-server/configure-a-native-mode-report-server-for-local-administration-ssrs.md).</span><span class="sxs-lookup"><span data-stu-id="21c8d-113">**Note:** If you do not see the **Site Settings** option in the menu, you do not have the required permissions, For more information see the "site settings" section of [Configure a Native Mode Report Server for Local Administration &#40;SSRS&#41;](report-server/configure-a-native-mode-report-server-for-local-administration-ssrs.md).</span></span>  
+  
+## <a name="options"></a><span data-ttu-id="21c8d-114">Параметры</span><span class="sxs-lookup"><span data-stu-id="21c8d-114">Options</span></span>  
+ <span data-ttu-id="21c8d-115">**имя**;</span><span class="sxs-lookup"><span data-stu-id="21c8d-115">**Name**</span></span>  
+ <span data-ttu-id="21c8d-116">Укажите заголовок, который будет использоваться для данного экземпляра диспетчера отчетов [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="21c8d-116">Specify the title to use for this instance of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Report Manager.</span></span> <span data-ttu-id="21c8d-117">По умолчанию используется заголовок " [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] ".</span><span class="sxs-lookup"><span data-stu-id="21c8d-117">By default, the title is "[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)][!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]".</span></span>  
+  
+ <span data-ttu-id="21c8d-118">**Выбрать для журнала отчета параметры по умолчанию**</span><span class="sxs-lookup"><span data-stu-id="21c8d-118">**Select the default settings for report history**</span></span>  
+ <span data-ttu-id="21c8d-119">Выберите значение по умолчанию для количества сохраняемых копий журнала отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-119">Select a default value for the number of copies of report history to retain.</span></span> <span data-ttu-id="21c8d-120">Значение по умолчанию предоставляет начальный параметр, устанавливающий ограничения для журнала отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-120">The default value provides an initial setting that establishes report history limits.</span></span> <span data-ttu-id="21c8d-121">Эти параметры могут быть изменены на уровне отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-121">You can vary these settings at the report level.</span></span> <span data-ttu-id="21c8d-122">Дополнительные сведения см. в разделе [Страница "Свойства параметров моментального снимка" (диспетчер отчетов)](../../2014/reporting-services/snapshot-options-properties-page-report-manager.md).</span><span class="sxs-lookup"><span data-stu-id="21c8d-122">For more information, see [Snapshot Options Properties Page &#40;Report Manager&#41;](../../2014/reporting-services/snapshot-options-properties-page-report-manager.md).</span></span>  
+  
+ <span data-ttu-id="21c8d-123">Если объем журнала отчета будет ограничен позже, при превышении указанного предела объема существующего журнала отчета сервер отчетов сокращает объем журнала до нового предела.</span><span class="sxs-lookup"><span data-stu-id="21c8d-123">If you limit report history later, when the existing report history exceeds the limit you specify, the report server reduces the existing report history to the new limit.</span></span> <span data-ttu-id="21c8d-124">Первыми удаляются наиболее старые моментальные снимки отчетов.</span><span class="sxs-lookup"><span data-stu-id="21c8d-124">The oldest report snapshots are deleted first.</span></span> <span data-ttu-id="21c8d-125">Если журнал отчетов отсутствует или его объем меньше заданного предела, добавляются новые моментальные снимки отчетов.</span><span class="sxs-lookup"><span data-stu-id="21c8d-125">If report history is empty or below the limit, new report snapshots are added.</span></span> <span data-ttu-id="21c8d-126">По достижении предела при добавлении новых моментальных снимков отчетов удаляются наиболее старые моментальные снимки.</span><span class="sxs-lookup"><span data-stu-id="21c8d-126">When the limit is reached, the oldest snapshot is deleted when a new report snapshot is added.</span></span>  
+  
+ <span data-ttu-id="21c8d-127">**Время ожидания выполнения отчета**</span><span class="sxs-lookup"><span data-stu-id="21c8d-127">**Report Execution Timeout**</span></span>  
+ <span data-ttu-id="21c8d-128">Задайте время истечения обработки отчета после определенного числа секунд.</span><span class="sxs-lookup"><span data-stu-id="21c8d-128">Specify whether report processing times out after a certain number of seconds.</span></span>  
+  
+ <span data-ttu-id="21c8d-129">Это значение применяется для обработки отчетов на сервере отчетов.</span><span class="sxs-lookup"><span data-stu-id="21c8d-129">This value applies to report processing on a report server.</span></span> <span data-ttu-id="21c8d-130">Оно не влияет на обработку данных на сервере баз данных, предоставляющем данные для отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-130">It does not affect data processing on the database server that provides the data for your report.</span></span>  
+  
+ <span data-ttu-id="21c8d-131">Таймер обработки отчета включается при выборе отчета и останавливается после открытия отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-131">The report processing timer clock begins when the report is selected and ends when the report opens.</span></span> <span data-ttu-id="21c8d-132">Если это значение задано, укажите достаточное время для завершения обработки данных и обработки отчета.</span><span class="sxs-lookup"><span data-stu-id="21c8d-132">When you set this value, specify enough time to complete both data processing and report processing.</span></span>  
+  
+ <span data-ttu-id="21c8d-133">**Пользовательский URL-адрес для запуска построителя отчетов**</span><span class="sxs-lookup"><span data-stu-id="21c8d-133">**Custom Report Builder launch URL**</span></span>  
+ <span data-ttu-id="21c8d-134">Если сервер отчетов не использует URL-адрес построителя отчетов по умолчанию, укажите пользовательский URL-адрес.</span><span class="sxs-lookup"><span data-stu-id="21c8d-134">Specify a custom URL when the report server does not use the default Report Builder URL.</span></span> <span data-ttu-id="21c8d-135">Это необязательный параметр.</span><span class="sxs-lookup"><span data-stu-id="21c8d-135">This setting is optional.</span></span> <span data-ttu-id="21c8d-136">Если значение не указано, будет использован URL-адрес по умолчанию, а построитель отчетов запускается как приложение ClickOnce.</span><span class="sxs-lookup"><span data-stu-id="21c8d-136">If you do not specify a value, the default URL will be used, which launches Report Builder as a ClickOnce application.</span></span> <span data-ttu-id="21c8d-137">По умолчанию URL-адрес принимает одно из следующих значений.</span><span class="sxs-lookup"><span data-stu-id="21c8d-137">The default URL is one of the following:</span></span>  
+  
+ <span data-ttu-id="21c8d-138">**Сервер отчетов в собственном режиме:** При установке в собственном режиме URL-адрес по умолчанию будет иметь вид http:// \<*computername*> /репортсервер/репортбуилдер/ReportBuilder_3_0_0_0. Application.</span><span class="sxs-lookup"><span data-stu-id="21c8d-138">**Native mode report server:** In a native mode installation, the default URL will take the form of http://\<*computername*>/reportserver/ReportBuilder/ReportBuilder_3_0_0_0.application.</span></span>  
+  
+ <span data-ttu-id="21c8d-139">Режим интеграции с SharePoint. URL-адрес по умолчанию будет иметь вид http:// \<*SharePoint_site*> /_vti_bin/репортбуилдер/ReportBuilder_3_0_0_0. Application. "</span><span class="sxs-lookup"><span data-stu-id="21c8d-139">SharePoint integrated mode: The default URL will take the form of http://\<*SharePoint_site*>/_vti_bin/ReportBuilder/ReportBuilder_3_0_0_0.application."</span></span>  
+  
+ <span data-ttu-id="21c8d-140">**Применить**</span><span class="sxs-lookup"><span data-stu-id="21c8d-140">**Apply**</span></span>  
+ <span data-ttu-id="21c8d-141">Нажмите, чтобы сохранить изменения на сервере отчетов.</span><span class="sxs-lookup"><span data-stu-id="21c8d-141">Click to save your changes to the report server.</span></span>  
+  
+ <span data-ttu-id="21c8d-142">**Безопасность**</span><span class="sxs-lookup"><span data-stu-id="21c8d-142">**Security**</span></span>  
+ <span data-ttu-id="21c8d-143">Щелкните эту ссылку, чтобы открыть страницу «Назначения системных ролей», позволяющую назначить учетным записям пользователей и групп стандартные системные роли.</span><span class="sxs-lookup"><span data-stu-id="21c8d-143">Click this link to open the System Role Assignments page, on which you can assign user and group accounts to predefined system roles.</span></span>  
+  
+ <span data-ttu-id="21c8d-144">**Расписания**</span><span class="sxs-lookup"><span data-stu-id="21c8d-144">**Schedules**</span></span>  
+ <span data-ttu-id="21c8d-145">Щелкните эту ссылку, чтобы открыть страницу «Расписания», позволяющую определять стандартные общие расписания, которые пользователи могут выбрать для своих отчетов и подписок.</span><span class="sxs-lookup"><span data-stu-id="21c8d-145">Click this link to open the Schedules page, on which you can predefine shared schedules that users can select for their reports and subscriptions.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="21c8d-146">См. также:</span><span class="sxs-lookup"><span data-stu-id="21c8d-146">See Also</span></span>  
+ <span data-ttu-id="21c8d-147">[Диспетчер отчетов (службы Reporting Services в основном режиме)](../../2014/reporting-services/report-manager-ssrs-native-mode.md) </span><span class="sxs-lookup"><span data-stu-id="21c8d-147">[Report Manager  &#40;SSRS Native Mode&#41;](../../2014/reporting-services/report-manager-ssrs-native-mode.md) </span></span>  
+ <span data-ttu-id="21c8d-148">[Предоставление разрешений на сервер отчетов в собственном режиме](security/granting-permissions-on-a-native-mode-report-server.md) </span><span class="sxs-lookup"><span data-stu-id="21c8d-148">[Granting Permissions on a Native Mode Report Server](security/granting-permissions-on-a-native-mode-report-server.md) </span></span>  
+ <span data-ttu-id="21c8d-149">[Стандартные роли](security/role-definitions-predefined-roles.md) </span><span class="sxs-lookup"><span data-stu-id="21c8d-149">[Predefined Roles](security/role-definitions-predefined-roles.md) </span></span>  
+ [<span data-ttu-id="21c8d-150">Справка F1 диспетчера отчетов</span><span class="sxs-lookup"><span data-stu-id="21c8d-150">Report Manager F1 Help</span></span>](../../2014/reporting-services/report-manager-f1-help.md)  
+  
+  
