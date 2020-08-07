@@ -6,4 +6,4 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 08/04/2020
 ms.locfileid: "87654248"
 ---
-<span data-ttu-id="cd936-101">SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="cd936-101">SQL Server 2014</span></span>
+<span data-ttu-id="64dd6-101">SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="64dd6-101">SQL Server 2014</span></span>

@@ -6,4 +6,4 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 08/04/2020
 ms.locfileid: "87654247"
 ---
-<span data-ttu-id="d8000-101">SQL Server 2012</span><span class="sxs-lookup"><span data-stu-id="d8000-101">SQL Server 2012</span></span>
+<span data-ttu-id="e31d4-101">SQL Server 2012</span><span class="sxs-lookup"><span data-stu-id="e31d4-101">SQL Server 2012</span></span>
