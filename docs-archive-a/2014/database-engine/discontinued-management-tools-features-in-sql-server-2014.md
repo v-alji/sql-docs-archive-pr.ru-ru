@@ -1,0 +1,49 @@
+---
+title: Неподдерживаемые функции средств управления в SQL Server 2014 | Документация Майкрософт
+ms.custom: ''
+ms.date: 06/13/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: ssms
+ms.topic: conceptual
+ms.assetid: 6e58acd0-73c5-4161-9fbc-8ea531bc681c
+author: stevestein
+ms.author: sstein
+ms.openlocfilehash: 3ae7d4a708816c1b30a0b208bb422e0920b4c76c
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87732966"
+---
+# <a name="discontinued-management-tools-features-in-sql-server-2014"></a><span data-ttu-id="9ac6d-102">Неподдерживаемые возможности средств управления в SQL Server 2014</span><span class="sxs-lookup"><span data-stu-id="9ac6d-102">Discontinued Management Tools Features in SQL Server 2014</span></span>
+  <span data-ttu-id="9ac6d-103">В этом разделе описываются функции средств управления [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] , которые недоступны в [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9ac6d-103">This topic describes [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Management Tools features that are no longer available in [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].</span></span>  
+  
+## <a name="features-removed-in-sscurrent"></a><span data-ttu-id="9ac6d-104">Функции, удаленные в [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ac6d-104">Features Removed in [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]</span></span>  
+ <span data-ttu-id="9ac6d-105">Отсутствуют</span><span class="sxs-lookup"><span data-stu-id="9ac6d-105">None</span></span>  
+  
+## <a name="features-removed-in-sssql11"></a><span data-ttu-id="9ac6d-106">Функции, удаленные в [!INCLUDE[ssSQL11](../includes/sssql11-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ac6d-106">Features Removed in [!INCLUDE[ssSQL11](../includes/sssql11-md.md)]</span></span>  
+  
+### <a name="sql-server-compact-edition"></a><span data-ttu-id="9ac6d-107">SQL Server Compact Edition</span><span class="sxs-lookup"><span data-stu-id="9ac6d-107">SQL Server Compact Edition</span></span>  
+ <span data-ttu-id="9ac6d-108">Редактор кода SQL Server Compact Edition исключен из среды [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9ac6d-108">The SQL Server Compact Edition code editor has been removed from [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)].</span></span> <span data-ttu-id="9ac6d-109">Поддержка SQL Server Compact Edition также исключена из обозревателя объектов, обозревателя решений и обозревателя шаблонов.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-109">Support for SQL Server Compact Edition has also been removed from Object Explorer, Solution Explorer, and Template Explorer.</span></span> <span data-ttu-id="9ac6d-110">Вместо них используйте редакторы Transact-SQL в среде Microsoft Visual Studio 2010 с пакетом обновления 1 (SP1) или в WebMatrix.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-110">Use the Transact-SQL editors in Microsoft Visual Studio 2010 Service Pack 1 or Webmatrix instead.</span></span>  
+  
+### <a name="activex-subsystem-for-sql-server-agent"></a><span data-ttu-id="9ac6d-111">Подсистема ActiveX для агента SQL Server</span><span class="sxs-lookup"><span data-stu-id="9ac6d-111">ActiveX Subsystem for SQL Server Agent</span></span>  
+ <span data-ttu-id="9ac6d-112">В этом выпуске была удалена подсистема ActiveX для агента SQL Server.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-112">The ActiveX subsystem for SQL Server Agent has been removed in this release.</span></span> <span data-ttu-id="9ac6d-113">Заменяющая ее функциональность отсутствует.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-113">There is no replacement functionality.</span></span>  
+  
+### <a name="sp_addtask-sp_deletetask-sp_updatetask"></a><span data-ttu-id="9ac6d-114">sp_addtask, sp_deletetask, sp_updatetask</span><span class="sxs-lookup"><span data-stu-id="9ac6d-114">sp_addtask, sp_deletetask, sp_updatetask</span></span>  
+ <span data-ttu-id="9ac6d-115">В этом выпуске были удалены хранимые процедуры sp_addtask, sp_deletetask и sp_updatetask.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-115">Sp_addtask, sp_deletetask, and sp_updatetask have been removed in this release.</span></span> <span data-ttu-id="9ac6d-116">Не следует использовать эту функциональность в новых и обновляемых приложениях.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-116">Do not use this functionality in new or updated applications.</span></span>  
+  
+### <a name="net-send-and-pager-notification"></a><span data-ttu-id="9ac6d-117">NET SEND и уведомления на пейджер</span><span class="sxs-lookup"><span data-stu-id="9ac6d-117">Net Send and Pager Notification</span></span>  
+ <span data-ttu-id="9ac6d-118">В этом выпуске были удалены отправка сообщений с помощью NET SEND и уведомлений на пейджер.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-118">Net Send and Pager Notification have been removed in this release.</span></span> <span data-ttu-id="9ac6d-119">Не следует использовать эту функциональность в новых и обновляемых приложениях.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-119">Do not use this functionality in new or updated applications.</span></span>  
+  
+### <a name="data-tier-applications"></a><span data-ttu-id="9ac6d-120">Приложения уровня данных</span><span class="sxs-lookup"><span data-stu-id="9ac6d-120">Data-tier Applications</span></span>  
+ <span data-ttu-id="9ac6d-121">Некоторые компоненты приложения уровня данных (DAC), присутствующие в [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] , были удалены из [!INCLUDE[ssSQL11](../includes/sssql11-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9ac6d-121">Some data-tier application (DAC) features present in [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] have been removed in [!INCLUDE[ssSQL11](../includes/sssql11-md.md)].</span></span> <span data-ttu-id="9ac6d-122">Тем не менее, платформа приложения уровня данных (DACFx, версия 3.0), выпущенная вместе с [!INCLUDE[ssSQL11](../includes/sssql11-md.md)], совместима с [!INCLUDE[ssVersion2005](../includes/ssversion2005-md.md)] — [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] и [!INCLUDE[ssSDSfull](../includes/sssdsfull-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9ac6d-122">However, the Data-Tier Application Framework (DACfx version 3.0) released with [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] is compatible with [!INCLUDE[ssVersion2005](../includes/ssversion2005-md.md)] through [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] and [!INCLUDE[ssSDSfull](../includes/sssdsfull-md.md)].</span></span> <span data-ttu-id="9ac6d-123">Версия DAC 3.0 не поддерживается более ранними версиями [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] , включая [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] в [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9ac6d-123">DAC version 3.0 is not supported by earlier versions of [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] including [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] in [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)].</span></span> <span data-ttu-id="9ac6d-124">Проекты базы данных Visual Studio 2010 не поддерживают пакеты приложения уровня данных 3.0 (DACPAC) или пакеты экспорта приложения уровня данных (BACPAC), созданные в DACFx 3.0 или более поздней версии.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-124">Visual Studio 2010 Database Projects do not support DAC 3.0 DACPAC packages or DAC Export (BACPAC) packages generated with DACfx version 3.0 or later.</span></span>  
+  
+ <span data-ttu-id="9ac6d-125">Рекомендуется использовать последнюю версию проекта базы данных [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-125">Microsoft recommends using the latest available version [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools Database Projects.</span></span>  
+  
+ <span data-ttu-id="9ac6d-126">API DACFx 3.0 и средства [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] поддерживают чтение DACPAC- и BACPAC-файлов, созданных с помощью более ранних версий средств [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] и DACFx: извлечение баз данных из этих версий в DACPAC-файлы и развертывание в поддерживаемые версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] с помощью [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] или [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools.</span><span class="sxs-lookup"><span data-stu-id="9ac6d-126">DACfx 3.0 API and [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] tools do support reading DACPAC and BACPAC files created using earlier [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] tools and DACfx versions: extracting databases into DACPAC files from these versions, and deploying databases into supported versions of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] through [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] or [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="9ac6d-127">См. также:</span><span class="sxs-lookup"><span data-stu-id="9ac6d-127">See Also</span></span>  
+ [<span data-ttu-id="9ac6d-128">Обратная совместимость</span><span class="sxs-lookup"><span data-stu-id="9ac6d-128">Backward Compatibility</span></span>](../../2014/getting-started/backward-compatibility.md)  
+  
+  

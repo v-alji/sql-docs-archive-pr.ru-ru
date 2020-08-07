@@ -1,0 +1,46 @@
+---
+title: Очередность и ассоциативность операторов | Документы Майкрософт
+ms.custom: ''
+ms.date: 03/06/2017
+ms.prod: sql-server-2014
+ms.reviewer: ''
+ms.technology: integration-services
+ms.topic: conceptual
+helpviewer_keywords:
+- associativity [Integration Services]
+- precedence [Integration Services]
+ms.assetid: 5094164f-dabc-45b5-b611-384feb2b3fe3
+author: chugugrace
+ms.author: chugu
+ms.openlocfilehash: 90ec23f9e961cbe4df291b9670c09e51d5d8704b
+ms.sourcegitcommit: ad4d92dce894592a259721a1571b1d8736abacdb
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87734374"
+---
+# <a name="operator-precedence-and-associativity"></a><span data-ttu-id="f354a-102">Очередность и ассоциативность операторов</span><span class="sxs-lookup"><span data-stu-id="f354a-102">Operator Precedence and Associativity</span></span>
+  <span data-ttu-id="f354a-103">Каждый оператор в наборе операторов, поддерживаемом средством оценки выражений, имеет назначенный приоритет в иерархии приоритетов и содержит направление, в котором производится его вычисление.</span><span class="sxs-lookup"><span data-stu-id="f354a-103">Each operator in the set of operators that the expression evaluator supports has a designated precedence in the precedence hierarchy and includes a direction in which it is evaluated.</span></span> <span data-ttu-id="f354a-104">Направление вычисления для оператора — это ассоциативность оператора.</span><span class="sxs-lookup"><span data-stu-id="f354a-104">The direction of evaluation for an operator is operator associativity.</span></span> <span data-ttu-id="f354a-105">Операторы с более высоким приоритетом выполняются раньше операторов с более низким приоритетом.</span><span class="sxs-lookup"><span data-stu-id="f354a-105">Operators with higher precedence are evaluated before operators with lower precedence.</span></span> <span data-ttu-id="f354a-106">Если выполнение выражения предполагает наличие нескольких операторов, порядок выполнения этих операторов определяется их приоритетом.</span><span class="sxs-lookup"><span data-stu-id="f354a-106">If a complex expression has multiple operators, operator precedence determines the order in which the operations are performed.</span></span> <span data-ttu-id="f354a-107">Порядок исполнения может существенно повлиять на результирующее значение.</span><span class="sxs-lookup"><span data-stu-id="f354a-107">The order of execution can significantly affect the resulting value.</span></span> <span data-ttu-id="f354a-108">Некоторые операторы имеют одинаковый приоритет.</span><span class="sxs-lookup"><span data-stu-id="f354a-108">Some operators have equal precedence.</span></span> <span data-ttu-id="f354a-109">Если выражение содержит несколько операторов с одинаковым приоритетом, то операторы выполняются направленно, слева направо или справа налево.</span><span class="sxs-lookup"><span data-stu-id="f354a-109">If an expression contains multiple operators of equal precedence, the operators are evaluated directionally, from left to right or right to left.</span></span>  
+  
+ <span data-ttu-id="f354a-110">В следующей таблице представлен список операторов в порядке убывания приоритета.</span><span class="sxs-lookup"><span data-stu-id="f354a-110">The following table lists the precedence of operators in order of high to low.</span></span> <span data-ttu-id="f354a-111">Операторы одного уровня имеют одинаковый приоритет.</span><span class="sxs-lookup"><span data-stu-id="f354a-111">Operators at the same level have equal precedence.</span></span>  
+  
+|<span data-ttu-id="f354a-112">Символ оператора</span><span class="sxs-lookup"><span data-stu-id="f354a-112">Operator symbol</span></span>|<span data-ttu-id="f354a-113">Тип операции</span><span class="sxs-lookup"><span data-stu-id="f354a-113">Type of Operation</span></span>|<span data-ttu-id="f354a-114">Ассоциативность</span><span class="sxs-lookup"><span data-stu-id="f354a-114">Associativity</span></span>|  
+|---------------------|-----------------------|-------------------|  
+|<span data-ttu-id="f354a-115">( )</span><span class="sxs-lookup"><span data-stu-id="f354a-115">( )</span></span>|<span data-ttu-id="f354a-116">Выражение</span><span class="sxs-lookup"><span data-stu-id="f354a-116">Expression</span></span>|<span data-ttu-id="f354a-117">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-117">Left to right</span></span>|  
+|<span data-ttu-id="f354a-118">–, !, ~</span><span class="sxs-lookup"><span data-stu-id="f354a-118">-, !, ~</span></span>|<span data-ttu-id="f354a-119">Унарный</span><span class="sxs-lookup"><span data-stu-id="f354a-119">Unary</span></span>|<span data-ttu-id="f354a-120">Справа налево</span><span class="sxs-lookup"><span data-stu-id="f354a-120">Right to left</span></span>|  
+|<span data-ttu-id="f354a-121">Приведения</span><span class="sxs-lookup"><span data-stu-id="f354a-121">casts</span></span>|<span data-ttu-id="f354a-122">Унарный</span><span class="sxs-lookup"><span data-stu-id="f354a-122">Unary</span></span>|<span data-ttu-id="f354a-123">Справа налево</span><span class="sxs-lookup"><span data-stu-id="f354a-123">Right to left</span></span>|  
+|<span data-ttu-id="f354a-124">\*, / ,%</span><span class="sxs-lookup"><span data-stu-id="f354a-124">\*, / ,%</span></span>|<span data-ttu-id="f354a-125">Мультипликативные</span><span class="sxs-lookup"><span data-stu-id="f354a-125">Multiplicative</span></span>|<span data-ttu-id="f354a-126">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-126">Left to right</span></span>|  
+|<span data-ttu-id="f354a-127">+, –</span><span class="sxs-lookup"><span data-stu-id="f354a-127">+, -</span></span>|<span data-ttu-id="f354a-128">Аддитивная</span><span class="sxs-lookup"><span data-stu-id="f354a-128">Additive</span></span>|<span data-ttu-id="f354a-129">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-129">Left to right</span></span>|  
+|<span data-ttu-id="f354a-130">\<, >, \<=, >=</span><span class="sxs-lookup"><span data-stu-id="f354a-130">\<, >, \<=, >=</span></span>|<span data-ttu-id="f354a-131">Отношение</span><span class="sxs-lookup"><span data-stu-id="f354a-131">Relational</span></span>|<span data-ttu-id="f354a-132">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-132">Left to right</span></span>|  
+|<span data-ttu-id="f354a-133">==, !=</span><span class="sxs-lookup"><span data-stu-id="f354a-133">==, !=</span></span>|<span data-ttu-id="f354a-134">Равенство</span><span class="sxs-lookup"><span data-stu-id="f354a-134">Equality</span></span>|<span data-ttu-id="f354a-135">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-135">Left to right</span></span>|  
+|&|<span data-ttu-id="f354a-136">Побитовое И</span><span class="sxs-lookup"><span data-stu-id="f354a-136">Bitwise AND</span></span>|<span data-ttu-id="f354a-137">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-137">Left to right</span></span>|  
+|^|<span data-ttu-id="f354a-138">Побитовое исключающее ИЛИ</span><span class="sxs-lookup"><span data-stu-id="f354a-138">Bitwise exclusive OR</span></span>|<span data-ttu-id="f354a-139">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-139">Left to right</span></span>|  
+|<span data-ttu-id="f354a-140">&#124;</span><span class="sxs-lookup"><span data-stu-id="f354a-140">&#124;</span></span>|<span data-ttu-id="f354a-141">Побитовое ИЛИ</span><span class="sxs-lookup"><span data-stu-id="f354a-141">Bitwise inclusive OR</span></span>|<span data-ttu-id="f354a-142">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-142">Left to right</span></span>|  
+|&&|<span data-ttu-id="f354a-143">Логическое И</span><span class="sxs-lookup"><span data-stu-id="f354a-143">Logical AND</span></span>|<span data-ttu-id="f354a-144">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-144">Left to right</span></span>|  
+|<span data-ttu-id="f354a-145">&#124;&#124;</span><span class="sxs-lookup"><span data-stu-id="f354a-145">&#124;&#124;</span></span>|<span data-ttu-id="f354a-146">Логическое ИЛИ</span><span class="sxs-lookup"><span data-stu-id="f354a-146">Logical OR</span></span>|<span data-ttu-id="f354a-147">Слева направо</span><span class="sxs-lookup"><span data-stu-id="f354a-147">Left to right</span></span>|  
+|<span data-ttu-id="f354a-148">?</span><span class="sxs-lookup"><span data-stu-id="f354a-148">?</span></span> <span data-ttu-id="f354a-149">, перечислены ниже.</span><span class="sxs-lookup"><span data-stu-id="f354a-149">:</span></span>|<span data-ttu-id="f354a-150">Условное выражение</span><span class="sxs-lookup"><span data-stu-id="f354a-150">Conditional expression</span></span>|<span data-ttu-id="f354a-151">Справа налево</span><span class="sxs-lookup"><span data-stu-id="f354a-151">Right to left</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="f354a-152">См. также:</span><span class="sxs-lookup"><span data-stu-id="f354a-152">See Also</span></span>  
+ [<span data-ttu-id="f354a-153">Операторы (выражение служб SSIS)</span><span class="sxs-lookup"><span data-stu-id="f354a-153">Operators &#40;SSIS Expression&#41;</span></span>](operators-ssis-expression.md)  
+  
+  
